@@ -75,6 +75,7 @@ export default async function Home({
             variant="grid"
             limit={3}
             designType="gold"
+            isDark={false}
           /></Container>
       </section>
     </div>

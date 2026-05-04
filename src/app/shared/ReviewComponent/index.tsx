@@ -16,9 +16,15 @@ interface Review {
 interface Props {
   reviews: Review[];
   variant?: "grid" | "list";
+  isDark?: boolean;
 }
 
-export default function ReviewComponent({ reviews, variant = "grid" }: Props) {
+export default function ReviewComponent({
+  reviews,
+  variant = "grid",
+  isDark
+}: Props) {
+
   if (variant === "grid") {
     return (
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 break-inside-avoid">
@@ -29,7 +35,7 @@ export default function ReviewComponent({ reviews, variant = "grid" }: Props) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
-            className="min-h-[300px] flex flex-col justify-between gap-[16px] bg-gradient-to-br from-gray-900 to-gray-800 border border-transparent p-6 rounded-[24px] backdrop-blur-sm hover:border-accent hover:scale-101 transition-all duration-500 group"
+            className={`min-h-[300px] flex flex-col justify-between gap-[16px] border border-transparent p-6 rounded-[24px] backdrop-blur-sm  hover:scale-101 transition-all duration-500 group ${isDark ? "bg-gradient-to-br from-gray-900 to-gray-800 hover:border-accent" : "bg-secondary shadow-lg"}`}
           >
             <div className="flex justify-between items-start ">
               <div className="flex gap-1">
@@ -42,14 +48,14 @@ export default function ReviewComponent({ reviews, variant = "grid" }: Props) {
               </div>
               <Quote className="text-accent" />
             </div>
-            <p className="h-[140px] text-gray-300 text-sm leading-relaxed italic overflow-hidden">
+            <p className={`h-[140px] text-sm leading-relaxed overflow-hidden ${isDark ? "text-gray-300 italic" : "text-dark-gray"}`}>
               {review.content}
             </p>
             <div className="w-full flex items-center gap-[10px] pt-[10px] border-t border-gray-800/50">
               <div className="text-4xl">{review?.avatar}</div>
               <div className="w-full">
                 <div className="flex justify-between items-center gap-1.5">
-                  <span className="text-secondary font-bold text-[14px]">{review.authorName}</span>
+                  <span className={`font-bold text-[14px] ${isDark ? "text-secondary" : "text-black"}`}>{review.authorName}</span>
                   <span className="text-secondary/50 text-[12px]">{review.date}</span>
                 </div>
                 <div className="text-[10px] text-gray-500 uppercase tracking-widest mt-0.5">

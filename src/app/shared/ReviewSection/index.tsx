@@ -10,7 +10,7 @@ import Header from "@/app/shared/Header";
 import { reviewsData } from "@/constants/reviewsData";
 
 
-export default function ReviewSection({ variant, title, limit = 3, designType }: ReviewSectionType) {
+export default function ReviewSection({ variant, title, limit = 3, designType, isDark }: ReviewSectionType) {
     const [displayReviews, setDisplayReviews] = useState<any[]>([]);
     const router = useRouter();
     const t = useTranslations("Review")
@@ -36,11 +36,11 @@ export default function ReviewSection({ variant, title, limit = 3, designType }:
                 />
             )}
 
-            <ReviewComponent reviews={displayReviews} variant={variant} />
+            <ReviewComponent reviews={displayReviews} variant={variant} isDark={isDark} />
 
             <Button
                 onClick={() => router.push("/review")}
-                styles="mt-8 w-full py-3 border rounded-lg md:w-max md:px-10 mx-auto block"
+                styles="px-6 py-3 rounded-lg font-semibold group inline-flex items-center gap-2"
                 designType={(designType || "transparent") as "transparent"}
             >
                 {t("ShowReviews")}
