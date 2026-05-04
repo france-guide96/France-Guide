@@ -66,8 +66,8 @@ export default function ReviewComponent({ reviews, variant = "grid" }: Props) {
   return (
     <div className="space-y-6">
       {reviews.map((review) => (
-        <div  className="border-b border-dark-gray pb-6 last:border-0 last:pb-0">
-          <div key={review.id} className="flex items-start gap-4">
+        <div key={review.id} className="border-b border-dark-gray pb-6 last:border-0 last:pb-0">
+          <div className="flex items-start gap-4">
             <div className="text-4xl">{review?.avatar}</div>
             <div className="flex-1">
               <div className="flex items-center justify-between mb-2">

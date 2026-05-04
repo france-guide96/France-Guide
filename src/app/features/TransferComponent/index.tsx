@@ -11,13 +11,20 @@ import {
   LucideIcon,
 } from "lucide-react";
 import Container from "@/app/shared/Container";
+import { useModals } from "@/context/ModalContext";
 import { ImageWithFallback } from "@/app/shared/imageWithFallback/imageWithFallback";
 import mercedes from "@/assets/transfer/vClass.webp";
 import Button from "@/app/shared/Button";
 import Header from "@/app/shared/Header";
 import BackButton from "@/app/shared/BackButton";
-import { useModals } from "@/context/ModalContext";
+import ImageExpander from "@/app/shared/ImageExpander";
 import { TransferPageData } from "lib/utils/transferType";
+import carImage1 from "@/assets/car/1.jpg"
+import carImage2 from "@/assets/car/2.jpg"
+import carImage3 from "@/assets/car/3.jpg"
+import carImage4 from "@/assets/car/4.jpg"
+import carImage5 from "@/assets/car/5.jpg"
+import carImage6 from "@/assets/car/6.jpg"
 
 const specIconMap: Record<number, LucideIcon> = {
   0: Users,
@@ -25,6 +32,16 @@ const specIconMap: Record<number, LucideIcon> = {
   2: ShieldCheck,
 };
 
+//temporary data, BE-ic ekacoxy chpatkeracri vonc cuyc tam, error, henc dnenq esi kjnjenq
+
+const carImagesData = [
+  carImage1,
+  carImage2,
+  carImage3,
+  carImage4,
+  carImage5,
+  carImage6,
+];
 export default function TransferPage({ data }: { data: TransferPageData }) {
   const { openContact } = useModals();
 
@@ -79,7 +96,35 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
                       })}
                   </div>
                 </div>
+
               </div>
+
+              <div className="w-full px-[10px]  mt-6">
+                <ImageExpander
+                  images={carImagesData.map((img, idx) => ({
+                    src: img.src,
+                    alt: `Car gallery image ${idx + 1}`
+                  }))} />
+              </div>
+
+              {/* <div className="w-full px-[10px] mt-6">
+                <ImageExpander
+                  images={data?.carCarousel?.map((img: any, idx: number) => {
+                    // Strapi uses .url, not .src
+                    // Also handles the possibility of a nested attributes object
+                    const strapiUrl = img.url || img.attributes?.url;
+
+                    // If your images aren't showing, you might need: 
+                    // process.env.NEXT_PUBLIC_STRAPI_URL + strapiUrl
+
+                    return {
+                      src: strapiUrl || "",
+                      alt: img.alternativeText || `Car gallery image ${idx + 1}`
+                    };
+                  }) || []}
+                />
+              </div> */}
+
             </motion.div>
 
             <div className="flex-1 flex flex-col items-start gap-[20px]">
@@ -122,6 +167,8 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
           </div>
         </div>
 
+
+
         <div className="relative group mt-[100px] px-[20px]">
           <div className="absolute -inset-0.5 bg-gradient-to-b from-accent/30 to-transparent rounded-[10px] blur opacity-20" />
           <div className="relative bg-dark-gray/10 backdrop-blur-2xl rounded-[10px] border border-secondary/5 overflow-hidden">
@@ -146,7 +193,7 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
                   <motion.div
                     key={item?.id}
                     whileHover={{
-                      backgroundColor: "rgba(255, 255, 255, 0.02)",
+                      backgroundColor: "rgba(255, 255, 255, 0.03)",
                     }}
                     className="grid grid-cols-12 p-2 md:p-4 items-center transition-all group/row"
                   >
