@@ -19,12 +19,6 @@ import Header from "@/app/shared/Header";
 import BackButton from "@/app/shared/BackButton";
 import ImageExpander from "@/app/shared/ImageExpander";
 import { TransferPageData } from "lib/utils/transferType";
-import carImage1 from "@/assets/car/1.jpg"
-import carImage2 from "@/assets/car/2.jpg"
-import carImage3 from "@/assets/car/3.jpg"
-import carImage4 from "@/assets/car/4.jpg"
-import carImage5 from "@/assets/car/5.jpg"
-import carImage6 from "@/assets/car/6.jpg"
 
 const specIconMap: Record<number, LucideIcon> = {
   0: Users,
@@ -32,18 +26,16 @@ const specIconMap: Record<number, LucideIcon> = {
   2: ShieldCheck,
 };
 
-//temporary data, BE-ic ekacoxy chpatkeracri vonc cuyc tam, error, henc dnenq esi kjnjenq
-
-const carImagesData = [
-  carImage1,
-  carImage2,
-  carImage3,
-  carImage4,
-  carImage5,
-  carImage6,
-];
 export default function TransferPage({ data }: { data: TransferPageData }) {
   const { openContact } = useModals();
+
+  const getImageUrlSafe = (url?: string): string => {
+    if (!url) return "";
+
+    return url.startsWith("http")
+      ? url
+      : `${process.env.NEXT_PUBLIC_STRAPI_URL}${url}`;
+  };
 
   return (
     <main className="bg-primary px-[20px] py-[100px] md:py-[150px] text-secondary overflow-hidden">
@@ -96,35 +88,19 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
                       })}
                   </div>
                 </div>
-
               </div>
 
               <div className="w-full px-[10px]  mt-6">
                 <ImageExpander
-                  images={carImagesData.map((img, idx) => ({
-                    src: img.src,
-                    alt: `Car gallery image ${idx + 1}`
-                  }))} />
-              </div>
-
-              {/* <div className="w-full px-[10px] mt-6">
-                <ImageExpander
-                  images={data?.carCarousel?.map((img: any, idx: number) => {
-                    // Strapi uses .url, not .src
-                    // Also handles the possibility of a nested attributes object
-                    const strapiUrl = img.url || img.attributes?.url;
-
-                    // If your images aren't showing, you might need: 
-                    // process.env.NEXT_PUBLIC_STRAPI_URL + strapiUrl
-
-                    return {
-                      src: strapiUrl || "",
-                      alt: img.alternativeText || `Car gallery image ${idx + 1}`
-                    };
-                  }) || []}
+                  images={
+                    data?.carCarousel &&
+                    data?.carCarousel.map((img, idx: number) => ({
+                      src: getImageUrlSafe(img?.url),
+                      alt: `Car gallery image ${idx + 1}`,
+                    }))
+                  }
                 />
-              </div> */}
-
+              </div>
             </motion.div>
 
             <div className="flex-1 flex flex-col items-start gap-[20px]">
@@ -166,8 +142,6 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
             </div>
           </div>
         </div>
-
-
 
         <div className="relative group mt-[100px] px-[20px]">
           <div className="absolute -inset-0.5 bg-gradient-to-b from-accent/30 to-transparent rounded-[10px] blur opacity-20" />
