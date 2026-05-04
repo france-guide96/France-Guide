@@ -120,7 +120,6 @@
     "FromGroup": "From a group of",
     "People": "people",
     "WhatsIncluded": "What is included in the price?",
-    "ShowReviews": "Show all reviews",
     "Pricing": "Price",
     "Date": "Date",
     "Time": "Time",
@@ -242,5 +241,11 @@
     "PopularRoute": "Popular Route",
     "FixedRate": "Fixed rate",
     "ViewAllRates": "View all rates"
+  },
+  "Review": {
+    "Reviews": "Reviews",
+    "Prev": "Prev",
+    "Next": "Next",
+    "ShowReviews": "Show all reviews"
   }
 }
