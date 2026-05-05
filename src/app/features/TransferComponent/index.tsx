@@ -97,6 +97,8 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
                     data?.carCarousel.map((img, idx: number) => ({
                       src: getImageUrlSafe(img?.url),
                       alt: `Car gallery image ${idx + 1}`,
+                      width: img.width,
+                      height: img.height
                     }))
                   }
                 />
