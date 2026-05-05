@@ -99,9 +99,11 @@ export default function GetInTouch() {
             <div className="flex flex-col-reverse lg:flex-row justify-between items-start gap-[48px] px-[20px]">
               <div className="w-full flex flex-row lg:flex-col flex-wrap justify-between items-start gap-[32px] mt-[50px] lg:mt-[0px]">
                 {contactData.map((item, i) => (
-                  <div
+                  <a
+                    target="_blank"
+                    href={item.href}
                     key={i}
-                    className="w-[150px] sm:w-[300px] flex flex-col lg:flex-row justify-start items-start gap-[16px]"
+                    className="w-[150px] sm:w-[300px] flex flex-col lg:flex-row justify-start items-start gap-[16px] hover:scale-102 transition-all duration-300"
                   >
                     <div className="flex justify-center items-center bg-accent/10 rounded-[50px] p-[15px]">
                       <Image
@@ -122,7 +124,7 @@ export default function GetInTouch() {
                       description={t(item.sub)}
                       descriptionStyles="text-[12px] sm:text-[14px] font-[500] leading-[143%] text-secondary/50"
                     />
-                  </div>
+                  </a>
                 ))}
               </div>
 

@@ -20,7 +20,7 @@ export default function Footer() {
           <div className="flex flex-col xl:flex-row justify-start md:justify-between gap-[50px] mb-8">
             <div className="flex-1">
               <Logo className="mb-4" />
-              <p className="text-secondary/50 text-sm max-w-[200px] lg:max-w-full">
+              <p className="text-secondary/50 text-sm max-w-[200px]">
                 {t("DiscoverParis")}
               </p>
             </div>

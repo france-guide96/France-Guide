@@ -13,12 +13,10 @@ export default function AboutHimself({ data, myselfTitle }: AboutHimselfProps) {
           blockStyles="flex items-center"
         />
         <div className="grid md:grid-cols-2 items-start gap-10 mt-[20px]">
-          {data?.map((item, index) => (
+          {data?.map((item) => (
             <div
               key={item.id}
-              className={`bg-gradient-to-br from-secondary-transparent to-secondary rounded-3xl p-10 shadow-lg border border-gray-100 ${
-                index % 2 !== 0 ? "md:mt-12" : ""
-              }`}
+              className="bg-gradient-to-br from-secondary-transparent to-secondary rounded-3xl p-10 shadow-lg border border-gray-100"
             >
               <Quote className="w-12 h-12 text-accent mb-6 opacity-40" />
               <p className="text-gray-700 leading-relaxed text-lg italic">

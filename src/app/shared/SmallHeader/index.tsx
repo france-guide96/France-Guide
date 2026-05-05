@@ -16,8 +16,8 @@ export default function SmallHeader() {
       </div>
 
       <div>
-        <h1 className="text-7xl font-bold mb-4 leading-tight">{t("Name")}</h1>
-        <div className="flex items-center gap-2 text-amber-300 mb-6">
+        <h1 className="text-7xl font-bold leading-tight">{t("Name")}</h1>
+        <div className="flex items-center gap-2 text-amber-300">
           <MapPin className="w-5 h-5" />
           <span className="text-lg">{t("Paris")}</span>
         </div>
