@@ -34,10 +34,12 @@ export default function AboutMe({ aboutData }: { aboutData: AboutPageData }) {
                   return {
                     src,
                     alt: aboutData?.carousel[0]?.alt || "Gallery image",
+                    width: img.width,
+                    height: img.height
                   };
                 })
               }
-              styles="grid grid-cols-2 grid-rows-2 gap-4 px-[20px] my-[50px] h-[460px]"
+              styles="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[280px]"
               imgStyles="relative w-full h-full rounded-[16px] overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-[1.02] shadow-md border-none first:row-span-2"
             />
             <Education

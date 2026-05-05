@@ -15,26 +15,30 @@ export default function ImageExpander({ images, styles, imgStyles }: GalleryType
 
     return (
         <>
-            <div className={styles ?? "grid grid-cols-3 gap-4"}>
-                {images.map((img, index) => (
-                    <button
-                        key={index}
-                        type="button"
-                        onClick={() => setIndex(index)}
-                        className={imgStyles ?? "relative block h-32 w-full rounded-[16px] overflow-hidden cursor-pointer hover:scale-102 transition-transform duration-300 shadow-md border-none"}
-                    >
-                        <Image
-                            src={img.src}
-                            alt={img.alt || ""}
-                            fill
-                            unoptimized
-                            className="object-cover"
-                            sizes="(max-width: 768px) 100vw, 33vw"
-                        />
-                    </button>
-                ))}
-            </div>
+            <div className={styles ?? "grid grid-cols-3 gap-4 auto-rows-[128px] [grid-auto-flow:dense]"}>
+                {images.map((img, index) => {
+                    const isPortrait = img.height > img.width;
+                    const span = isPortrait ? "row-span-2" : "row-span-1";
 
+                    return (
+                        <button
+                            key={index}
+                            type="button"
+                            onClick={() => setIndex(index)}
+                            className={`${imgStyles ?? "relative block w-full rounded-[16px] overflow-hidden cursor-pointer shadow-md border-none"} ${span}`}
+                        >
+                            <Image
+                                src={img.src}
+                                alt={img.alt || ""}
+                                fill
+                                unoptimized
+                                className="object-cover transition-transform duration-500 ease-out hover:scale-110"
+                                sizes="(max-width: 768px) 100vw, 33vw"
+                            />
+                        </button>
+                    );
+                })}
+            </div>
             <Lightbox
                 index={index}
                 open={index >= 0}

@@ -1,6 +1,8 @@
 export type GalleryItem = {
   src: string;
   alt?: string;
+  height: number;
+  width: number;
 };
 
 export type GalleryType = {
