@@ -25,20 +25,19 @@ export default function AboutMe({ aboutData }: { aboutData: AboutPageData }) {
               myselfTitle={aboutData?.myselfTitle || ""}
             />
             <ImageExpander
-              images={
-                (aboutData?.carousel[0]?.image || []).map((img) => {
-                  const rawUrl = img.formats?.large?.url || img.url || "";
-                  const src = rawUrl.startsWith("http")
-                    ? rawUrl
-                    : `${process.env.NEXT_PUBLIC_STRAPI_URL}${rawUrl}`;
-                  return {
-                    src,
-                    alt: aboutData?.carousel[0]?.alt || "Gallery image",
-                    width: img.width,
-                    height: img.height
-                  };
-                })
-              }
+              isAbout
+              images={(aboutData?.carousel[0]?.image || []).map((img) => {
+                const rawUrl = img.formats?.large?.url || img.url || "";
+                const src = rawUrl.startsWith("http")
+                  ? rawUrl
+                  : `${process.env.NEXT_PUBLIC_STRAPI_URL}${rawUrl}`;
+                return {
+                  src,
+                  alt: aboutData?.carousel[0]?.alt || "Gallery image",
+                  width: img.width,
+                  height: img.height,
+                };
+              })}
               styles="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[280px]"
               imgStyles="relative w-full h-full rounded-[16px] overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-[1.02] shadow-md border-none first:row-span-2"
             />
@@ -63,6 +62,7 @@ export default function AboutMe({ aboutData }: { aboutData: AboutPageData }) {
               variant="grid"
               limit={3}
               designType="gold"
+              isDark
             />
           </div>
         </Container>

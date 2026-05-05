@@ -4,4 +4,5 @@ export type ReviewSectionType = {
   limit?: number;
   designType?: "transparent" | "gold" | "white";
   isDark?: boolean;
+  isDarkReview?: boolean;
 };
