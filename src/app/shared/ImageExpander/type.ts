@@ -5,4 +5,6 @@ export type GalleryItem = {
 
 export type GalleryType = {
   images: GalleryItem[];
+  styles?: string;
+  imgStyles?: string;
 };

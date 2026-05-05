@@ -8,20 +8,20 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom";
 
 import "yet-another-react-lightbox/styles.css";
 
-export default function ImageExpander({ images }: GalleryType) {
+export default function ImageExpander({ images, styles, imgStyles }: GalleryType) {
     const [index, setIndex] = useState(-1);
 
     if (!images || images.length === 0) return null;
 
     return (
         <>
-            <div className="grid grid-cols-3 gap-4">
+            <div className={styles ?? "grid grid-cols-3 gap-4"}>
                 {images.map((img, index) => (
                     <button
                         key={index}
                         type="button"
                         onClick={() => setIndex(index)}
-                        className="relative block h-32 w-full rounded-[16px] overflow-hidden cursor-pointer hover:scale-102 transition-transform duration-300 shadow-md border-none"
+                        className={imgStyles ?? "relative block h-32 w-full rounded-[16px] overflow-hidden cursor-pointer hover:scale-102 transition-transform duration-300 shadow-md border-none"}
                     >
                         <Image
                             src={img.src}

@@ -1,5 +1,4 @@
 import Container from "@/app/shared/Container";
-import Carousel from "@/app/shared/Carousel";
 import Education from "@/app/shared/Education";
 import AboutHimself from "@/app/shared/AboutHimself";
 import Principles from "@/app/shared/Principles";
@@ -25,8 +24,22 @@ export default function AboutMe({ aboutData }: { aboutData: AboutPageData }) {
               data={aboutData?.myself || []}
               myselfTitle={aboutData?.myselfTitle || ""}
             />
-            <Carousel data={aboutData?.carousel[0] || []} />
-            {/* <ImageExpander /> */}
+            <ImageExpander
+              images={
+                (aboutData?.carousel[0]?.image || []).map((img) => {
+                  const rawUrl = img.formats?.large?.url || img.url || "";
+                  const src = rawUrl.startsWith("http")
+                    ? rawUrl
+                    : `${process.env.NEXT_PUBLIC_STRAPI_URL}${rawUrl}`;
+                  return {
+                    src,
+                    alt: aboutData?.carousel[0]?.alt || "Gallery image",
+                  };
+                })
+              }
+              styles="grid grid-cols-2 grid-rows-2 gap-4 px-[20px] my-[50px] h-[460px]"
+              imgStyles="relative w-full h-full rounded-[16px] overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-[1.02] shadow-md border-none first:row-span-2"
+            />
             <Education
               title={aboutData?.educationTitle || ""}
               subTitle={aboutData?.educationSubTitle || ""}
