@@ -35,7 +35,7 @@ export default function ReviewComponent({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
-            className={`min-h-[300px] flex flex-col justify-between gap-[16px] border border-transparent p-6 rounded-[24px] backdrop-blur-sm  hover:scale-101 transition-all duration-500 group ${isDark ? "bg-gradient-to-br from-gray-900 to-gray-800 hover:border-accent" : "bg-secondary shadow-lg"}`}
+            className={`min-h-[300px] flex flex-col justify-between gap-[16px] border border-transparent p-6 rounded-[24px] backdrop-blur-sm  hover:scale-101 transition-all duration-500 group ${isDark ? "bg-gradient-to-br from-gray-900 to-gray-800 hover:border-accent" : "bg-white shadow-lg"}`}
           >
             <div className="flex justify-between items-start ">
               <div className="flex gap-1">
@@ -51,7 +51,7 @@ export default function ReviewComponent({
             <p className={`h-[140px] text-sm leading-relaxed overflow-hidden ${isDark ? "text-gray-300 italic" : "text-dark-gray"}`}>
               {review.content}
             </p>
-            <div className="w-full flex items-center gap-[10px] pt-[10px] border-t border-gray-800/50">
+            <div className="w-full flex items-center gap-[10px] pt-[10px] border-t border-gray-200/50">
               <div className="text-4xl">{review?.avatar}</div>
               <div className="w-full">
                 <div className="flex justify-between items-center gap-1.5">
