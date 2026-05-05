@@ -20,6 +20,7 @@ import BookingModal from "@/app/shared/BookingModal";
 import { AnimatePresence, motion } from "framer-motion";
 import BackButton from "@/app/shared/BackButton";
 import ImageExpander from "@/app/shared/ImageExpander";
+import ReviewSection from "@/app/shared/ReviewSection";
 
 type Props = {
   tour: TourCard;
@@ -87,30 +88,6 @@ export function TourDetail({ tour }: Props) {
     });
   };
 
-  const reviews = [
-    {
-      name: "Мария К.",
-      rating: 5,
-      date: "15 марта 2026",
-      text: "Потрясающая экскурсия! Гид Анна рассказала множество интересных фактов. Без очереди - это огромный плюс!",
-      avatar: "👩",
-    },
-    {
-      name: "Дмитрий П.",
-      rating: 5,
-      date: "10 марта 2026",
-      text: "Отличная организация, профессиональный гид. Три часа пролетели незаметно. Рекомендую!",
-      avatar: "👨",
-    },
-    {
-      name: "Елена С.",
-      rating: 4,
-      date: "5 марта 2026",
-      text: "Очень понравилось! Единственное - хотелось бы больше времени для самостоятельного осмотра.",
-      avatar: "👩",
-    },
-  ];
-
   const handleBack = () => {
     router.back();
   };
@@ -167,6 +144,8 @@ export function TourDetail({ tour }: Props) {
                       allGalleryImages?.map((img, idx) => ({
                         src: getImageUrl(img.url) || "",
                         alt: img.alternativeText || `Gallery ${idx + 1}`,
+                        width: img.width,
+                        height: img.height,
                       })) || []
                     }
                   />
@@ -281,45 +260,12 @@ export function TourDetail({ tour }: Props) {
                 <h2 className="text-[24px] font-[700] leading-[133%] text-secondary mb-6">
                   {t("Reviews")}
                 </h2>
-                <div className="space-y-6">
-                  {reviews.map((review, idx) => (
-                    <div
-                      key={idx}
-                      className="border-b border-dark-gray pb-6 last:border-0 last:pb-0"
-                    >
-                      <div className="flex items-start gap-4">
-                        <div className="text-4xl">{review?.avatar}</div>
-                        <div className="flex-1">
-                          <div className="flex items-center justify-between mb-2">
-                            <div>
-                              <div className="text-secondary font-semibold">
-                                {review.name}
-                              </div>
-                              <div className="text-sm text-gray-400">
-                                {review.date}
-                              </div>
-                            </div>
-                            <div className="flex items-center gap-1">
-                              {[...Array(review.rating)].map((_, i) => (
-                                <Star
-                                  key={i}
-                                  className="w-4 h-4 fill-accent text-accent"
-                                />
-                              ))}
-                            </div>
-                          </div>
-                          <p className="text-gray-300">{review.text}</p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <Button
-                  styles="mt-6 w-full py-3 border rounded-lg"
+                <ReviewSection
+                  variant="list"
+                  limit={3}
                   designType="transparent"
-                >
-                  {t("ShowReviews")}
-                </Button>
+                  title={false}
+                />
               </div>
             </div>
 
@@ -369,8 +315,7 @@ export function TourDetail({ tour }: Props) {
                             handleChange(e);
                             if (dateError) setDateError(false);
                           }}
-                          className={`appearance-none w-full px-4 py-3 bg-dark-gray border rounded-[10px] text-secondary focus:outline-none ${
-                            dateError
+                          className={`appearance-none w-full px-4 py-3 bg-dark-gray border rounded-[10px] text-secondary focus:outline-none ${dateError
                               ? "border-red-500 animate-shake shadow-[0_0_10px_rgba(239,68,68,0.2)]"
                               : "border-gray-700 focus:border-accent"
                           }`}

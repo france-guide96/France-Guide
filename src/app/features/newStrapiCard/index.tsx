@@ -2,6 +2,7 @@ import { fetchTourCards } from "lib/api/strapi/tour/toursCard";
 import { TourCardNew } from "../TourCardNew";
 import { TourCard } from "lib/utils/tourCardType";
 import CategoryHeader from "@/app/shared/CategoryHeader";
+import ReviewSection from "@/app/shared/ReviewSection";
 
 export default async function NewStrapiCard({
   locale,
@@ -31,6 +32,7 @@ export default async function NewStrapiCard({
           <div>No Data</div>
         )}
       </div>
+      <ReviewSection variant="grid" isDarkReview title designType="gold" />
     </>
   );
 }

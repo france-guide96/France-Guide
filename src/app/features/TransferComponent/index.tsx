@@ -11,12 +11,13 @@ import {
   LucideIcon,
 } from "lucide-react";
 import Container from "@/app/shared/Container";
+import { useModals } from "@/context/ModalContext";
 import { ImageWithFallback } from "@/app/shared/imageWithFallback/imageWithFallback";
 import mercedes from "@/assets/transfer/vClass.webp";
 import Button from "@/app/shared/Button";
 import Header from "@/app/shared/Header";
 import BackButton from "@/app/shared/BackButton";
-import { useModals } from "@/context/ModalContext";
+import ImageExpander from "@/app/shared/ImageExpander";
 import { TransferPageData } from "lib/utils/transferType";
 
 const specIconMap: Record<number, LucideIcon> = {
@@ -27,6 +28,14 @@ const specIconMap: Record<number, LucideIcon> = {
 
 export default function TransferPage({ data }: { data: TransferPageData }) {
   const { openContact } = useModals();
+
+  const getImageUrlSafe = (url?: string): string => {
+    if (!url) return "";
+
+    return url.startsWith("http")
+      ? url
+      : `${process.env.NEXT_PUBLIC_STRAPI_URL}${url}`;
+  };
 
   return (
     <main className="bg-primary px-[20px] py-[100px] md:py-[150px] text-secondary overflow-hidden">
@@ -79,6 +88,20 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
                       })}
                   </div>
                 </div>
+              </div>
+
+              <div className="w-full px-[10px]  mt-6">
+                <ImageExpander
+                  images={
+                    data?.carCarousel &&
+                    data?.carCarousel.map((img, idx: number) => ({
+                      src: getImageUrlSafe(img?.url),
+                      alt: `Car gallery image ${idx + 1}`,
+                      width: img.width,
+                      height: img.height
+                    }))
+                  }
+                />
               </div>
             </motion.div>
 
@@ -146,7 +169,7 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
                   <motion.div
                     key={item?.id}
                     whileHover={{
-                      backgroundColor: "rgba(255, 255, 255, 0.02)",
+                      backgroundColor: "rgba(255, 255, 255, 0.03)",
                     }}
                     className="grid grid-cols-12 p-2 md:p-4 items-center transition-all group/row"
                   >

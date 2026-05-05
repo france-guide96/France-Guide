@@ -1,9 +1,10 @@
+import { Metadata } from "next";
 import Container from "@/app/shared/Container";
 import CategoryCards from "@/app/shared/category";
 import HeroSectionHome from "@/app/features/HeroSectionHome";
 import AboutSectionWrapper from "@/app/shared/AboutSectionWrapper";
 import TransferSectionWrapper from "@/app/shared/TransferSectionWrapper";
-import { Metadata } from "next";
+import ReviewSection from "@/app/shared/ReviewSection";
 
 export async function generateMetadata({
   params,
@@ -22,19 +23,19 @@ export async function generateMetadata({
       : "Exclusive guided tours of Paris, its suburbs and regions of France. Personal approach, unforgettable experiences. Book your tour today!",
     keywords: isRu
       ? [
-          "экскурсии в Париже",
-          "русскоговорящий гид",
-          "туры во Францию",
-          "Версаль",
-          "Лувр",
-        ]
+        "экскурсии в Париже",
+        "русскоговорящий гид",
+        "туры во Францию",
+        "Версаль",
+        "Лувр",
+      ]
       : [
-          "Paris tours",
-          "Russian speaking guide",
-          "France excursions",
-          "Versailles",
-          "Louvre",
-        ],
+        "Paris tours",
+        "Russian speaking guide",
+        "France excursions",
+        "Versailles",
+        "Louvre",
+      ],
     openGraph: {
       title: isRu
         ? "Экскурсии в Париже | Elite Paris Guide"
@@ -68,6 +69,14 @@ export default async function Home({
           </div>
         </Container>
         <TransferSectionWrapper locale={locale} />
+        <Container>
+          <ReviewSection
+            title={true}
+            variant="grid"
+            limit={3}
+            designType="gold"
+            isDark
+          /></Container>
       </section>
     </div>
   );
