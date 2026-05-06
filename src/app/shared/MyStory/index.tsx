@@ -30,7 +30,7 @@ export default function MyStory({ title, subTitle, events }: MyStoryProps) {
                       {event.year}
                     </div>
                     <h3 className="text-2xl font-bold text-slate-900 mb-4 uppercase tracking-tight group-hover:text-accent transition-colors">
-                      {event.title}
+                      {event.eventTitle}
                     </h3>
                     <p className="text-slate-500 leading-relaxed text-lg font-medium">
                       {event.description}

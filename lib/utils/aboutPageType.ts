@@ -91,6 +91,7 @@ interface TimelineEventItem {
   year: string;
   title: string;
   description: string;
+  eventTitle: string;
 }
 
 export interface AboutPageData {

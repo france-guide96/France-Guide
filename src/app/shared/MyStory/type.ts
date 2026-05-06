@@ -6,5 +6,6 @@ export interface MyStoryProps {
     year: string;
     title: string;
     description: string;
+    eventTitle: string;
   }[];
 }
