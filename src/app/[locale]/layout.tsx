@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       languages: { ru: "/ru", en: "/en" },
     },
     openGraph: {
-      siteName: "Elite Paris Guide",
+      siteName: "France Guide",
       locale: isRu ? "ru_RU" : "en_US",
       type: "website",
       images: [
@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           url: "/og-image.jpg",
           width: 1200,
           height: 630,
-          alt: "Elite Paris Guide",
+          alt: "France Guide",
         },
       ],
     },

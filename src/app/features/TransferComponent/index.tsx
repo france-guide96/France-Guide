@@ -7,18 +7,17 @@ import {
   Users,
   Car,
   Star,
-  ArrowRight,
   LucideIcon,
 } from "lucide-react";
 import Container from "@/app/shared/Container";
-import { useModals } from "@/context/ModalContext";
 import { ImageWithFallback } from "@/app/shared/imageWithFallback/imageWithFallback";
 import mercedes from "@/assets/transfer/vClass.webp";
-import Button from "@/app/shared/Button";
 import Header from "@/app/shared/Header";
 import BackButton from "@/app/shared/BackButton";
 import ImageExpander from "@/app/shared/ImageExpander";
 import { TransferPageData } from "lib/utils/transferType";
+import ReviewSection from "@/app/shared/ReviewSection";
+import ContactButtons from "@/app/shared/ContactButton";
 
 const specIconMap: Record<number, LucideIcon> = {
   0: Users,
@@ -27,8 +26,6 @@ const specIconMap: Record<number, LucideIcon> = {
 };
 
 export default function TransferPage({ data }: { data: TransferPageData }) {
-  const { openContact } = useModals();
-
   const getImageUrlSafe = (url?: string): string => {
     if (!url) return "";
 
@@ -98,7 +95,7 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
                       src: getImageUrlSafe(img?.url),
                       alt: `Car gallery image ${idx + 1}`,
                       width: img.width,
-                      height: img.height
+                      height: img.height,
                     }))
                   }
                 />
@@ -124,22 +121,7 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
                   )}
 
               <div className="flex items-center justify-center gap-2">
-                <Button
-                  styles="px-6 py-3 rounded-lg font-[600] group inline-flex items-center gap-2"
-                  designType="gold"
-                >
-                  <span className="group inline-flex items-center gap-2">
-                    Contact
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </span>
-                </Button>
-                <Button
-                  onClick={openContact}
-                  styles="group inline-flex items-center px-6 py-3 ml-[10px] font-[600] rounded-lg shadow-md hover:shadow-lg"
-                  designType="white"
-                >
-                  <p>Contact</p>
-                </Button>
+                <ContactButtons />
               </div>
             </div>
           </div>
@@ -197,6 +179,7 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
             </div>
           </div>
         </div>
+        <ReviewSection designType="gold" isDarkReview title variant="grid" />
       </Container>
     </main>
   );

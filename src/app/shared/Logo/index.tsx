@@ -187,7 +187,7 @@ export function Logo({ className = "" }: { className?: string }) {
 
       <div className="flex flex-col leading-tight">
         <div className="flex items-baseline gap-1.5">
-          <span className="text-xl font-light text-gray-300">Paris</span>
+          <span className="text-xl font-light text-gray-300">France</span>
         </div>
         <div className="flex items-center gap-1.5 -mt-0.5">
           <div className="h-px w-6 bg-gradient-to-r from-yellow-600 to-transparent"></div>

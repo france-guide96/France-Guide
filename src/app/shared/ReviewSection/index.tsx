@@ -40,7 +40,7 @@ export default function ReviewSection({
                 <Header
                     heading={t("Reviews")}
                     blockStyles="flex flex-col items-center mt-[100px]"
-                    isDark={true}
+                    isDark={isDark}
                 />
             )}
             <ReviewComponent

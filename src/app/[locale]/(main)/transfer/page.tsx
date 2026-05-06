@@ -12,15 +12,15 @@ export async function generateMetadata({
 
   return {
     title: isRu
-      ? "Трансфер из аэропорта Парижа | Elite Paris Guide"
-      : "Paris Airport Transfer | Elite Paris Guide",
+      ? "Трансфер из аэропорта Парижа | France Guide"
+      : "Paris Airport Transfer | France Guide",
     description: isRu
       ? "Комфортный трансфер из аэропортов Парижа (CDG, Orly). Встреча с табличкой, помощь с багажом. Бронируйте заранее!"
       : "Comfortable transfer from Paris airports (CDG, Orly). Meet & greet, luggage assistance. Book in advance!",
     openGraph: {
       title: isRu
-        ? "Трансфер | Elite Paris Guide"
-        : "Transfer | Elite Paris Guide",
+        ? "Трансфер | France Guide"
+        : "Transfer | France Guide",
       description: isRu
         ? "Комфортный трансфер из аэропортов Парижа"
         : "Comfortable transfer from Paris airports",

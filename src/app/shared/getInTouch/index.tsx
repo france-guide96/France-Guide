@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 import Image from "next/image";
 import Header from "../Header";
 import Container from "../Container";
@@ -98,34 +99,38 @@ export default function GetInTouch() {
             />
             <div className="flex flex-col-reverse lg:flex-row justify-between items-start gap-[48px] px-[20px]">
               <div className="w-full flex flex-row lg:flex-col flex-wrap justify-between items-start gap-[32px] mt-[50px] lg:mt-[0px]">
-                {contactData.map((item, i) => (
-                  <a
-                    target="_blank"
-                    href={item.href}
-                    key={i}
-                    className="w-[150px] sm:w-[300px] flex flex-col lg:flex-row justify-start items-start gap-[16px] hover:scale-102 transition-all duration-300"
-                  >
-                    <div className="flex justify-center items-center bg-accent/10 rounded-[50px] p-[15px]">
-                      <Image
-                        src={item.icon}
-                        alt={t(item.key) + "icon"}
-                        width={24}
-                        height={24}
-                        className="object-cover w-[16px] h-[16px] sm:w-[24px] sm:h-[24px]"
+                {contactData &&
+                  contactData.map((item, i) => (
+                    <Link
+                      key={i}
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title={t(item.key)}
+                      aria-label={t(item.key)}
+                      className="w-[150px] sm:w-[300px] flex flex-col lg:flex-row justify-start items-start gap-[16px] hover:scale-102 transition-all duration-300"
+                    >
+                      <div className="flex justify-center items-center bg-accent/10 rounded-[50px] p-[15px]">
+                        <Image
+                          src={item.icon}
+                          alt={t(item.key) + "icon"}
+                          width={24}
+                          height={24}
+                          className="object-cover w-[16px] h-[16px] sm:w-[24px] sm:h-[24px]"
+                        />
+                      </div>
+                      <Card
+                        stylesOfCard="flex flex-col items-start gap-[4px]"
+                        primaryText={t(item.key)}
+                        primaryTextStyles="text-[16px] sm:text-[20px] font-[500] leading-[150%] text-secondary/80"
+                        textBlockStyles="flex flex-col items-start gap-[4px]"
+                        secondaryText={item.value}
+                        secondaryTextStyles="text-[12px] sm:text-[16px] font-[400] leading-[150%] text-accent"
+                        description={t(item.sub)}
+                        descriptionStyles="text-[12px] sm:text-[14px] font-[500] leading-[143%] text-secondary/50"
                       />
-                    </div>
-                    <Card
-                      stylesOfCard="flex flex-col items-start gap-[4px]"
-                      primaryText={t(item.key)}
-                      primaryTextStyles="text-[16px] sm:text-[20px] font-[500] leading-[150%] text-secondary/80"
-                      textBlockStyles="flex flex-col items-start gap-[4px]"
-                      secondaryText={item.value}
-                      secondaryTextStyles="text-[12px] sm:text-[16px] font-[400] leading-[150%] text-accent"
-                      description={t(item.sub)}
-                      descriptionStyles="text-[12px] sm:text-[14px] font-[500] leading-[143%] text-secondary/50"
-                    />
-                  </a>
-                ))}
+                    </Link>
+                  ))}
               </div>
 
               <div className="w-full flex flex-col gap-[25px] bg-secondary-transparent rounded-[6px] p-[32px]">

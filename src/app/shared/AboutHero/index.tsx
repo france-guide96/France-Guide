@@ -46,7 +46,7 @@ export default async function AboutHero({
                 {description}
               </p>
               <div className="flex gap-4">
-                <ContactButtons />
+                <ContactButtons isAbout/>
               </div>
             </div>
 

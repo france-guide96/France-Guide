@@ -91,7 +91,7 @@ export default function Footer() {
           </div>
           <div className="border-t border-dark-gray pt-8 text-center text-secondary/50 text-sm">
             <p>
-              &copy; {CURRENT_YEAR} Elite Paris Guide. {t("AllRights")}
+              &copy; {CURRENT_YEAR} France Guide. {t("AllRights")}
             </p>
           </div>
         </div>
