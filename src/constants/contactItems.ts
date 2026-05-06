@@ -9,6 +9,7 @@ export type ContactItem = {
   key: string;
   value: string;
   sub: string;
+  href: string;
 };
 
 export const contactData: ContactItem[] = [
@@ -17,23 +18,27 @@ export const contactData: ContactItem[] = [
     key: "Phone",
     value: "+33-609-57-27-80",
     sub: "Availability",
+    href: "tel:+33609572780",
   },
   {
     icon: emailIcon,
     key: "Email",
     value: "garik@france-gid.ru",
     sub: "Response",
+    href: "mailto:garik@france-gid.ru",
   },
   {
     icon: viberIcon,
     key: "Viber",
     value: "+33-609-57-27-80",
     sub: "ConvenientCommunication",
+    href: "https://viber.com",
   },
   {
     icon: whatsAppIcon,
     key: "WhatsApp",
     value: "+33-609-57-27-80",
     sub: "QuickResponses",
+    href: "https://wa.me",
   },
 ];

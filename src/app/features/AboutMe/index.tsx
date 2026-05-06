@@ -17,14 +17,14 @@ export default function AboutMe({ aboutData }: { aboutData: AboutPageData }) {
         description={aboutData?.aboutPageDescription || ""}
         statistics={aboutData?.stats || []}
       />
-      <main className="bg-secondary py-[50px] md:py-[100px]">
+      <main className="bg-secondary">
         <Container>
-          <div className="py-[50px]">
             <AboutHimself
               data={aboutData?.myself || []}
               myselfTitle={aboutData?.myselfTitle || ""}
             />
-            <ImageExpander
+            <div className="py-20">
+              <ImageExpander
               isAbout
               images={(aboutData?.carousel[0]?.image || []).map((img) => {
                 const rawUrl = img.formats?.large?.url || img.url || "";
@@ -38,9 +38,10 @@ export default function AboutMe({ aboutData }: { aboutData: AboutPageData }) {
                   height: img.height,
                 };
               })}
-              styles="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[280px]"
+              styles="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[280px] py-10"
               imgStyles="relative w-full h-full rounded-[16px] overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-[1.02] shadow-md border-none first:row-span-2"
             />
+            </div>
             <Education
               title={aboutData?.educationTitle || ""}
               subTitle={aboutData?.educationSubTitle || ""}
@@ -64,7 +65,6 @@ export default function AboutMe({ aboutData }: { aboutData: AboutPageData }) {
               designType="gold"
               isDark
             />
-          </div>
         </Container>
       </main>
     </>

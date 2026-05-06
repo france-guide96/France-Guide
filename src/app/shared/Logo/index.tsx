@@ -1,9 +1,7 @@
 export function Logo({ className = "" }: { className?: string }) {
   return (
     <div className={`flex items-center gap-3 ${className}`}>
-      {/* Ornate Badge */}
       <div className="relative w-12 h-12 flex items-center justify-center">
-        {/* Outer Circle with Gradient */}
         <svg
           width="48"
           height="48"
@@ -12,7 +10,6 @@ export function Logo({ className = "" }: { className?: string }) {
           xmlns="http://www.w3.org/2000/svg"
           className="absolute inset-0"
         >
-          {/* Outer decorative ring */}
           <circle
             cx="24"
             cy="24"
@@ -23,15 +20,12 @@ export function Logo({ className = "" }: { className?: string }) {
           />
           <circle cx="24" cy="24" r="19" fill="url(#bg-gradient)" />
 
-          {/* Decorative dots */}
           <circle cx="24" cy="4" r="1" fill="#FCD34D" />
           <circle cx="24" cy="44" r="1" fill="#FCD34D" />
           <circle cx="4" cy="24" r="1" fill="#FCD34D" />
           <circle cx="44" cy="24" r="1" fill="#FCD34D" />
 
-          {/* Eiffel Tower - More Realistic */}
           <g transform="translate(24, 35)">
-            {/* Base platform */}
             <line
               x1="-7"
               y1="0"
@@ -41,7 +35,6 @@ export function Logo({ className = "" }: { className?: string }) {
               strokeWidth="1"
             />
 
-            {/* Main legs - left and right */}
             <path
               d="M -6.5 0 L -3.5 -10 L -2.5 -18 L -1.5 -23"
               stroke="url(#tower-gradient)"
@@ -55,7 +48,6 @@ export function Logo({ className = "" }: { className?: string }) {
               fill="none"
             />
 
-            {/* Cross beams */}
             <line
               x1="-6"
               y1="-2"
@@ -75,7 +67,6 @@ export function Logo({ className = "" }: { className?: string }) {
               opacity="0.6"
             />
 
-            {/* First platform */}
             <line
               x1="-4"
               y1="-10"
@@ -93,7 +84,6 @@ export function Logo({ className = "" }: { className?: string }) {
               opacity="0.3"
             />
 
-            {/* Middle section cross beams */}
             <line
               x1="-3.5"
               y1="-12"
@@ -113,7 +103,6 @@ export function Logo({ className = "" }: { className?: string }) {
               opacity="0.5"
             />
 
-            {/* Second platform */}
             <line
               x1="-2.5"
               y1="-18"
@@ -131,13 +120,11 @@ export function Logo({ className = "" }: { className?: string }) {
               opacity="0.3"
             />
 
-            {/* Top section */}
             <path
               d="M -1.5 -23 L -0.5 -26 L 0.5 -26 L 1.5 -23"
               fill="url(#tower-gradient)"
             />
 
-            {/* Antenna */}
             <line
               x1="0"
               y1="-26"
@@ -147,7 +134,6 @@ export function Logo({ className = "" }: { className?: string }) {
               strokeWidth="0.6"
             />
 
-            {/* Top light */}
             <circle cx="0" cy="-29.5" r="0.8" fill="#FCD34D">
               <animate
                 attributeName="opacity"
@@ -157,7 +143,6 @@ export function Logo({ className = "" }: { className?: string }) {
               />
             </circle>
 
-            {/* Arch at bottom */}
             <path
               d="M -6.5 0 Q -6 -3, -4 -5 Q -2 -6.5, 0 -6.5 Q 2 -6.5, 4 -5 Q 6 -3, 6.5 0"
               stroke="#D4AF37"
@@ -200,13 +185,9 @@ export function Logo({ className = "" }: { className?: string }) {
         </svg>
       </div>
 
-      {/* Text */}
       <div className="flex flex-col leading-tight">
         <div className="flex items-baseline gap-1.5">
-          <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-600 tracking-tight">
-            Elite
-          </span>
-          <span className="text-xl font-light text-gray-300">Paris</span>
+          <span className="text-xl font-light text-gray-300">France</span>
         </div>
         <div className="flex items-center gap-1.5 -mt-0.5">
           <div className="h-px w-6 bg-gradient-to-r from-yellow-600 to-transparent"></div>

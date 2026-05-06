@@ -7,7 +7,7 @@ import { ReviewSectionType } from "./type";
 import ReviewComponent from "@/app/shared/ReviewComponent";
 import Button from "@/app/shared/Button";
 import Header from "@/app/shared/Header";
-import { reviewsData } from "@/constants/reviewsData";
+import { Review, reviewsData } from "@/constants/reviewsData";
 
 export default function ReviewSection({
   variant,
@@ -17,25 +17,34 @@ export default function ReviewSection({
   isDarkReview,
   isDark,
 }: ReviewSectionType) {
-  const [displayReviews, setDisplayReviews] = useState<any[]>([]);
+  const getShuffledReviews = (data: Review[], limit: number) => {
+    return [...data].sort(() => 0.5 - Math.random()).slice(0, limit);
+  };
+
+  const [displayReviews, setDisplayReviews] = useState<Review[]>([]);
   const router = useRouter();
   const t = useTranslations("Review");
-
   useEffect(() => {
-    const shuffled = [...reviewsData]
-      .sort(() => 0.5 - Math.random())
-      .slice(0, limit);
-    setDisplayReviews(shuffled);
+    const timeoutId = setTimeout(() => {
+      const shuffled = getShuffledReviews(reviewsData, limit);
+      setDisplayReviews(shuffled);
+    }, 0);
+
+    return () => clearTimeout(timeoutId);
   }, [limit]);
+
+  if (displayReviews.length === 0) return null;
 
   const wrapperStyles =
     variant === "list"
       ? "bg-gradient-to-br from-gray-900 to-gray-800 border border-dark-gray/50 rounded-2xl p-8 transition-all"
       : "";
 
+  if (displayReviews.length === 0) return null;
+
   return (
     <section
-      className={`flex flex-col items-center gap-[50px] ${wrapperStyles}`}
+      className={`flex flex-col items-center gap-[50px] pb-20 ${wrapperStyles}`}
     >
       {title && (
         <Header
@@ -44,13 +53,11 @@ export default function ReviewSection({
           isDark={isDark}
         />
       )}
-
       <ReviewComponent
         reviews={displayReviews}
         variant={variant}
         isDark={isDarkReview}
       />
-
       <Button
         onClick={() => router.push("/review")}
         styles="px-6 py-3 rounded-lg font-semibold group inline-flex items-center gap-2"

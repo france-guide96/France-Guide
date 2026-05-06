@@ -143,7 +143,7 @@ export default function Preloader() {
             textTransform: "uppercase",
           }}
         >
-          Elite Private Guide
+          France Guide
         </p>
       </div>
 

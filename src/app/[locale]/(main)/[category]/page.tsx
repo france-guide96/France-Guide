@@ -45,8 +45,8 @@ export async function generateMetadata({
   const info = categoryTitles[category];
 
   const title = info
-    ? `${isRu ? info.ru : info.en} | Elite Paris Guide`
-    : "Elite Paris Guide";
+    ? `${isRu ? info.ru : info.en} |  France Guide`
+    : " France Guide";
   const description = info ? (isRu ? info.descRu : info.descEn) : "";
 
   return {

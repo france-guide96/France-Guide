@@ -20,7 +20,7 @@ export default function Footer() {
           <div className="flex flex-col xl:flex-row justify-start md:justify-between gap-[50px] mb-8">
             <div className="flex-1">
               <Logo className="mb-4" />
-              <p className="text-secondary/50 text-sm max-w-[200px] lg:max-w-full">
+              <p className="text-secondary/50 text-sm max-w-[200px]">
                 {t("DiscoverParis")}
               </p>
             </div>
@@ -91,7 +91,7 @@ export default function Footer() {
           </div>
           <div className="border-t border-dark-gray pt-8 text-center text-secondary/50 text-sm">
             <p>
-              &copy; {CURRENT_YEAR} Elite Paris Guide. {t("AllRights")}
+              &copy; {CURRENT_YEAR} France Guide. {t("AllRights")}
             </p>
           </div>
         </div>

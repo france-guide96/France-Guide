@@ -53,7 +53,7 @@ export async function POST(req: Request) {
       : `✉️ Сообщение от ${name}`;
 
     await resend.emails.send({
-      from: "Elite Paris Guide <onboarding@resend.dev>",
+      from: "France Guide <onboarding@resend.dev>",
       to: toEmail,
       replyTo: email,
       subject: subject,
@@ -85,7 +85,7 @@ export async function POST(req: Request) {
             </div>
           </div>
           <div style="background-color: #f9fafb; padding: 16px; text-align: center; font-size: 12px; color: #9ca3af;">
-            Это автоматическое уведомление с сайта Elite Paris Guide
+            Это автоматическое уведомление с сайта France Guide
           </div>
         </div>
       `,

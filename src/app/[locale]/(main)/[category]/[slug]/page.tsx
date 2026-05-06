@@ -14,9 +14,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, category, slug } = await params;
   const data = await fetchTourDetails(locale, category, slug);
 
-  if (!data) return { title: "Elite Paris Guide" };
+  if (!data) return { title: " France Guide" };
 
-  const title = `${data.primaryText} | Elite Paris Guide`;
+  const title = `${data.primaryText} | France Guide`;
   const description =
     data?.primaryText ||
     (locale === "ru"

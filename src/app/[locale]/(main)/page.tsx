@@ -16,8 +16,8 @@ export async function generateMetadata({
 
   return {
     title: isRu
-      ? "Экскурсии в Париже с русскоговорящим гидом | Elite Paris Guide"
-      : "Paris Tours with Russian-Speaking Guide | Elite Paris Guide",
+      ? "Экскурсии в Париже с русскоговорящим гидом | France Guide"
+      : "France Tours with Russian-Speaking Guide | France Guide",
     description: isRu
       ? "Эксклюзивные экскурсии по Парижу, предместьям и регионам Франции. Индивидуальный подход, незабываемые впечатления. Забронируйте тур сегодня!"
       : "Exclusive guided tours of Paris, its suburbs and regions of France. Personal approach, unforgettable experiences. Book your tour today!",
@@ -30,7 +30,7 @@ export async function generateMetadata({
         "Лувр",
       ]
       : [
-        "Paris tours",
+        "France tours",
         "Russian speaking guide",
         "France excursions",
         "Versailles",
@@ -38,8 +38,8 @@ export async function generateMetadata({
       ],
     openGraph: {
       title: isRu
-        ? "Экскурсии в Париже | Elite Paris Guide"
-        : "Paris Tours | Elite Paris Guide",
+        ? "Экскурсии в Париже | France Guide"
+        : "France Tours | France Guide",
       description: isRu
         ? "Эксклюзивные экскурсии по Парижу и Франции с русскоговорящим гидом"
         : "Exclusive tours of Paris and France with a Russian-speaking guide",

@@ -5,8 +5,10 @@ import Image from "next/image";
 import { GalleryType } from "./type";
 import Lightbox from "yet-another-react-lightbox";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
+import Header from "../Header";
 
 import "yet-another-react-lightbox/styles.css";
+import { useTranslations } from "next-intl";
 
 export default function ImageExpander({
   images,
@@ -15,11 +17,16 @@ export default function ImageExpander({
   isAbout = false,
 }: GalleryType) {
   const [index, setIndex] = useState(-1);
-
+  const t = useTranslations("About")
   if (!images || images.length === 0) return null;
 
   return (
     <>
+      <div className="flex justify-center">
+        {isAbout &&
+          <Header heading={t("Gallery")} subHeading={t("ExploreMoments")} isDark blockStyles="flex items-center" />
+        }
+      </div>
       <div
         className={
           styles ??
