@@ -4,7 +4,6 @@ import { useState } from "react";
 import Image from "next/image";
 import { GalleryType } from "./type";
 import Lightbox from "yet-another-react-lightbox";
-import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import Header from "../Header";
 
 import "yet-another-react-lightbox/styles.css";
@@ -64,7 +63,6 @@ export default function ImageExpander({
           src: img.src,
           alt: img.alt,
         }))}
-        plugins={[Zoom]}
         styles={{
           container: { backgroundColor: "rgba(0, 0, 0, 0.9)" },
         }}

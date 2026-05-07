@@ -51,22 +51,22 @@ export default function Footer() {
                 </h4>
                 <ul className="space-y-2 text-secondary/50 text-sm">
                   <li>
-                    <a
+                    <Link
                       href={"/about"}
                       className="hover:text-accent transition-colors"
                     >
                       {t("About")}
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-accent transition-colors">
+                    <Link href="/review" className="hover:text-accent transition-colors">
                       {t("Reviews")}
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-accent transition-colors">
+                    <Link href="#" className="hover:text-accent transition-colors">
                       {t("Contacts")}
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>

@@ -8,6 +8,12 @@ import {
   Car,
   Star,
   LucideIcon,
+  Sparkles,
+  Wifi,
+  Droplets,
+  UserCheck,
+  Thermometer,
+  Baby,
 } from "lucide-react";
 import Container from "@/app/shared/Container";
 import { ImageWithFallback } from "@/app/shared/imageWithFallback/imageWithFallback";
@@ -26,6 +32,17 @@ const specIconMap: Record<number, LucideIcon> = {
 };
 
 export default function TransferPage({ data }: { data: TransferPageData }) {
+
+  const AMENITIES = [
+    { icon: <Wifi className="w-5 h-5" />, label: 'Бесплатный Wi-Fi', sub: 'Высокоскоростной' },
+    { icon: <Droplets className="w-5 h-5" />, label: 'Минеральная вода', sub: 'Evian / Perrier' },
+    { icon: <UserCheck className="w-5 h-5" />, label: 'Профи-водитель', sub: 'Англ / Франц' },
+    { icon: <Thermometer className="w-5 h-5" />, label: 'Климат-контроль', sub: 'Индивидуальный' },
+    { icon: <Baby className="w-5 h-5" />, label: 'Детские кресла', sub: 'По запросу' },
+    { icon: <Sparkles className="w-5 h-5" />, label: 'Чистота VIP', sub: 'Дезинфекция' },
+  ];
+
+
   const getImageUrlSafe = (url?: string): string => {
     if (!url) return "";
 
@@ -35,13 +52,14 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
   };
 
   return (
-    <main className="bg-primary px-[20px] py-[100px] md:py-[150px] text-secondary overflow-hidden">
+    <main className="bg-primary px-[20px] py-[100px] text-secondary overflow-hidden">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 blur-[150px] rounded-full -z-10" />
       <Container>
         <BackButton styles="text-secondary/50 hover:text-secondary px-[20px]" />
 
         <div className="flex flex-col justify-center items-center gap-[60px] px-[20px]">
           <motion.h1
+            viewport={{ once: true }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
@@ -52,41 +70,43 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
               blockStyles="items-center"
             />
           </motion.h1>
-          <div className="flex flex-col lg:flex-row justify-center items-stretch gap-[60px]">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              className="flex-2 relative group"
-            >
-              <div className="absolute -inset-1 bg-gradient-to-r from-accent/20 to-transparent rounded-[40px] blur-xl opacity-50 group-hover:opacity-100 transition duration-1000" />
-              <div className="relative rounded-[32px] overflow-hidden border border-secondary/5 bg-dark-gray">
-                <ImageWithFallback
-                  src={mercedes}
-                  width={1000}
-                  height={1000}
-                  alt="Mercedes V Class"
-                  className="w-full h-full object-cover transform transition-transform duration-[2000ms] group-hover:scale-110"
-                />
-                <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black/90 to-transparent">
-                  <div className="flex gap-8">
-                    {data &&
-                      data.carSpecs?.map((spec, index) => {
-                        const Icon = specIconMap[index] || Star;
+          <div className="flex flex-col lg:flex-row justify-between items-stretch gap-[60px]">
+            <div className="flex-1">
+              <motion.div
+                viewport={{ once: true }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                className="relative group"
+              >
+                <div className="absolute -inset-1 bg-gradient-to-r from-accent/20 to-transparent rounded-[40px] blur-xl opacity-50 group-hover:opacity-100 transition duration-1000" />
+                <div className="relative rounded-[32px] overflow-hidden border border-secondary/5 bg-dark-gray">
+                  <ImageWithFallback
+                    src={mercedes}
+                    width={1000}
+                    height={1000}
+                    alt="Mercedes V Class"
+                    className="w-full h-full object-cover transform transition-transform duration-[2000ms] group-hover:scale-110"
+                  />
+                  <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black/90 to-transparent">
+                    <div className="flex gap-8">
+                      {data &&
+                        data.carSpecs?.map((spec, index) => {
+                          const Icon = specIconMap[index] || Star;
 
-                        return (
-                          <div
-                            key={spec.id}
-                            className="flex items-center gap-2"
-                          >
-                            <Icon className="w-5 h-5 text-accent" />
-                            <span>{spec.text}</span>
-                          </div>
-                        );
-                      })}
+                          return (
+                            <div
+                              key={spec.id}
+                              className="flex items-center gap-2"
+                            >
+                              <Icon className="w-5 h-5 text-accent" />
+                              <span>{spec.text}</span>
+                            </div>
+                          );
+                        })}
+                    </div>
                   </div>
                 </div>
-              </div>
-
+              </motion.div>
               <div className="w-full px-[10px]  mt-6">
                 <ImageExpander
                   images={
@@ -100,29 +120,56 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
                   }
                 />
               </div>
-            </motion.div>
+            </div>
+            <div className="flex-[0.7] flex flex-col items-start gap-[60px]">
+              <div className="flex flex-col items-start gap-[20px]">
+                <h2 className="text-3xl font-[500] underline decoration-accent decoration-2 underline-offset-8">
+                  {data?.carTitle}
+                </h2>
+                {data &&
+                  data?.carDescription
+                    ?.split("\n")
+                    .map((paragraph: string, index: number) =>
+                      paragraph.trim() ? (
+                        <p
+                          className="text-secondary leading-relaxed text-md"
+                          key={index}
+                        >
+                          {paragraph}
+                        </p>
+                      ) : null,
+                    )}
 
-            <div className="flex-1 flex flex-col items-start gap-[20px]">
-              <h2 className="text-3xl font-[500] underline decoration-accent decoration-2 underline-offset-8">
-                {data?.carTitle}
-              </h2>
-              {data &&
-                data?.carDescription
-                  ?.split("\n")
-                  .map((paragraph: string, index: number) =>
-                    paragraph.trim() ? (
-                      <p
-                        className="text-secondary leading-relaxed text-md"
-                        key={index}
-                      >
-                        {paragraph}
-                      </p>
-                    ) : null,
-                  )}
-
-              <div className="flex items-center justify-center gap-2">
-                <ContactButtons />
+                <div className="flex items-center justify-center gap-2">
+                  <ContactButtons />
+                </div>
               </div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="w-full glass-panel overflow-hidden relative bg-gradient-to-br from-gray-900 to-gray-800 px-8 py-6 rounded-2xl"
+              >
+
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold mb-4 flex items-center gap-2">
+                  <Sparkles className="w-3 h-3" />
+                  Премиальные удобства в салоне
+                </p>
+
+                <div className="w-full grid grid-cols-2 gap-y-6 gap-x-4">
+                  {AMENITIES.map((item, i) => (
+                    <div key={i} className="w-full flex gap-3 items-start group">
+                      <div className="w-10 h-10 rounded-lg bg-gold/10 border border-gold/20 flex items-center justify-center text-gold group-hover:border-gold transition-colors duration-300">
+                        {item.icon}
+                      </div>
+                      <div>
+                        <p className="text-xs font-bold text-secondary leading-tight">{item.label}</p>
+                        <p className="text-[10px] text-secondary/40 mt-0.5">{item.sub}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -145,10 +192,11 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
               </div>
             </div>
 
-            <div className="divide-y divide-white/5">
+            <div className="divide-y divide-secondary/5">
               {data &&
                 data.priceTable?.map((item) => (
                   <motion.div
+                    viewport={{ once: true }}
                     key={item?.id}
                     whileHover={{
                       backgroundColor: "rgba(255, 255, 255, 0.03)",
@@ -164,7 +212,7 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
                           <div className="text-[10px] text-accent font-[900] uppercase md:tracking-widest leading-none mb-1">
                             {item?.title}
                           </div>
-                          <div className="text-[14px] md:text-xl font-[500] flex items-center text-white">
+                          <div className="text-[14px] md:text-xl font-[500] flex items-center text-secondary">
                             {item?.subTitle}
                           </div>
                         </div>

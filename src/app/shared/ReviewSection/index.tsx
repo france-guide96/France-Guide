@@ -44,7 +44,7 @@ export default function ReviewSection({
 
   return (
     <section
-      className={`flex flex-col items-center gap-[50px] pb-20 ${wrapperStyles}`}
+      className={`flex flex-col items-center gap-[50px] border-t border-dark-gray ${wrapperStyles}`}
     >
       {title && (
         <Header
