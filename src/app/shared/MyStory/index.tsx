@@ -12,7 +12,7 @@ export default function MyStory({ title, subTitle, events }: MyStoryProps) {
           isDark
           blockStyles="flex items-center mb-12"
         />
-        <div className="relative">
+        {/* <div className="relative">
           <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-yellow-200 via-yellow-400 to-yellow-600 hidden md:block"></div>
           <div className="space-y-12">
             {events?.map((event, index) => (
@@ -46,8 +46,45 @@ export default function MyStory({ title, subTitle, events }: MyStoryProps) {
               </div>
             ))}
           </div>
-        </div>
+        </div>  */}
       </div>
+      <div className="relative">
+            <div className="overflow-x-auto overflow-y-visible pb-8 scrollbar-hide scroll-smooth">
+              <div className="flex gap-8 px-4" style={{ width: 'fit-content', minWidth: '100%' }}>
+                {events?.map((item, idx) => (
+                  <div key={idx} className="relative flex flex-col items-center w-72 flex-shrink-0">
+                    <div className="bg-white rounded-2xl p-6 shadow-xl border border-gray-200 hover:shadow-2xl hover:scale-105 transition-all duration-300 w-full group">
+                      <div className="inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-bold rounded-xl mb-4 shadow-md text-2xl">
+                        {item.year}
+                      </div>
+
+                      <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-yellow-600 transition-colors">
+                        {item.eventTitle}
+                      </h3>
+
+                      {/* Description */}
+                      <p className="text-gray-600 leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+
+                    {/* Connector Line to Next Item */}
+                    {idx < events.length - 1 && (
+                      <div className="absolute top-16 -right-8 w-8 h-1 bg-gradient-to-r from-yellow-400 to-yellow-500"></div>
+                    )}
+
+                    {/* Timeline Dot */}
+                    <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-yellow-600 rounded-full border-4 border-white shadow-lg"></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Bottom Timeline Line */}
+            <div className="relative mt-4">
+              <div className="h-1 bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-600 rounded-full"></div>
+            </div>
+          </div>
     </section>
   );
 }

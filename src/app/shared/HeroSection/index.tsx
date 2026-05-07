@@ -3,13 +3,12 @@
 import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { useModals } from "@/context/ModalContext";
-
+import Image from "next/image";
+import { HeroProps } from "./type";
 import Button from "@/app/shared/Button";
 import Container from "@/app/shared/Container";
 import phoneIcon from "@/assets/elements/phone.png";
-import Image from "next/image";
 import scrollAnimation from "@/assets/elements/scroll.gif";
-import { HeroProps } from "./type";
 
 export default function HeroSection({
   generalStyles,
@@ -41,10 +40,22 @@ export default function HeroSection({
   };
 
   return (
-    <section className="relative bg-[url('/paris-gif.gif')] bg-cover bg-center min-h-screen">
+    <section className="relative min-h-screen overflow-hidden">
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/0509.mp4" type="video/mp4" />
+      </video>
+
+      <div className="absolute inset-0 bg-black/30 z-[1]" />
       <Container>
         <div
-          className={`flex flex-col items-center justify-center min-h-screen gap-[48px] px-[10px] pt-[150px] pb-[50px] ${generalStyles}`}
+          className={`relative z-[2] flex flex-col items-center justify-center min-h-screen gap-[48px] px-[10px] pt-[150px] pb-[50px] ${generalStyles}`}
         >
           <div className="flex flex-col items-center justify-center text-center gap-[24px]">
             <h1

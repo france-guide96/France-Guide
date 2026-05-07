@@ -46,6 +46,7 @@ export default function TransferPromo({ data }: { data: TransferSectionData }) {
         <div className="grid lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-7 lg:order-2 relative">
             <motion.div
+              viewport={{ once: true }}
               initial={{ opacity: 0, scale: 1.1, x: 50 }}
               whileInView={{ opacity: 1, scale: 1, x: 0 }}
               transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
@@ -65,6 +66,7 @@ export default function TransferPromo({ data }: { data: TransferSectionData }) {
 
           <div className="lg:col-span-5 lg:order-1 flex flex-col gap-12">
             <motion.div
+              viewport={{ once: true }}
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               className="space-y-8"

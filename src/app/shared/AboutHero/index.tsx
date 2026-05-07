@@ -1,6 +1,6 @@
 import { ImageWithFallback } from "@/app/shared/imageWithFallback/imageWithFallback";
 import cuteSmile from "@/assets/about/cuteSmile.jpg";
-import paris from "@/assets/about/paris.jpeg";
+import paris from "@/assets/about/paris.jpg";
 import { Star } from "lucide-react";
 import { AboutHeroProps } from "./type";
 import ContactButtons from "../ContactButton";
@@ -23,7 +23,8 @@ export default async function AboutHero({
     : cuteSmile;
 
   return (
-    <section className="relative min-h-screen pt-28">
+    <section className="relative min-h-screen">
+
       <div className="absolute inset-0">
         <ImageWithFallback
           width={1000}
@@ -38,20 +39,20 @@ export default async function AboutHero({
 
       <Container>
         <div className="relative px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="min-h-screen flex gap-16 items-center justify-between pt-[120px]">
 
-            <div className="text-white space-y-4">
+            <div className="flex-2 text-secondary flex flex-col items-start justify-center gap-[20px]">
               <SmallHeader />
-              <p className="text-base text-gray-200 leading-relaxed max-w-xl">
+              <p className="text-base text-gray-200 leading-relaxed">
                 {description}
               </p>
               <div className="flex gap-4">
-                <ContactButtons isAbout/>
+                <ContactButtons isAbout />
               </div>
             </div>
 
-            <div className="hidden lg:flex flex-col justify-center items-center">
-              <div className="relative w-full max-w-sm">
+            <div className="flex-1 hidden lg:flex flex-col justify-center items-center">
+              <div className="relative w-full">
                 <div className="backdrop-blur-xl rounded-3xl overflow-hidden shadow-2xl border border-white/20">
                   <div className="aspect-square relative">
                     <ImageWithFallback
@@ -66,7 +67,7 @@ export default async function AboutHero({
                   </div>
                 </div>
 
-                <div className="absolute -top-4 -right-4 bg-amber-500 text-white rounded-2xl p-4 shadow-2xl">
+                <div className="absolute -top-4 -right-4 bg-amber-500 text-secondary rounded-2xl p-4 shadow-2xl">
                   <div className="text-2xl font-bold">{countExcursions}+</div>
                   <div className="text-xs">экскурсий</div>
                 </div>
@@ -103,7 +104,6 @@ export default async function AboutHero({
                   })}
               </div>
             </div>
-
           </div>
         </div>
       </Container>
