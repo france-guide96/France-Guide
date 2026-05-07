@@ -9,6 +9,7 @@ export async function fetchTransferPageData(
   query.append("populate[0]", "carCarousel");
   query.append("populate[1]", "carSpecs");
   query.append("populate[2]", "priceTable");
+  query.append("populate[3]", "features");
 
   const url = `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/transfer?${query.toString()}`;
 

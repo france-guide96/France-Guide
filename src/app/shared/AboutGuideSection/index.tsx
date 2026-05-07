@@ -68,22 +68,6 @@ export default function AboutGuideSection({ aboutData }: AboutDataProps) {
                 )}
           </div>
 
-          {/* <div className="flex flex-row justify-between gap-2 md:gap-6 px-[10px]">
-            {aboutData &&
-              aboutData?.stats?.map((item, index) => {
-                return (
-                  <AboutCard
-                    key={index}
-                    value={item.value}
-                    label={item.label}
-                    icon={icons[index] || Star}
-                  />
-                );
-              })}
-          </div> */}
-
-          {/* axpers es 2ic meky yntri, indz takiny aveli a dur gali, myus karanq jnjenq eta */}
-
           <div className="w-full grid grid-cols-3 gap-6 pt-6">
             {aboutData &&
               aboutData.stats.map((stat, index) => {

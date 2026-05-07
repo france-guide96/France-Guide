@@ -1,28 +1,19 @@
 "use client";
 
 import { useRouter } from "@/navigation";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import {
-  ShieldCheck,
-  Compass,
-  ArrowRight,
-  LucideIcon,
-  CheckCircle,
+  ArrowRight
 } from "lucide-react";
 import Container from "@/app/shared/Container";
 import Header from "@/app/shared/Header";
 import Button from "@/app/shared/Button";
 import { TransferSectionData } from "lib/utils/transferType";
 import { ImageWithFallback } from "@/app/shared/imageWithFallback/imageWithFallback";
-
-const transferIconMap: Record<number, LucideIcon> = {
-  0: ShieldCheck,
-  1: Compass,
-};
+import TransferFeatures from "@/app/shared/TransferFeatures";
 
 export default function TransferPromo({ data }: { data: TransferSectionData }) {
-  const locale = useLocale();
   const t = useTranslations("Transfer");
   const router = useRouter();
 
@@ -79,29 +70,7 @@ export default function TransferPromo({ data }: { data: TransferSectionData }) {
                       paragraph.trim() ? <p key={index}>{paragraph}</p> : null,
                     )}
               </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {data &&
-                  data?.features?.map((feature, index) => {
-                    const Icon = transferIconMap[index] || CheckCircle;
-
-                    return (
-                      <div key={feature.id} className="flex gap-4">
-                        <div>
-                          <Icon className="text-accent w-6 h-6 shrink-0" />
-                        </div>
-                        <div>
-                          <h4 className="text-sm font-[900] uppercase tracking-widest text-primary">
-                            {feature?.title}
-                          </h4>
-                          <p className="text-xs text-gray-transparent/60 mt-1">
-                            {feature.description}
-                          </p>
-                        </div>
-                      </div>
-                    );
-                  })}
-              </div>
+              <TransferFeatures data={data || []} />
             </motion.div>
 
             <motion.div

@@ -8,12 +8,6 @@ import {
   Car,
   Star,
   LucideIcon,
-  Sparkles,
-  Wifi,
-  Droplets,
-  UserCheck,
-  Thermometer,
-  Baby,
 } from "lucide-react";
 import Container from "@/app/shared/Container";
 import { ImageWithFallback } from "@/app/shared/imageWithFallback/imageWithFallback";
@@ -24,6 +18,7 @@ import ImageExpander from "@/app/shared/ImageExpander";
 import { TransferPageData } from "lib/utils/transferType";
 import ReviewSection from "@/app/shared/ReviewSection";
 import ContactButtons from "@/app/shared/ContactButton";
+import TransferFeatures from "@/app/shared/TransferFeatures";
 
 const specIconMap: Record<number, LucideIcon> = {
   0: Users,
@@ -33,14 +28,6 @@ const specIconMap: Record<number, LucideIcon> = {
 
 export default function TransferPage({ data }: { data: TransferPageData }) {
 
-  const AMENITIES = [
-    { icon: <Wifi className="w-5 h-5" />, label: 'Бесплатный Wi-Fi', sub: 'Высокоскоростной' },
-    { icon: <Droplets className="w-5 h-5" />, label: 'Минеральная вода', sub: 'Evian / Perrier' },
-    { icon: <UserCheck className="w-5 h-5" />, label: 'Профи-водитель', sub: 'Англ / Франц' },
-    { icon: <Thermometer className="w-5 h-5" />, label: 'Климат-контроль', sub: 'Индивидуальный' },
-    { icon: <Baby className="w-5 h-5" />, label: 'Детские кресла', sub: 'По запросу' },
-    { icon: <Sparkles className="w-5 h-5" />, label: 'Чистота VIP', sub: 'Дезинфекция' },
-  ];
 
 
   const getImageUrlSafe = (url?: string): string => {
@@ -50,6 +37,8 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
       ? url
       : `${process.env.NEXT_PUBLIC_STRAPI_URL}${url}`;
   };
+
+  const firstImage = getImageUrlSafe(data.carCarousel?.[0]?.url);
 
   return (
     <main className="bg-primary px-[20px] py-[100px] text-secondary overflow-hidden">
@@ -81,11 +70,12 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
                 <div className="absolute -inset-1 bg-gradient-to-r from-accent/20 to-transparent rounded-[40px] blur-xl opacity-50 group-hover:opacity-100 transition duration-1000" />
                 <div className="relative rounded-[32px] overflow-hidden border border-secondary/5 bg-dark-gray">
                   <ImageWithFallback
-                    src={mercedes}
+                    src={firstImage}
                     width={1000}
                     height={1000}
                     alt="Mercedes V Class"
                     className="w-full h-full object-cover transform transition-transform duration-[2000ms] group-hover:scale-110"
+                    unoptimized
                   />
                   <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black/90 to-transparent">
                     <div className="flex gap-8">
@@ -144,32 +134,8 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
                   <ContactButtons />
                 </div>
               </div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="w-full glass-panel overflow-hidden relative bg-gradient-to-br from-gray-900 to-gray-800 px-8 py-6 rounded-2xl"
-              >
+              <TransferFeatures data={data || []} />
 
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold mb-4 flex items-center gap-2">
-                  <Sparkles className="w-3 h-3" />
-                  Премиальные удобства в салоне
-                </p>
-
-                <div className="w-full grid grid-cols-2 gap-y-6 gap-x-4">
-                  {AMENITIES.map((item, i) => (
-                    <div key={i} className="w-full flex gap-3 items-start group">
-                      <div className="w-10 h-10 rounded-lg bg-gold/10 border border-gold/20 flex items-center justify-center text-gold group-hover:border-gold transition-colors duration-300">
-                        {item.icon}
-                      </div>
-                      <div>
-                        <p className="text-xs font-bold text-secondary leading-tight">{item.label}</p>
-                        <p className="text-[10px] text-secondary/40 mt-0.5">{item.sub}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
             </div>
           </div>
         </div>
