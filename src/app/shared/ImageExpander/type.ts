@@ -10,4 +10,5 @@ export type GalleryType = {
   styles?: string;
   imgStyles?: string;
   isAbout?: boolean;
+  isTransfer?: boolean;
 };

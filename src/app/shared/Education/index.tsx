@@ -23,7 +23,7 @@ export default function Education({ title, subTitle, items }: EducationProps) {
           headingStyles="font-[500]"
           subHeading={subTitle}
           isDark={true}
-          blockStyles="flex items-center mb-12"
+          blockStyles="flex items-center mb-12 text-center"
         />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {items &&

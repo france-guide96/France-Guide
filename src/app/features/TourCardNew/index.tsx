@@ -34,15 +34,6 @@ export async function TourCardNew({ tour, locale }: TourCardProps) {
           <ImageWithFallback
             src={imageUrl}
             alt={tour?.primaryText}
-            className="absolute inset-0 w-full h-full object-cover blur-2xl scale-110 opacity-40"
-            width={600}
-            height={400}
-            unoptimized
-          />
-
-          <ImageWithFallback
-            src={imageUrl}
-            alt={tour?.primaryText}
             className="relative w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             width={600}
             height={400}

@@ -70,10 +70,12 @@
     "Email": "Email",
     "Viber": "Viber",
     "WhatsApp": "WhatsApp",
+    "Telegram": "Telegram",
     "Availability": "Available 9:00 - 21:00",
     "Response": "Response within 24 hours",
     "ConvenientCommunication": "Convenient communication at any time.",
     "QuickResponses": "Quick responses.",
+    "TelegramSupport": "Fast support via Telegram.",
     "SuccessMessage": "Message was sent successfully",
     "FailedMessage": "Message was not sent"
   },
