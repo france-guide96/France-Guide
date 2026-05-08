@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "@/navigation";
-import { ArrowRight, LucideIcon, Clock, Users, Star } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { ImageWithFallback } from "../imageWithFallback/imageWithFallback";
 import { useModals } from "@/context/ModalContext";
@@ -13,13 +13,6 @@ import smile from "@/assets/about/smile.jpg";
 
 const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL;
 
-const icons = [Clock, Users, Star];
-
-type Props = {
-  value: number | string;
-  label: string;
-  icon: LucideIcon;
-};
 export default function AboutGuideSection({ aboutData }: AboutDataProps) {
   const router = useRouter();
   const t = useTranslations("About");
@@ -28,7 +21,7 @@ export default function AboutGuideSection({ aboutData }: AboutDataProps) {
   if (!aboutData)
     return (
       <div className="text-center py-10 text-gray-400 italic">
-        Настройте контент в Strapi...
+        Настройте контент ...
       </div>
     );
 
@@ -36,18 +29,6 @@ export default function AboutGuideSection({ aboutData }: AboutDataProps) {
     const url = aboutData?.gallery?.[index]?.url;
     if (!url) return null;
     return url.startsWith("http") ? url : `${STRAPI_URL}${url}`;
-  };
-
-  const AboutCard = ({ value, label, icon: Icon }: Props) => {
-    return (
-      <div className="flex-1 flex flex-col items-center bg-secondary/10 rounded-xl p-2 md:p-6 md:w-[160px] text-center shadow-md hover:shadow-lg transition-shadow duration-300">
-        <div className="w-14 h-14 md:mx-auto md:mb-4 bg-accent/10 flex items-center justify-center rounded-xl">
-          <Icon className="w-6 h-6 text-yellow-600" />
-        </div>
-        <div className="text-[28px] font-bold text-dark-gray mb-1">{value}</div>
-        <div className="text-[14px] text-gray-transparent">{label}</div>
-      </div>
-    );
   };
 
   return (
@@ -68,16 +49,34 @@ export default function AboutGuideSection({ aboutData }: AboutDataProps) {
                 )}
           </div>
 
-          <div className="w-full flex flex-row justify-between gap-2 md:gap-6 px-[10px]">
+          <div className="w-full grid grid-cols-3 gap-6 pt-6">
             {aboutData &&
-              aboutData?.stats?.map((item, index) => {
+              aboutData.stats.map((stat, index) => {
+                const isRating =
+                  index === 2 || stat.label.toLowerCase().includes("Рейтинг");
+
                 return (
-                  <AboutCard
-                    key={index}
-                    value={item.value}
-                    label={item.label}
-                    icon={icons[index] || Star}
-                  />
+                  <div
+                    key={stat.id}
+                    className={`text-center ${index === 1 ? "border-l border-r border-primary" : ""}`}
+                  >
+                    {isRating ? (
+                      <div className="flex items-start justify-center gap-1 mb-1">
+                        <span className="text-4xl font-bold text-accent">
+                          {stat.value}
+                        </span>
+                        <Star
+                          className="w-6 h-6 text-accent mt-2"
+                          fill="currentColor"
+                        />
+                      </div>
+                    ) : (
+                      <div className="text-4xl font-bold text-accent mb-1">
+                        {stat.value}
+                      </div>
+                    )}
+                    <div className="text-sm text-dark-gray">{stat.label}</div>
+                  </div>
                 );
               })}
           </div>
@@ -120,11 +119,11 @@ export default function AboutGuideSection({ aboutData }: AboutDataProps) {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 gap-2">
             {[1, 2].map((idx) => (
               <div
                 key={idx}
-                className="relative h-[150px] rounded-2xl overflow-hidden border-4 border-secondary shadow-lg"
+                className="relative h-[250px] rounded-2xl overflow-hidden border-4 border-secondary shadow-lg"
               >
                 <ImageWithFallback
                   src={getImageUrl(idx) || smile}

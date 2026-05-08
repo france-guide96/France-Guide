@@ -36,6 +36,11 @@ export interface PriceRow {
   priceVip: number;
 }
 
+export interface Feature {
+  id: number;
+  title: string;
+  description: string;
+}
 export interface TransferPageData {
   titlePage: string;
   subTitlePage: string;
@@ -44,4 +49,5 @@ export interface TransferPageData {
   carCarousel: StrapiImage[];
   carSpecs: TransferSpec[];
   priceTable: PriceRow[];
+  features: Feature[];
 }

@@ -5,4 +5,5 @@ export type ReviewSectionType = {
   designType?: "transparent" | "gold" | "white";
   isDark?: boolean;
   isDarkReview?: boolean;
+  borderTop?: boolean
 };

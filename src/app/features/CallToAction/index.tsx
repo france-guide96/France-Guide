@@ -1,59 +1,20 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { useTranslations } from "next-intl";
+import Button from "@/app/shared/Button";
 import {
-  Send,
-  MessageCircle,
-  Phone,
-  Mail,
-  MessageSquare,
   MessagesSquare,
 } from "lucide-react";
 import { AnimatePresence } from "framer-motion";
-import Button from "@/app/shared/Button";
+import { getContactMethods } from "@/constants/contactMethods";
 
 export default function CallToAction() {
   const t = useTranslations("ContactModal");
   const [showCTA, setShowCTA] = useState<boolean>(false);
 
-  const CONTACT_METHODS = [
-    {
-      id: "whatsapp",
-      href: "https://wa.me",
-      icon: <MessageCircle className="text-green-500" />,
-      label: "WhatsApp",
-      sub: t("QuickReply"),
-    },
-    {
-      id: "viber",
-      href: "https://viber.com",
-      icon: <MessageSquare className="text-purple-500" />,
-      label: "Viber",
-      sub: t("QuickReply"),
-    },
-    {
-      id: "telegram",
-      href: "https://t.me",
-      icon: <Send className="text-sky-400" />,
-      label: "Telegram",
-      sub: "@username",
-    },
-    {
-      id: "email",
-      href: "mailto:garik@france-gid.ru",
-      icon: <Mail className="text-accent" />,
-      label: "Email",
-      sub: "garik@france-gid.ru",
-    },
-    {
-      id: t("Phone"),
-      href: "tel:+33609572780",
-      icon: <Phone className="text-blue-500" />,
-      label: t("Call"),
-      sub: "+33 6 09 57 27 80",
-    },
-  ];
+  const CONTACT_METHODS = getContactMethods(t);
 
   return (
     <div>
@@ -64,14 +25,14 @@ export default function CallToAction() {
           className={`fixed lg:bottom-10 lg:right-10 bottom-[10px] right-[10px] py-[40px] px-[20px] md:p-[20px] z-[9999] font-body flex flex-col items-center gap-[50px] bg-gradient-to-br from-gray-900 to-gray-800 border border-secondary/30 rounded-[14px] transition-all duration-300 ease-out transform ${showCTA ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 translate-y-4 pointer-events-none"}`}
         >
           <Button
-            styles="absolute top-2 right-2 cursor-pointer text-xl text-secondary"
+            styles="absolute top-2 right-2 cursor-pointer text-xl text-secondary md:hidden"
             onClick={() => setShowCTA(false)}
           >
             ✕
           </Button>
           <h3 className="max-w-[300px] text-secondary">{t("ContactOffer")}</h3>
           <div className="space-y-6">
-            <div className="space-y-4 md:space-y-5 grid grid-cols-2">
+            <div className="grid grid-cols-2 gap-4 md:gap-5">
               {CONTACT_METHODS.map((method) => (
                 <ContactLink key={method.id} {...method} />
               ))}
@@ -84,7 +45,7 @@ export default function CallToAction() {
       </AnimatePresence>
       {!showCTA && (
         <div
-          className="fixed bg-primary/50 bottom-[10px] right-[10px] lg:bottom-10 lg:right-10 w-[50px] h-[50px] md:w-[60px] md:h-[60px] p-[10px] rounded-full z-[158] flex items-center justify-center transition-all duration-300"
+          className="fixed bg-primary border border-secondary bottom-[10px] right-[10px] lg:bottom-10 lg:right-10 w-[50px] h-[50px] md:w-[60px] md:h-[60px] p-[10px] rounded-full z-[158] flex items-center justify-center transition-all duration-300"
           onMouseEnter={() => setShowCTA(true)}
         >
           <MessagesSquare className="text-secondary w-6 h-6" />
@@ -106,10 +67,10 @@ function ContactLink({
   sub: string;
 }) {
   return (
-    <a
+    <Link
       href={href}
       target="_blank"
-      className="flex items-center gap-2 md:gap-4 group cursor-pointer text-secondary"
+      className="flex items-center gap-2 md:gap-3 group cursor-pointer text-secondary"
     >
       <div className="w-6 h-6 md:w-12 md:h-12 bg-gray-900 rounded-2xl flex items-center justify-center border border-gray-800 group-hover:border-accent transition-colors">
         {icon}
@@ -122,6 +83,6 @@ function ContactLink({
           {sub}
         </div>
       </div>
-    </a>
+    </Link>
   );
 }

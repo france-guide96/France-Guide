@@ -1,6 +1,5 @@
 import { ImageWithFallback } from "@/app/shared/imageWithFallback/imageWithFallback";
 import cuteSmile from "@/assets/about/cuteSmile.jpg";
-import paris from "@/assets/about/paris.jpeg";
 import { Star } from "lucide-react";
 import { AboutHeroProps } from "./type";
 import ContactButtons from "../ContactButton";
@@ -23,35 +22,34 @@ export default async function AboutHero({
     : cuteSmile;
 
   return (
-    <section className="relative min-h-screen pt-28">
-      <div className="absolute inset-0">
-        <ImageWithFallback
-          width={1000}
-          height={100}
-          src={paris}
-          alt="Paris"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-      </div>
+    <section className="relative min-h-screen overflow-hidden">
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/0508.mp4" type="video/mp4" />
+      </video>
 
       <Container>
         <div className="relative px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="min-h-screen flex gap-16 items-center justify-between pt-[120px]">
 
-            <div className="text-white space-y-4">
+            <div className="flex-2 text-secondary flex flex-col items-start justify-center gap-[20px]">
               <SmallHeader />
-              <p className="text-base text-gray-200 leading-relaxed max-w-xl">
+              <p className="max-w-[700px] text-base text-secondary">
                 {description}
               </p>
               <div className="flex gap-4">
-                <ContactButtons isAbout/>
+                <ContactButtons isAbout />
               </div>
             </div>
 
-            <div className="hidden lg:flex flex-col justify-center items-center">
-              <div className="relative w-full max-w-sm">
+            <div className="flex-1 hidden lg:flex flex-col justify-center items-center">
+              <div className="relative w-full">
                 <div className="backdrop-blur-xl rounded-3xl overflow-hidden shadow-2xl border border-white/20">
                   <div className="aspect-square relative">
                     <ImageWithFallback
@@ -66,7 +64,7 @@ export default async function AboutHero({
                   </div>
                 </div>
 
-                <div className="absolute -top-4 -right-4 bg-amber-500 text-white rounded-2xl p-4 shadow-2xl">
+                <div className="absolute -top-4 -right-4 bg-amber-500 text-secondary rounded-2xl p-4 shadow-2xl">
                   <div className="text-2xl font-bold">{countExcursions}+</div>
                   <div className="text-xs">экскурсий</div>
                 </div>
@@ -103,7 +101,6 @@ export default async function AboutHero({
                   })}
               </div>
             </div>
-
           </div>
         </div>
       </Container>

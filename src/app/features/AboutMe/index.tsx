@@ -4,9 +4,9 @@ import AboutHimself from "@/app/shared/AboutHimself";
 import Principles from "@/app/shared/Principles";
 import MyStory from "@/app/shared/MyStory";
 import AboutHero from "@/app/shared/AboutHero";
-import { AboutPageData } from "lib/utils/aboutPageType";
 import ReviewSection from "@/app/shared/ReviewSection";
 import ImageExpander from "@/app/shared/ImageExpander";
+import { AboutPageData } from "lib/utils/aboutPageType";
 
 export default function AboutMe({ aboutData }: { aboutData: AboutPageData }) {
   return (
@@ -58,13 +58,15 @@ export default function AboutMe({ aboutData }: { aboutData: AboutPageData }) {
               subTitle={aboutData.timelineEventSubTitle || ""}
               events={aboutData.timelineEventItem || []}
             />
-            <ReviewSection
+            <div className="pb-[100px]">
+              <ReviewSection
               title={true}
               variant="grid"
               limit={3}
               designType="gold"
               isDark
             />
+            </div>
         </Container>
       </main>
     </>

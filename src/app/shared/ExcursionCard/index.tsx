@@ -63,7 +63,7 @@ export default function ExcursionCard({
                         {title}
                     </h3>
 
-                    <p className={`hidden md:block text-secondary/60 leading-relaxed transition-all duration-500 overflow-hidden
+                    <p className={`hidden md:block text-secondary leading-relaxed transition-all duration-500 overflow-hidden
                         ${isLarge ? "text-base md:mb-6 max-h-0 group-hover:max-h-24" : "text-sm md:mb-4 max-h-0 group-hover:max-h-12"}`}
                     >
                         {t(description)}

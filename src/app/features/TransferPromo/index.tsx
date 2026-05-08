@@ -1,28 +1,17 @@
 "use client";
 
 import { useRouter } from "@/navigation";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import {
-  ShieldCheck,
-  Compass,
-  ArrowRight,
-  LucideIcon,
-  CheckCircle,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Container from "@/app/shared/Container";
 import Header from "@/app/shared/Header";
 import Button from "@/app/shared/Button";
 import { TransferSectionData } from "lib/utils/transferType";
 import { ImageWithFallback } from "@/app/shared/imageWithFallback/imageWithFallback";
-
-const transferIconMap: Record<number, LucideIcon> = {
-  0: ShieldCheck,
-  1: Compass,
-};
+import TransferFeatures from "@/app/shared/TransferFeatures";
 
 export default function TransferPromo({ data }: { data: TransferSectionData }) {
-  const locale = useLocale();
   const t = useTranslations("Transfer");
   const router = useRouter();
 
@@ -46,6 +35,7 @@ export default function TransferPromo({ data }: { data: TransferSectionData }) {
         <div className="grid lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-7 lg:order-2 relative">
             <motion.div
+              viewport={{ once: true }}
               initial={{ opacity: 0, scale: 1.1, x: 50 }}
               whileInView={{ opacity: 1, scale: 1, x: 0 }}
               transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
@@ -65,6 +55,7 @@ export default function TransferPromo({ data }: { data: TransferSectionData }) {
 
           <div className="lg:col-span-5 lg:order-1 flex flex-col gap-12">
             <motion.div
+              viewport={{ once: true }}
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               className="space-y-8"
@@ -77,29 +68,11 @@ export default function TransferPromo({ data }: { data: TransferSectionData }) {
                       paragraph.trim() ? <p key={index}>{paragraph}</p> : null,
                     )}
               </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {data &&
-                  data?.features?.map((feature, index) => {
-                    const Icon = transferIconMap[index] || CheckCircle;
-
-                    return (
-                      <div key={feature.id} className="flex gap-4">
-                        <div>
-                          <Icon className="text-accent w-6 h-6 shrink-0" />
-                        </div>
-                        <div>
-                          <h4 className="text-sm font-[900] uppercase tracking-widest text-primary">
-                            {feature?.title}
-                          </h4>
-                          <p className="text-xs text-gray-transparent/60 mt-1">
-                            {feature.description}
-                          </p>
-                        </div>
-                      </div>
-                    );
-                  })}
-              </div>
+              <TransferFeatures
+                data={data}
+                headingStyles="text-primary"
+                subHeadingStyles="text-gray-transparent/60"
+              />
             </motion.div>
 
             <motion.div
