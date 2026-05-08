@@ -31,7 +31,7 @@ export default async function AboutHero({
         preload="metadata"
         className="absolute inset-0 w-full h-full object-cover"
       >
-        <source src="/0508.mp4" type="video/mp4" />
+        <source src="/0507.mp4" type="video/mp4" />
       </video>
 
       <Container>
