@@ -14,47 +14,68 @@ export default function ImageExpander({
   styles,
   imgStyles,
   isAbout = false,
+  isTransfer = false
 }: GalleryType) {
   const [index, setIndex] = useState(-1);
-  const t = useTranslations("About")
+  const t = useTranslations("About");
   if (!images || images.length === 0) return null;
 
   return (
     <>
       <div className="flex justify-center">
-        {isAbout &&
-          <Header heading={t("Gallery")} subHeading={t("ExploreMoments")} isDark blockStyles="flex items-center" />
-        }
+        {isAbout && !isTransfer && (
+          <Header
+            heading={t("Gallery")}
+            subHeading={t("ExploreMoments")}
+            isDark
+            blockStyles="flex items-center"
+          />
+        )}
       </div>
       <div
         className={
           styles ??
-          "grid grid-cols-3 gap-4 auto-rows-[128px] [grid-auto-flow:dense]"
+          "grid grid-cols-3 gap-4 auto-rows-[200px] [grid-auto-flow:dense]"
         }
       >
-        {images.map((img, index) => {
+        {images.map((img, idx) => {
           const isPortrait = img.height > img.width || img.height === img.width;
+
           const span = isPortrait ? "row-span-2" : "row-span-1";
 
           return (
             <button
-              key={index}
+              key={idx}
               type="button"
-              onClick={() => setIndex(index)}
-              className={`${imgStyles ?? "relative block w-full rounded-[16px] overflow-hidden cursor-pointer shadow-md border-none"} ${isAbout && span}`}
+              onClick={() => setIndex(idx)}
+              className={`${imgStyles ?? "relative block w-full min-h-[200px] rounded-[16px] overflow-hidden cursor-pointer shadow-md"} ${isAbout && span}`}
             >
-              <Image
-                src={img.src}
-                alt={img.alt || ""}
-                fill
-                unoptimized
-                className="object-cover transition-transform duration-500 ease-out hover:scale-110"
-                sizes="(max-width: 768px) 100vw, 33vw"
-              />
+              <div className="relative h-full w-full overflow-hidden bg-[#0B1220] flex items-center justify-center">
+
+                <Image
+                  src={img.src}
+                  alt=""
+                  fill
+                  className="object-cover blur-lg opacity-40 scale-110"
+                  unoptimized
+                />
+
+                <div className="relative w-full h-full p-1">
+                  <Image
+                    src={img.src}
+                    alt={img.alt || ""}
+                    fill
+                    unoptimized
+                    className={`${isAbout || isTransfer ? "object-cover" : "object-contain z-10"}  transition-transform duration-500 hover:scale-[1.02]`}
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
+              </div>
             </button>
           );
         })}
       </div>
+
       <Lightbox
         index={index}
         open={index >= 0}

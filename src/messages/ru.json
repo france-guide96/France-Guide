@@ -70,10 +70,12 @@
     "Email": "Электронная почта",
     "Viber": "Viber",
     "WhatsApp": "WhatsApp",
+    "Telegram": "Telegram",
     "Availability": "Доступно с 9:00 до 21:00.",
     "Response": "Ответ в течение 24 часов.",
     "ConvenientCommunication": "Удобное общение в любое время.",
     "QuickResponses": "Быстрые ответы.",
+    "TelegramSupport": "Быстрая поддержка через Telegram.",
     "SuccessMessage": "Сообщение было успешно отправлено",
     "FailedMessage": "Сообщение не было отправлено"
   },

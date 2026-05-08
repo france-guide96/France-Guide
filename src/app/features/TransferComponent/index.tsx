@@ -93,7 +93,7 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
                   </div>
                 </div>
               </motion.div>
-              <div className="w-full px-[10px]  mt-6">
+              <div className="w-full px-[10px] mt-6">
                 <ImageExpander
                   images={
                     data?.carCarousel &&
@@ -104,6 +104,7 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
                       height: img.height,
                     }))
                   }
+                  isTransfer
                 />
               </div>
             </div>

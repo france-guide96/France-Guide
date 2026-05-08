@@ -108,7 +108,7 @@ export default function GetInTouch() {
                       rel="noopener noreferrer"
                       title={t(item.key)}
                       aria-label={t(item.key)}
-                      className="w-[150px] sm:w-[300px] flex flex-col lg:flex-row justify-start items-start gap-[16px] hover:scale-102 transition-all duration-300"
+                      className="w-[150px] sm:w-[350px] flex flex-col lg:flex-row justify-start items-start gap-[16px] hover:scale-102 transition-all duration-300"
                     >
                       <div className="flex justify-center items-center bg-accent/10 rounded-[50px] p-[15px]">
                         <Image

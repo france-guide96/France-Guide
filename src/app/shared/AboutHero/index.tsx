@@ -35,15 +35,14 @@ export default async function AboutHero({
       </video>
 
       <Container>
-        <div className="relative px-6">
+        <div className="relative sm:px-6 px-[10px]">
           <div className="min-h-screen flex gap-16 items-center justify-between pt-[120px]">
-
-            <div className="flex-2 text-secondary flex flex-col items-start justify-center gap-[20px]">
+            <div className="flex-2 text-secondary flex flex-col items-start justify-center gap-[10px] md:gap-[20px]">
               <SmallHeader />
-              <p className="max-w-[700px] text-base text-secondary">
+              <p className="max-w-[700px] text-[12px] md:text-base text-secondary bg-secondary/20 md:bg-transparent font-bold md:font-normal p-[10px] md:p-0 rounded-2xl">
                 {description}
               </p>
-              <div className="flex gap-4">
+              <div className="flex gap-2 md:gap-4">
                 <ContactButtons isAbout />
               </div>
             </div>
