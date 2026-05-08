@@ -76,6 +76,7 @@ export default async function Home({
             limit={3}
             designType="gold"
             isDark
+            borderTop
           /></Container>
       </section>
     </div>

@@ -16,6 +16,7 @@ export default function ReviewSection({
   designType,
   isDarkReview,
   isDark,
+  borderTop
 }: ReviewSectionType) {
   const getShuffledReviews = (data: Review[], limit: number) => {
     return [...data].sort(() => 0.5 - Math.random()).slice(0, limit);
@@ -44,7 +45,7 @@ export default function ReviewSection({
 
   return (
     <section
-      className={`flex flex-col items-center gap-[50px] border-t border-dark-gray ${wrapperStyles}`}
+      className={`flex flex-col items-center gap-[50px] ${borderTop && "border-t border-dark-gray"} ${wrapperStyles}`}
     >
       {title && (
         <Header

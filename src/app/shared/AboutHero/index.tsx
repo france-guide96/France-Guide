@@ -1,6 +1,5 @@
 import { ImageWithFallback } from "@/app/shared/imageWithFallback/imageWithFallback";
 import cuteSmile from "@/assets/about/cuteSmile.jpg";
-import paris from "@/assets/about/paris.jpg";
 import { Star } from "lucide-react";
 import { AboutHeroProps } from "./type";
 import ContactButtons from "../ContactButton";
@@ -23,19 +22,17 @@ export default async function AboutHero({
     : cuteSmile;
 
   return (
-    <section className="relative min-h-screen">
-
-      <div className="absolute inset-0">
-        <ImageWithFallback
-          width={1000}
-          height={100}
-          src={paris}
-          alt="Paris"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-      </div>
+    <section className="relative min-h-screen overflow-hidden">
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/0508.mp4" type="video/mp4" />
+      </video>
 
       <Container>
         <div className="relative px-6">
@@ -43,7 +40,7 @@ export default async function AboutHero({
 
             <div className="flex-2 text-secondary flex flex-col items-start justify-center gap-[20px]">
               <SmallHeader />
-              <p className="text-base text-gray-200 leading-relaxed">
+              <p className="max-w-[700px] text-base text-secondary">
                 {description}
               </p>
               <div className="flex gap-4">

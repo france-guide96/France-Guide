@@ -70,7 +70,7 @@ export default function TransferPromo({ data }: { data: TransferSectionData }) {
                       paragraph.trim() ? <p key={index}>{paragraph}</p> : null,
                     )}
               </div>
-              <TransferFeatures data={data || []} />
+              <TransferFeatures data={data || []} headingStyles="text-primary" subHeadingStyles="text-gray-transparent/60" />
             </motion.div>
 
             <motion.div

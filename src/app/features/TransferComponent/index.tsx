@@ -134,13 +134,13 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
                   <ContactButtons />
                 </div>
               </div>
-              <TransferFeatures data={data || []} />
+              <TransferFeatures data={data || []} headingStyles="text-secondary" subHeadingStyles="text-secondary/50" />
 
             </div>
           </div>
         </div>
 
-        <div className="relative group mt-[100px] px-[20px]">
+        <div className="relative group mt-[100px] px-[20px] mb-[100px]">
           <div className="absolute -inset-0.5 bg-gradient-to-b from-accent/30 to-transparent rounded-[10px] blur opacity-20" />
           <div className="relative bg-dark-gray/10 backdrop-blur-2xl rounded-[10px] border border-secondary/5 overflow-hidden">
             <div className="grid grid-cols-12 p-2 md:p-8 border-b border-secondary/5 bg-secondary/5 items-center gap-[10px]">
@@ -193,7 +193,7 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
             </div>
           </div>
         </div>
-        <ReviewSection designType="gold" isDarkReview title variant="grid" />
+        <ReviewSection designType="gold" isDarkReview title variant="grid" borderTop />
       </Container>
     </main>
   );

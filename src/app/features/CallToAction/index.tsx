@@ -5,64 +5,16 @@ import Link from "next/link";
 import { useTranslations } from "next-intl";
 import Button from "@/app/shared/Button";
 import {
-  Send,
-  MessageCircle,
-  Phone,
-  Mail,
-  MessageSquare,
   MessagesSquare,
-  MessageSquareHeart,
 } from "lucide-react";
 import { AnimatePresence } from "framer-motion";
+import { getContactMethods } from "@/constants/contactMethods";
 
 export default function CallToAction() {
   const t = useTranslations("ContactModal");
   const [showCTA, setShowCTA] = useState<boolean>(false);
 
-  const CONTACT_METHODS = [
-    {
-      id: "whatsapp",
-      href: "https://wa.me",
-      icon: <MessageCircle className="text-green-500" />,
-      label: "WhatsApp",
-      sub: t("QuickReply"),
-    },
-    {
-      id: "viber",
-      href: "https://viber.com",
-      icon: <MessageSquare className="text-purple-500" />,
-      label: "Viber",
-      sub: t("QuickReply"),
-    },
-    {
-      id: "telegram",
-      href: "https://t.me",
-      icon: <Send className="text-sky-400" />,
-      label: "Telegram",
-      sub: "@username",
-    },
-    {
-      id: "email",
-      href: "mailto:garik@france-gid.ru",
-      icon: <Mail className="text-accent" />,
-      label: "Email",
-      sub: "garik@france-gid.ru",
-    },
-    {
-      id: t("Phone"),
-      href: "tel:+33609572780",
-      icon: <Phone className="text-blue-500" />,
-      label: t("Call"),
-      sub: "+33 6 09 57 27 80",
-    },
-    {
-      id: "instagram",
-      href: "https://www.instagram.com/garik.vash.gid.paris/",
-      icon: <MessageSquareHeart className="text-red-500" />,
-      label: "Instagram",
-      sub: "@garik.vash.gid.paris",
-    }
-  ];
+  const CONTACT_METHODS = getContactMethods(t);
 
   return (
     <div>

@@ -58,13 +58,15 @@ export default function AboutMe({ aboutData }: { aboutData: AboutPageData }) {
               subTitle={aboutData.timelineEventSubTitle || ""}
               events={aboutData.timelineEventItem || []}
             />
-            <ReviewSection
+            <div className="pb-[100px]">
+              <ReviewSection
               title={true}
               variant="grid"
               limit={3}
               designType="gold"
               isDark
             />
+            </div>
         </Container>
       </main>
     </>

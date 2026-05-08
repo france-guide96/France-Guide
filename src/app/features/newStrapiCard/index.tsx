@@ -32,7 +32,7 @@ export default async function NewStrapiCard({
           <div>No Data</div>
         )}
       </div>
-      <ReviewSection variant="grid" isDarkReview title designType="gold" />
+      <ReviewSection variant="grid" isDarkReview title designType="gold" borderTop />
     </>
   );
 }

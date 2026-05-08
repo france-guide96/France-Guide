@@ -21,21 +21,16 @@
   --color-dark-gray: #1f2937;
 }
 
-html {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-html::-webkit-scrollbar {
-  display: none;
-}
-
-.scrollbar-hide {
+html,
+body,
+* {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
-.scrollbar-hide::-webkit-scrollbar {
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
   display: none;
 }
 
@@ -52,7 +47,8 @@ img {
 @layer base {
   input:focus {
     outline: none;
-    box-shadow: 0 0 0 2px rgba(10, 22, 40, 0.3); /* custom focus */
+    box-shadow: 0 0 0 2px rgba(10, 22, 40, 0.3);
+    /* custom focus */
   }
 
   textarea:focus,
