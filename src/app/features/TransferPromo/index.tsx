@@ -3,9 +3,7 @@
 import { useRouter } from "@/navigation";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import {
-  ArrowRight
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Container from "@/app/shared/Container";
 import Header from "@/app/shared/Header";
 import Button from "@/app/shared/Button";
@@ -70,7 +68,11 @@ export default function TransferPromo({ data }: { data: TransferSectionData }) {
                       paragraph.trim() ? <p key={index}>{paragraph}</p> : null,
                     )}
               </div>
-              <TransferFeatures data={data || []} headingStyles="text-primary" subHeadingStyles="text-gray-transparent/60" />
+              <TransferFeatures
+                data={data}
+                headingStyles="text-primary"
+                subHeadingStyles="text-gray-transparent/60"
+              />
             </motion.div>
 
             <motion.div

@@ -11,7 +11,6 @@ import {
 } from "lucide-react";
 import Container from "@/app/shared/Container";
 import { ImageWithFallback } from "@/app/shared/imageWithFallback/imageWithFallback";
-import mercedes from "@/assets/transfer/vClass.webp";
 import Header from "@/app/shared/Header";
 import BackButton from "@/app/shared/BackButton";
 import ImageExpander from "@/app/shared/ImageExpander";
@@ -27,9 +26,6 @@ const specIconMap: Record<number, LucideIcon> = {
 };
 
 export default function TransferPage({ data }: { data: TransferPageData }) {
-
-
-
   const getImageUrlSafe = (url?: string): string => {
     if (!url) return "";
 
@@ -134,7 +130,7 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
                   <ContactButtons />
                 </div>
               </div>
-              <TransferFeatures data={data || []} headingStyles="text-secondary" subHeadingStyles="text-secondary/50" />
+              <TransferFeatures data={data} headingStyles="text-secondary" subHeadingStyles="text-secondary/50" />
 
             </div>
           </div>
