@@ -27,6 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       languages: { ru: "/ru", en: "/en" },
     },
     openGraph: {
+      url: "https://france-gid.vercel.app",
       siteName: "France Guide",
       locale: isRu ? "ru_RU" : "en_US",
       type: "website",
