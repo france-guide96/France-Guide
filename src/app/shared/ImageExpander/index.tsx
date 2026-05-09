@@ -14,7 +14,7 @@ export default function ImageExpander({
   styles,
   imgStyles,
   isAbout = false,
-  isTransfer = false
+  isTransfer = false,
 }: GalleryType) {
   const [index, setIndex] = useState(-1);
   const t = useTranslations("About");
@@ -51,10 +51,9 @@ export default function ImageExpander({
               className={`${imgStyles ?? "relative block w-full min-h-[200px] rounded-[16px] overflow-hidden cursor-pointer shadow-md"} ${isAbout && span}`}
             >
               <div className="relative h-full w-full overflow-hidden bg-[#0B1220] flex items-center justify-center">
-
                 <Image
                   src={img.src}
-                  alt=""
+                  alt={img.alt || ""}
                   fill
                   className="object-cover blur-lg opacity-40 scale-110"
                   unoptimized
