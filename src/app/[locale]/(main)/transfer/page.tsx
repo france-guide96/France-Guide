@@ -1,4 +1,6 @@
+import ReviewSectionServer from "@/app/features/ReviewSectionServer";
 import TransferPage from "@/app/features/TransferComponent";
+import Container from "@/app/shared/Container";
 import { fetchTransferPageData } from "lib/api/strapi/transfer/transferPage";
 import { Metadata } from "next";
 
@@ -18,9 +20,7 @@ export async function generateMetadata({
       ? "Комфортный трансфер из аэропортов Парижа (CDG, Orly). Встреча с табличкой, помощь с багажом. Бронируйте заранее!"
       : "Comfortable transfer from Paris airports (CDG, Orly). Meet & greet, luggage assistance. Book in advance!",
     openGraph: {
-      title: isRu
-        ? "Трансфер | France Guide"
-        : "Transfer | France Guide",
+      title: isRu ? "Трансфер | France Guide" : "Transfer | France Guide",
       description: isRu
         ? "Комфортный трансфер из аэропортов Парижа"
         : "Comfortable transfer from Paris airports",
@@ -52,5 +52,21 @@ export default async function Transfer({
     );
   }
 
-  return <TransferPage data={data} />;
+  return (
+    <div className="bg-primary">
+      <TransferPage data={data} />
+      <div className="py-[100px]">
+
+      <Container>
+        <ReviewSectionServer
+          designType="gold"
+          isDarkReview
+          title
+          variant="grid"
+          borderTop
+          />
+      </Container>
+          </div>
+    </div>
+  );
 }
