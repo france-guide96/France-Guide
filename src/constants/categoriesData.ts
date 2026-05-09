@@ -12,9 +12,7 @@ export type CategoryItem = {
   href?: string;
   duration?: string;
   group?: string;
-  rating?: string;
-  category: string;
-  isLarge?: boolean;
+  location: string;
 };
 
 export const CategoriesData: CategoryItem[] = [
@@ -25,10 +23,8 @@ export const CategoriesData: CategoryItem[] = [
     image: parisImg,
     duration: "2 - 4",
     group: "1-7",
-    rating: "5.0",
-    category: "Popular",
-    isLarge: true,
     href: PathnameEnum.ExcursionsInParis,
+    location: "Париж",
   },
   {
     id: 2,
@@ -37,9 +33,8 @@ export const CategoriesData: CategoryItem[] = [
     image: vercaillesImg,
     duration: "4 - 10",
     group: "1-7",
-    rating: "4.9",
-    category: "History",
     href: PathnameEnum.ExcursionsToTheSuburbsOfParis,
+    location: "Предместья",
   },
   {
     id: 3,
@@ -48,8 +43,7 @@ export const CategoriesData: CategoryItem[] = [
     image: niceImg,
     duration: "5 - 13",
     group: "1-7",
-    rating: "4.8",
-    category: "Journey",
     href: PathnameEnum.ToursOfFrance,
+    location: "Регионы",
   },
 ];

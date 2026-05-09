@@ -7,8 +7,7 @@ export type ExcursionProps = {
   image: string | StaticImageData;
   duration?: string;
   group?: string;
-  rating?: string;
-  category: string;
+  location: string;
   isLarge?: boolean;
   href?: string;
 }

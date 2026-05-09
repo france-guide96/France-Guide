@@ -1,37 +1,25 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import ExcursionCard from "../ExcursionCard";
 import { CategoriesData } from "@/constants/categoriesData";
+import ExcursionCard from "../ExcursionCard";
 
 export default function CategoryCards() {
   const t = useTranslations("HeroSection");
 
   return (
-    <div className="w-full px-[10px]">
-      <main className="w-full flex flex-col md:flex-row items-stretch justify-between gap-4">
-        <div className="w-full md:w-1/2">
-          <ExcursionCard
-            {...CategoriesData[0]}
-            title={t(CategoriesData[0].title)}
-          />
-        </div>
-
-        <div className="w-full md:w-1/2 flex flex-row md:flex-col justify-between gap-4">
-          <div className="w-1/2 md:w-full">
+    <div className="from-amber-50 via-white to-rose-50 py-16">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {CategoriesData.map((category) => (
             <ExcursionCard
-              {...CategoriesData[1]}
-              title={t(CategoriesData[1].title)}
+              key={category.id}
+              {...category}
+              title={t(category.title)}
             />
-          </div>
-          <div className="w-1/2 md:w-full">
-            <ExcursionCard
-              {...CategoriesData[2]}
-              title={t(CategoriesData[2].title)}
-            />
-          </div>
+          ))}
         </div>
-      </main>
+      </div>
     </div>
   );
 }

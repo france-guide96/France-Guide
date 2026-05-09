@@ -85,17 +85,17 @@ export default async function Page({ params }: Props) {
     <div className="bg-primary">
       <TourDetail tour={data} />
       <div className="py-[100px]">
-      <Container>
-        <ReviewSectionServer
-          title
-          variant="grid"
-          limit={3}
-          isDarkReview
-          designType="gold"
-          borderTop
+        <Container>
+          <ReviewSectionServer
+            title
+            variant="grid"
+            limit={3}
+            isDarkReview
+            designType="gold"
+            borderTop
           />
-      </Container>
-          </div>
+        </Container>
+      </div>
     </div>
   );
 }
