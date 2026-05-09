@@ -1,15 +1,14 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { useRouter } from "@/navigation";
 import BackButton from "@/app/shared/BackButton";
+import { useRouter } from "@/navigation";
 import Container from "@/app/shared/Container";
 import ReviewComponent from "@/app/shared/ReviewComponent";
 import { ReviewForm } from "../ReviewForm";
-import { ReviewItem } from "lib/api/strapi/review/review";
 import Button from "@/app/shared/Button";
 import Header from "@/app/shared/Header";
-
+import { ReviewItem } from "lib/utils/review";
 
 export default function ReviewSectionWrapper({
   reviews,
@@ -67,6 +66,7 @@ export default function ReviewSectionWrapper({
                     </Button>
                   ),
                 )}
+
                 <Button
                   onClick={() => handlePageChange(currentPage + 1)}
                   disabled={currentPage === pageCount}
@@ -76,6 +76,7 @@ export default function ReviewSectionWrapper({
                 </Button>
               </div>
             )}
+
             <ReviewForm />
           </div>
         </div>

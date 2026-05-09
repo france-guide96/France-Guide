@@ -4,6 +4,7 @@ import { categoryMap } from "@/constants/categoryEnum";
 import { TourDetail } from "@/app/features/tourDetails";
 import { Metadata } from "next";
 import ReviewSectionServer from "@/app/features/ReviewSectionServer";
+import Container from "@/app/shared/Container";
 
 export const revalidate = 3600;
 
@@ -83,14 +84,16 @@ export default async function Page({ params }: Props) {
   return (
     <div className=" bg-primary">
       <TourDetail tour={data} />;
-      <ReviewSectionServer
-        title
-        variant="grid"
-        limit={3}
-        isDarkReview
-        designType="gold"
-        borderTop
-      />
+      <Container>
+        <ReviewSectionServer
+          title
+          variant="grid"
+          limit={3}
+          isDarkReview
+          designType="gold"
+          borderTop
+        />
+      </Container>
     </div>
   );
 }

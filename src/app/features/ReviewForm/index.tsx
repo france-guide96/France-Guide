@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Star } from "lucide-react";
 import { submitReview } from "lib/api/strapi/review/review";
+import Button from "@/app/shared/Button";
 
 export function ReviewForm() {
   const [name, setName] = useState("");
@@ -38,7 +39,7 @@ export function ReviewForm() {
             onMouseLeave={() => setHovered(0)}
           >
             <Star
-              className={`w-7 h-7 transition-colors ${
+              className={`w-7 h-7 transition-colors cursor-pointer ${
                 star <= (hovered || rating)
                   ? "fill-accent text-accent"
                   : "text-gray-600"
@@ -64,13 +65,13 @@ export function ReviewForm() {
         className="bg-gray-800 text-secondary placeholder-gray-500 rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-accent border border-transparent resize-none"
       />
 
-      <button
+      <Button
         onClick={handleSubmit}
         disabled={status === "loading" || !name || !review || !rating}
-        className="bg-accent hover:bg-accent/80 disabled:opacity-50 disabled:cursor-not-allowed text-secondary font-bold py-3 rounded-xl uppercase text-sm transition-all duration-300"
+        styles="bg-accent hover:bg-accent/80 disabled:opacity-50 disabled:cursor-not-allowed text-secondary font-bold py-3 rounded-xl uppercase text-sm transition-all duration-300"
       >
         {status === "loading" ? "Отправка..." : "Отправить"}
-      </button>
+      </Button>
 
       {status === "success" && (
         <p className="text-green-400 text-sm text-center">

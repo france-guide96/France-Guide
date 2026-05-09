@@ -6,7 +6,7 @@ import { ReviewSectionType } from "./type";
 import ReviewComponent from "@/app/shared/ReviewComponent";
 import Button from "@/app/shared/Button";
 import Header from "@/app/shared/Header";
-import { ReviewItem } from "lib/api/strapi/review/review";
+import { ReviewItem } from "lib/utils/review";
 
 type Props = ReviewSectionType & {
   reviews: ReviewItem[];

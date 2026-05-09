@@ -1,31 +1,5 @@
+import { ReviewItem, StrapiReview } from "lib/utils/review";
 import { fetchWithRetry } from "../fetchWithRetry";
-
-export type Review = {
-  id: number;
-  name: string;
-  review: string;
-  rating: number;
-  tourSlug: string;
-};
-
-export type StrapiReview = {
-  id: number;
-  name: string;
-  review: string;
-  rating: number;
-  tourSlug: string;
-  createdAt: string;
-  date?: string;
-};
-
-export type ReviewItem = {
-  id: number;
-  authorName: string;
-  rating: number;
-  content: string;
-  date: string;
-  avatar: string;
-};
 
 export function mapStrapiReview(r: StrapiReview): ReviewItem {
   const dateObj = r.date
@@ -75,8 +49,6 @@ export async function fetchReviews(
 
     const json = await res.json();
 
-    console.log(json);
-
     return {
       reviews: json.data ?? [],
       total: json.meta?.pagination?.total ?? 0,
@@ -94,7 +66,6 @@ export async function submitReview(data: {
 }): Promise<boolean> {
   try {
     const today = new Date().toISOString().split("T")[0];
-    console.log("Sending date:", today);
     const res = await fetch(`${STRAPI_URL}/api/reviews`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
