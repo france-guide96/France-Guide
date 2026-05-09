@@ -1,13 +1,16 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { useRouter } from "@/navigation";
 import { useTranslations } from "next-intl";
 import { ReviewSectionType } from "./type";
 import ReviewComponent from "@/app/shared/ReviewComponent";
 import Button from "@/app/shared/Button";
 import Header from "@/app/shared/Header";
-import { Review, reviewsData } from "@/constants/reviewsData";
+import { ReviewItem } from "lib/utils/review";
+
+type Props = ReviewSectionType & {
+  reviews: ReviewItem[];
+};
 
 export default function ReviewSection({
   variant,
@@ -16,32 +19,17 @@ export default function ReviewSection({
   designType,
   isDarkReview,
   isDark,
-  borderTop
-}: ReviewSectionType) {
-  const getShuffledReviews = (data: Review[], limit: number) => {
-    return [...data].sort(() => 0.5 - Math.random()).slice(0, limit);
-  };
-
-  const [displayReviews, setDisplayReviews] = useState<Review[]>([]);
+  borderTop,
+  reviews,
+}: Props) {
   const router = useRouter();
   const t = useTranslations("Review");
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      const shuffled = getShuffledReviews(reviewsData, limit);
-      setDisplayReviews(shuffled);
-    }, 0);
-
-    return () => clearTimeout(timeoutId);
-  }, [limit]);
-
-  if (displayReviews.length === 0) return null;
+  const displayReviews = reviews.slice(0, limit);
 
   const wrapperStyles =
     variant === "list"
       ? "bg-gradient-to-br from-gray-900 to-gray-800 border border-dark-gray/50 rounded-2xl p-8 transition-all"
       : "";
-
-  if (displayReviews.length === 0) return null;
 
   return (
     <section
