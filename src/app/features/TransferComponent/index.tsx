@@ -15,7 +15,7 @@ import Header from "@/app/shared/Header";
 import BackButton from "@/app/shared/BackButton";
 import ImageExpander from "@/app/shared/ImageExpander";
 import { TransferPageData } from "lib/utils/transferType";
-import ReviewSection from "@/app/shared/ReviewSection";
+import ReviewSectionServer from "../ReviewSectionServer";
 import ContactButtons from "@/app/shared/ContactButton";
 import TransferFeatures from "@/app/shared/TransferFeatures";
 
@@ -190,7 +190,7 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
             </div>
           </div>
         </div>
-        <ReviewSection designType="gold" isDarkReview title variant="grid" borderTop />
+        <ReviewSectionServer designType="gold" isDarkReview title variant="grid" borderTop />
       </Container>
     </main>
   );

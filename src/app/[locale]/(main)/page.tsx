@@ -4,7 +4,7 @@ import CategoryCards from "@/app/shared/category";
 import HeroSectionHome from "@/app/features/HeroSectionHome";
 import AboutSectionWrapper from "@/app/shared/AboutSectionWrapper";
 import TransferSectionWrapper from "@/app/shared/TransferSectionWrapper";
-import ReviewSection from "@/app/shared/ReviewSection";
+import ReviewSectionServer from "@/app/features/ReviewSectionServer";
 
 export async function generateMetadata({
   params,
@@ -70,7 +70,7 @@ export default async function Home({
         </Container>
         <TransferSectionWrapper locale={locale} />
         <Container>
-          <ReviewSection
+          <ReviewSectionServer
             title={true}
             variant="grid"
             limit={3}

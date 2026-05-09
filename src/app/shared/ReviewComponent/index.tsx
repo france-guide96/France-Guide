@@ -9,7 +9,6 @@ interface Review {
   rating: number;
   content: string;
   date: string;
-  tourName: string;
   avatar: string;
 }
 
@@ -57,9 +56,6 @@ export default function ReviewComponent({
                 <div className="flex justify-between items-center gap-1.5">
                   <span className={`font-bold text-[14px] ${isDark ? "text-secondary" : "text-black"}`}>{review.authorName}</span>
                   <span className="text-secondary/50 text-[12px]">{review.date}</span>
-                </div>
-                <div className="text-[10px] text-gray-500 uppercase tracking-widest mt-0.5">
-                  Тур: {review.tourName}
                 </div>
               </div>
             </div>
