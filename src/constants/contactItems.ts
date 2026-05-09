@@ -24,9 +24,9 @@ export const contactData: ContactItem[] = [
   {
     icon: emailIcon,
     key: "Email",
-    value: "garik@france-gid.ru",
+    value: "sagatravelparis@yahoo.fr",
     sub: "Response",
-    href: "mailto:garik@france-gid.ru",
+    href: "mailto:sagatravelparis@yahoo.fr",
   },
   {
     icon: viberIcon,

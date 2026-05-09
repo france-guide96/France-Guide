@@ -81,7 +81,7 @@ export default function Footer() {
                     <span>{t("Address")}</span>
                   </li>
                   <li>+33-609-57-27-80</li>
-                  <li>garik@france-gid.ru</li>
+                  <li>sagatravelparis@yahoo.fr</li>
                 </ul>
               </div>
             </div>

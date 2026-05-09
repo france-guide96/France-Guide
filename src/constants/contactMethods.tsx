@@ -34,10 +34,10 @@ export const getContactMethods = (t: TranslationFunction) => [
   },
   {
     id: "email",
-    href: "mailto:garik@france-gid.ru",
+    href: "mailto:sagatravelparis@yahoo.fr",
     icon: <Mail className="text-accent" />,
     label: "Email",
-    sub: "garik@france-gid.ru",
+    sub: "sagatravelparis@yahoo.fr",
   },
   {
     id: "phone",
