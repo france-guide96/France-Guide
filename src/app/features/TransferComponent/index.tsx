@@ -15,7 +15,6 @@ import Header from "@/app/shared/Header";
 import BackButton from "@/app/shared/BackButton";
 import ImageExpander from "@/app/shared/ImageExpander";
 import { TransferPageData } from "lib/utils/transferType";
-import ReviewSectionServer from "../ReviewSectionServer";
 import ContactButtons from "@/app/shared/ContactButton";
 import TransferFeatures from "@/app/shared/TransferFeatures";
 
@@ -37,7 +36,7 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
   const firstImage = getImageUrlSafe(data.carCarousel?.[0]?.url);
 
   return (
-    <main className="bg-primary px-[20px] py-[100px] text-secondary overflow-hidden">
+    <main className="px-[20px] text-secondary overflow-hidden">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 blur-[150px] rounded-full -z-10" />
       <Container>
         <BackButton styles="text-secondary/50 hover:text-secondary px-[20px]" />
@@ -131,8 +130,11 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
                   <ContactButtons />
                 </div>
               </div>
-              <TransferFeatures data={data} headingStyles="text-secondary" subHeadingStyles="text-secondary/50" />
-
+              <TransferFeatures
+                data={data}
+                headingStyles="text-secondary"
+                subHeadingStyles="text-secondary/50"
+              />
             </div>
           </div>
         </div>
@@ -190,7 +192,6 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
             </div>
           </div>
         </div>
-        <ReviewSectionServer designType="gold" isDarkReview title variant="grid" borderTop />
       </Container>
     </main>
   );

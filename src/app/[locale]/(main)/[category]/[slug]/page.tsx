@@ -82,8 +82,9 @@ export default async function Page({ params }: Props) {
   }
 
   return (
-    <div className=" bg-primary">
-      <TourDetail tour={data} />;
+    <div className="bg-primary">
+      <TourDetail tour={data} />
+      <div className="py-[100px]">
       <Container>
         <ReviewSectionServer
           title
@@ -92,8 +93,9 @@ export default async function Page({ params }: Props) {
           isDarkReview
           designType="gold"
           borderTop
-        />
+          />
       </Container>
+          </div>
     </div>
   );
 }
