@@ -6,7 +6,13 @@ const defaultLocale: string = "ru";
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
-
+  if (
+    pathname === "/robots.txt" ||
+    pathname === "/sitemap.xml" ||
+    pathname.startsWith("/_next")
+  ) {
+    return NextResponse.next();
+  }
   const cookieLocale = request.cookies.get("NEXT_LOCALE")?.value;
 
   const pathnameLocale = locales.find(
@@ -40,6 +46,6 @@ export function proxy(request: NextRequest) {
 
 export const config = {
   matcher: [
-    "/((?!api|_next/static|_next/image|assets|favicon.ico|sw.js|.*\\.(?:svg|png|jpg|jpeg|gif|webp|mp4|woff2)).*)",
+    "/((?!api|_next/static|_next/image|assets|favicon.ico|robots.txt|sitemap.xml|sw.js|.*\\.(?:svg|png|jpg|jpeg|gif|webp|mp4|woff2)).*)",
   ],
 };
