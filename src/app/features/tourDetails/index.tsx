@@ -113,7 +113,7 @@ export function TourDetail({ tour }: Props) {
   return (
     <>
       <Container>
-        <main className="px-[20px]">
+        <main className="px-[20px] py-[100px]">
           <BackButton
             styles="text-secondary/50 hover:text-secondary"
             onClick={handleBack}
