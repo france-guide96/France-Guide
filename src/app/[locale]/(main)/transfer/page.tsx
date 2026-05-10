@@ -53,7 +53,7 @@ export default async function Transfer({
   }
 
   return (
-    <div className="bg-primary">
+    <div className="bg-primary py-[100px]">
       <TransferPage data={data} />
       <div className="py-[100px]">
 
