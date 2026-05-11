@@ -235,40 +235,40 @@ export function TourDetail({ tour }: Props) {
               {tour?.contentSections?.length > 0 && (
                 <div className="space-y-6">
                   {tour?.contentSections?.map((section, idx: number) => (
-                    <div
-                      key={idx}
-                      className="bg-gradient-to-br from-gray-900 to-gray-800 border border-dark-gray/50 rounded-[16px] p-8 transition-all hover:border-accent/50"
-                    >
-                      {section?.title && (
-                        <h2 className="text-[24px] font-[700] leading-[133%] text-secondary mb-6 flex items-center gap-3">
-                          <div className="w-1 h-6 bg-accent rounded-full" />{" "}
-                          {section?.title}
-                        </h2>
-                      )}
+                      <div
+                        key={idx}
+                        className="bg-gradient-to-br from-gray-900 to-gray-800 border border-dark-gray/50 rounded-[16px] p-8 transition-all hover:border-accent/50"
+                      >
+                        {section?.title && (
+                          <h2 className="text-[24px] font-[700] leading-[133%] text-secondary mb-6 flex items-center gap-3">
+                            <div className="w-1 h-6 bg-accent rounded-full" />{" "}
+                            {section?.title}
+                          </h2>
+                        )}
 
-                      {section.description && (
-                        <div className="text-[16px] font-[400] leading-[163%] text-secondary space-y-4 whitespace-pre-line text-base">
-                          {section?.description}
-                        </div>
-                      )}
+                        {section.description && (
+                          <div className="text-[16px] font-[400] leading-[163%] text-secondary space-y-4 whitespace-pre-line text-base">
+                            {section?.description}
+                          </div>
+                        )}
 
-                      {section.isNewDesign && (
-                        <div className="mt-6">
-                          <ImageExpander
-                            images={
+                        {section.isNewDesign && (
+                          <div className="mt-6">
+                            <ImageExpander
+                              images={
                               section.newDesignImageCarousel?.map((img, idx) => ({
-                                src: getImageUrl(img.url) || "",
+                                    src: getImageUrl(img.url) || "",
                                 alt: img.alternativeText || `Gallery ${idx + 1}`,
-                                width: img.width,
-                                height: img.height,
+                                    width: img.width,
+                                    height: img.height,
                               })) || []
-                            }
-                            isGrid
-                          />
-                        </div>
-                      )}
+                              }
+                              isGrid
+                            />
+                          </div>
+                        )}
 
-                    </div>
+                      </div>
                   ))}
                 </div>
               )}
@@ -320,9 +320,9 @@ export function TourDetail({ tour }: Props) {
                             if (dateError) setDateError(false);
                           }}
                           className={`appearance-none w-full px-4 py-3 bg-dark-gray border rounded-[10px] text-secondary focus:outline-none ${dateError
-                            ? "border-red-500 animate-shake shadow-[0_0_10px_rgba(239,68,68,0.2)]"
-                            : "border-gray-700 focus:border-accent"
-                            }`}
+                              ? "border-red-500 animate-shake shadow-[0_0_10px_rgba(239,68,68,0.2)]"
+                              : "border-gray-700 focus:border-accent"
+                          }`}
                         />
                         <Calendar className="pointer-events-none absolute right-4 top-2/3 -translate-y-1/2 w-4 h-4 text-accent" />
                       </div>
@@ -390,12 +390,12 @@ export function TourDetail({ tour }: Props) {
                             {p.range} {t("People")}
                           </option>
                         )) || (
-                            <>
-                              <option value="1-3">1-3</option>
-                              <option value="4-5">4-5</option>
-                              <option value="6-7">6-7</option>
-                            </>
-                          )}
+                          <>
+                            <option value="1-3">1-3</option>
+                            <option value="4-5">4-5</option>
+                            <option value="6-7">6-7</option>
+                          </>
+                        )}
                       </select>
                       <ChevronDown className="pointer-events-none absolute right-4 top-2/3 -translate-y-1/2 w-4 h-4 text-accent" />
                     </div>
