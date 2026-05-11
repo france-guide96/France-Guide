@@ -9,6 +9,6 @@ export type GalleryType = {
   images: GalleryItem[];
   styles?: string;
   imgStyles?: string;
-  isAbout?: boolean;
-  isTransfer?: boolean;
+  isGrid?: boolean;
+  showHeader?: boolean;
 };

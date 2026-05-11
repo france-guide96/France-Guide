@@ -25,7 +25,8 @@ export default function AboutMe({ aboutData }: { aboutData: AboutPageData }) {
           />
           <div className="py-20">
             <ImageExpander
-              isAbout
+              isGrid
+              showHeader
               images={(aboutData?.carousel[0]?.image || []).map((img) => {
                 const rawUrl = img.formats?.large?.url || img.url || "";
                 const src = rawUrl.startsWith("http")
