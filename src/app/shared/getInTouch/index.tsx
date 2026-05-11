@@ -12,7 +12,13 @@ import { contactData } from "@/constants/contactItems";
 import Toast from "../toast";
 import { SEND_EMAIL_API } from "@/app/api/contact/api";
 
-export default function GetInTouch() {
+export default function GetInTouch({
+  title,
+  description,
+}: {
+  title: string;
+  description: string;
+}) {
   const t = useTranslations("GetInTouch");
 
   const [form, setForm] = useState({
@@ -97,8 +103,8 @@ export default function GetInTouch() {
               blockStyles="items-center"
               isDark={false}
               subHeadingStyles="text-center"
-              heading={t("GetInTouch")}
-              subHeading={t("ReadyToExplore")}
+              heading={title}
+              subHeading={description}
             />
             <div className="flex flex-col-reverse lg:flex-row justify-between items-start gap-[48px] px-[20px]">
               <div className="w-full flex flex-row lg:flex-col flex-wrap justify-between items-start gap-[32px] mt-[50px] lg:mt-[0px]">

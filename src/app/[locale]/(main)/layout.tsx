@@ -1,19 +1,21 @@
 import CallToAction from "@/app/features/CallToAction";
 import Navbar from "../../shared/Navbar";
-import GetInTouch from "@/app/shared/getInTouch";
 import Footer from "@/app/shared/Footer";
+import GetInTouchWrapper from "@/app/shared/getInTouchWrapper";
 
 export default function MainLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }) {
   return (
     <>
       <Navbar />
       {children}
       <CallToAction />
-      <GetInTouch />
+      <GetInTouchWrapper params={params} />
       <Footer />
     </>
   );

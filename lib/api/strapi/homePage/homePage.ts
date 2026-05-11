@@ -1,12 +1,5 @@
+import { HomePage } from "lib/utils/HomePageType";
 import { fetchWithRetry } from "../fetchWithRetry";
-
-export type HomePage = {
-  heroTitle: string;
-  heroDesc: string;
-  categoryTitle: string;
-  categoryDescription: string;
-  heroColorPart: string;
-};
 
 export async function fetchHomePage(locale: string): Promise<HomePage | null> {
   const params = new URLSearchParams();
