@@ -7,7 +7,6 @@ import TransferSectionWrapper from "@/app/shared/TransferSectionWrapper";
 import ReviewSectionServer from "@/app/features/ReviewSectionServer";
 import { fetchHomePage } from "lib/api/strapi/homePage/homePage";
 import { fetchCategories } from "lib/api/strapi/category/category";
-import { CategoriesData } from "@/constants/categoriesData";
 
 export async function generateMetadata({
   params,
