@@ -215,7 +215,9 @@
     "Reviews": "Reviews",
     "Contacts": "Contacts",
     "Address": "Paris, France",
-    "AllRights": "All rights reserved."
+    "AllRights": "All rights reserved.",
+    "Privacy": "Privacy policy",
+    "Terms": "Terms and conditions"
   },
   "ContactModal": {
     "ContactUs": "Contact us",
@@ -252,5 +254,39 @@
     "Prev": "Prev",
     "Next": "Next",
     "ShowReviews": "Show all reviews"
+  },
+  "PrivacyPolicy": {
+    "Heading": "Privacy policy",
+    "SubHeading": "We value your privacy. This policy explains how we handle your information when you visit this website.",
+    "InformationWeCollect": "Information We Collect",
+    "PersonalData": "Personal Data: When you contact us or book a service, we may collect your name, email address, phone number, and travel details.",
+    "BookingInformation": "Booking Information: We temporarily store the information necessary to organize your tours, transfers, or travel experiences.",
+    "PaymentData": "Payment Data: Payments are processed via secure third-party providers. We do not store your full credit card details on our servers.",
+    "UsageData": "Usage Data: We use cookies to understand how you interact with our site and to improve your browsing experience.",
+    "HowWeUseYourInformation": "How We Use Your Information",
+    "UseInformationOne": "To organize and manage your tours, transfers, and travel services.",
+    "UseInformationTwo": "To send booking confirmations, updates, and customer support responses.",
+    "UseInformationThree": "To improve our website experience and travel offers.",
+    "DataRetentionAndSecurity": "Data Retention & Security",
+    "DataRetentionText": "We retain your personal information only as long as necessary to provide our services and fulfill your requests. You can request the deletion of your personal data at any time by contacting us.",
+    "ThirdPartySharing": "Third-Party Sharing",
+    "ThirdPartyText": "We share your data only with essential partners, such as:",
+    "TourPartners": "Tour & Transportation Partners: To organize your booked services.",
+    "PaymentProcessors": "Payment Processors: To securely handle transactions.",
+    "HostingProviders": "Hosting Providers: Vercel (for website hosting)."
+  },
+  "TermsAndConditions": {
+    "Heading": "Terms & Conditions",
+    "SubHeading": "Please read these terms carefully before using our services.",
+    "AcceptanceOfTerms": "Acceptance of Terms",
+    "AcceptanceText": "By using this website, you agree to these terms and conditions.",
+    "OurServices": "Our Services",
+    "ServicesTextOne": "We provide tours, transfers, and travel-related services.",
+    "ServicesTextTwo": "Services may change or be updated at any time.",
+    "BookingsAndPayments": "Bookings and Payments",
+    "BookingTextOne": "Bookings are confirmed only after payment or approval.",
+    "BookingTextTwo": "Prices are subject to change without notice.",
+    "LimitationOfLiability": "Limitation of Liability",
+    "LiabilityText": "We are not responsible for delays, cancellations, or external factors beyond our control."
   }
 }
