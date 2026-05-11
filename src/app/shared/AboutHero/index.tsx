@@ -1,11 +1,10 @@
 import { ImageWithFallback } from "@/app/shared/imageWithFallback/imageWithFallback";
 import { Star } from "lucide-react";
 import { AboutHeroProps } from "./type";
-import ContactButtons from "../ContactButton";
 import SmallHeader from "../SmallHeader";
 import Container from "../Container";
 import cuteSmile from "@/assets/about/cuteSmile.jpg";
-import heroBg from "@/assets/about/heroBg.jpg";
+import heroBg from "@/assets/about/paris.jpg";
 
 export default async function AboutHero({
   description,
@@ -37,11 +36,10 @@ export default async function AboutHero({
           <div className="min-h-screen flex gap-16 items-center justify-between pt-[120px]">
             <div className="flex-2 text-secondary flex flex-col items-start justify-center gap-[10px] md:gap-[20px]">
               <SmallHeader />
-              <p className="max-w-[700px] text-[12px] md:text-base text-secondary bg-secondary/20 md:bg-transparent font-bold md:font-normal p-[10px] md:p-0 rounded-2xl">
+              <div className="p-[20px] bg-secondary/10 rounded-2xl backdrop-blur">
+                <p className="max-w-[700px] text-[12px] md:text-base text-secondary font-bold p-[10px] md:p-0">
                 {description}
               </p>
-              <div className="flex gap-2 md:gap-4">
-                <ContactButtons isAbout />
               </div>
             </div>
 
@@ -76,7 +74,7 @@ export default async function AboutHero({
                         className={`text-center ${index === 1 ? "border-l border-r border-white/20" : ""}`}
                       >
                         {isRating ? (
-                          <div className="flex items-center justify-center gap-1 mb-1">
+                          <div className="flex items-start justify-center gap-1 mb-1">
                             <span className="text-4xl font-bold text-amber-400">
                               {stat.value}
                             </span>
