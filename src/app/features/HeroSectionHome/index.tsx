@@ -2,29 +2,35 @@
 
 import Header from "@/app/shared/Header";
 import HeroSection from "@/app/shared/HeroSection";
-import { useTranslations } from "next-intl";
-import React from "react";
 
 export default function HeroSectionHome({
   isHero = false,
+  heroTitle,
+  heroDescription,
+  heroColorPart,
+  title,
+  description,
 }: {
   isHero?: boolean;
+  heroTitle?: string;
+  heroDescription?: string;
+  heroColorPart?: string;
+  title?: string;
+  description?: string;
 }) {
-  const t = useTranslations("HeroSection");
-
   return (
     <>
       {isHero ? (
         <HeroSection
-          heading={t("ExperienceParis")}
-          coloredPart={t("LikeNeverBefore")}
-          subHeading={t("ExclusiveGuided")}
+          heading={heroTitle}
+          coloredPart={heroColorPart}
+          subHeading={heroDescription}
         />
       ) : (
         <Header
           blockStyles="text-center items-center mb-[50px]"
-          heading={t("RecommendedExcursions")}
-          subHeading={t("ExcursionsThatWillReveal")}
+          heading={title}
+          subHeading={description}
           isDark
         />
       )}

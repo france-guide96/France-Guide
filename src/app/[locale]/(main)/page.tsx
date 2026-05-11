@@ -5,6 +5,7 @@ import HeroSectionHome from "@/app/features/HeroSectionHome";
 import AboutSectionWrapper from "@/app/shared/AboutSectionWrapper";
 import TransferSectionWrapper from "@/app/shared/TransferSectionWrapper";
 import ReviewSectionServer from "@/app/features/ReviewSectionServer";
+import { fetchHomePage } from "lib/api/strapi/homePage/homePage";
 
 export async function generateMetadata({
   params,
@@ -23,19 +24,19 @@ export async function generateMetadata({
       : "Exclusive guided tours of Paris, its suburbs and regions of France. Personal approach, unforgettable experiences. Book your tour today!",
     keywords: isRu
       ? [
-        "экскурсии в Париже",
-        "русскоговорящий гид",
-        "туры во Францию",
-        "Версаль",
-        "Лувр",
-      ]
+          "экскурсии в Париже",
+          "русскоговорящий гид",
+          "туры во Францию",
+          "Версаль",
+          "Лувр",
+        ]
       : [
-        "France tours",
-        "Russian speaking guide",
-        "France excursions",
-        "Versailles",
-        "Louvre",
-      ],
+          "France tours",
+          "Russian speaking guide",
+          "France excursions",
+          "Versailles",
+          "Louvre",
+        ],
     openGraph: {
       title: isRu
         ? "Экскурсии в Париже | France Guide"
@@ -57,13 +58,23 @@ export default async function Home({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  const homeData = await fetchHomePage(locale);
+
   return (
     <div>
-      <HeroSectionHome isHero />
+      <HeroSectionHome
+        heroTitle={homeData?.heroTitle || ""}
+        heroDescription={homeData?.heroDesc || ""}
+        heroColorPart={homeData?.heroColorPart || ""}
+        isHero
+      />
       <section className="bg-white py-[100px]">
         <Container>
           <div className="flex flex-col items-center">
-            <HeroSectionHome />
+            <HeroSectionHome
+              title={homeData?.categoryTitle || ""}
+              description={homeData?.categoryDescription || ""}
+            />
             <CategoryCards />
             <AboutSectionWrapper locale={locale} />
           </div>
