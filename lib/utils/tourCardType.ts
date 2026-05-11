@@ -34,7 +34,7 @@ export interface ContentSection {
   title?: string;
   description: string;
   isNewDesign: boolean;
-  newDesignImageCarousel: BgImg;
+  newDesignImageCarousel: [];
 }
 
 export interface PlanItem {

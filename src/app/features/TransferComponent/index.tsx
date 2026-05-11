@@ -103,7 +103,7 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
                       height: img.height,
                     }))
                   }
-                  isTransfer
+                  isGrid
                 />
               </div>
             </div>
