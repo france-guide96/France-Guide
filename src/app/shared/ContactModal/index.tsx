@@ -2,16 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  X,
-  Send,
-  Loader2,
-  MessageCircle,
-  Phone,
-  Mail,
-  CheckCircle2,
-  MessageSquare,
-} from "lucide-react";
+import { X, Send, Loader2, CheckCircle2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { SEND_EMAIL_API } from "@/app/api/contact/api";
 import Button from "../Button";
@@ -105,7 +96,7 @@ export default function ContactModal({ isOpen, onClose }: Props) {
               <X className="w-6 h-6" />
             </Button>
 
-            <div className="w-full md:w-2/5 bg-[#161920] p-8 md:p-12 border-r border-gray-800">
+            <div className="w-full md:w-2/5 bg-[#161920] p-8 md:p-10 border-r border-gray-800">
               <h2 className="text-3xl font-bold text-white mb-6">
                 {t("ContactUs")}
               </h2>

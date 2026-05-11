@@ -1,8 +1,10 @@
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 import { ExcursionProps } from "./type";
 import Link from "next/link";
 import { Clock, MapPin, Users } from "lucide-react";
 import { ImageWithFallback } from "../imageWithFallback/imageWithFallback";
+
+const strapiURL = process.env.NEXT_PUBLIC_STRAPI_URL || "";
 
 export default function ExcursionCard({
   image,
@@ -13,8 +15,15 @@ export default function ExcursionCard({
   href,
   location,
 }: ExcursionProps) {
-  const t = useTranslations("HeroSection");
   const locale = useLocale();
+
+  const rawUrl = typeof image === "string" ? image : image?.url;
+
+  const imageUrl = rawUrl
+    ? rawUrl.startsWith("http")
+      ? rawUrl
+      : `${strapiURL}${rawUrl}`
+    : "/fallback-image.jpg";
 
   return (
     <Link href={`/${locale}${href}`}>
@@ -22,9 +31,10 @@ export default function ExcursionCard({
         <div className="relative h-64 overflow-hidden">
           <ImageWithFallback
             fill
-            src={image}
+            src={imageUrl}
             alt={title}
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            unoptimized
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
         </div>
@@ -34,12 +44,12 @@ export default function ExcursionCard({
             {title}
           </h2>
 
-          <p className="text-gray-600 mb-6 leading-relaxed">{t(description)}</p>
+          <p className="text-gray-600 mb-6 leading-relaxed">{description}</p>
 
           <div className="flex items-center gap-4 mb-6 text-sm text-gray-500">
             <div className="flex items-center gap-1.5">
               <Clock className="w-4 h-4 text-amber-500" />
-              <span>{duration + " " + t("Hours")}</span>
+              <span>{duration}</span>
             </div>
             <div className="flex items-center gap-1.5">
               <MapPin className="w-4 h-4 text-amber-500" />
@@ -47,7 +57,7 @@ export default function ExcursionCard({
             </div>
             <span className="flex items-center gap-1.5 ">
               <Users className="w-4 h-4 text-amber-500" />
-              {group + " " + t("People")}
+              {group}
             </span>
           </div>
         </div>
