@@ -31,7 +31,7 @@ export const CategoriesData: CategoryItem[] = [
     title: "ExcursionsToTheSuburbs",
     description: "TheLuxury",
     image: vercaillesImg,
-    duration: "4 - 10",
+    duration: "4 - 5",
     group: "1-7",
     href: PathnameEnum.ExcursionsToTheSuburbsOfParis,
     location: "Предместья",

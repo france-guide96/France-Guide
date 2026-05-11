@@ -2,7 +2,7 @@
   "Navbar": {
     "Home": "Главная",
     "ExcursionsInParis": "Экскурсии в Париже",
-    "ExcursionsToTheSuburbsOfParis": "Экскурсии по предместьям Парижа",
+    "ExcursionsToTheSuburbsOfParis": "Экскурсии по предместиям Парижа",
     "ToursOfFrance": "Экскурсии по регионам Франции",
     "BookATour": "Забронировать тур",
     "Transfer": "Трансферы"
@@ -44,7 +44,7 @@
     "ExcursionToMont": "Экскурсия на Мон Сен Мишель",
     "VisitingTheMoulin": "Посещение кабарэ Мулен Руж, Лидо, Крейзи Хорс",
     "ExcursionsInParis": "Экскурсии в Париже",
-    "ExcursionsToTheSuburbs": "Экскурсии по предместьям Парижа",
+    "ExcursionsToTheSuburbs": "Экскурсии по предместиям Парижа",
     "RegionsOfFrance": "Экскурсии по регионам Франции",
     "Discover": "Откройте для себя магию ночного Парижа, величие Лувра и богемный дух Монмартра в индивидуальном формате.",
     "TheLuxury": "Роскошь Версаля, сады Живерни и величие замков в окрестностях столицы.",
@@ -59,20 +59,20 @@
     "Details": "Подробнее"
   },
   "GetInTouch": {
-    "GetInTouch": "Свяжитесь с нами",
+    "GetInTouch": "Свяжитесь со мной ",
     "ReadyToExplore": "Готовы исследовать Париж? Свяжитесь с нами, чтобы спланировать ваше незабываемое путешествие.",
     "SendMessage": "Отправить Сообщение",
     "YourName": "Ваше имя",
-    "YourEmail": "Ваш адрес электронной почты",
+    "YourEmail": "Адрес Вашей электронной почты",
     "PhoneNumber": "Номер телефона",
-    "YourDream": "Расскажите нам о вашей мечте о поездке в Париж...",
+    "YourDream": "Ваши вопросы и пожелания",
     "Phone": "Телефон",
     "Email": "Электронная почта",
     "Viber": "Viber",
     "WhatsApp": "WhatsApp",
     "Telegram": "Telegram",
-    "Availability": "Доступно с 9:00 до 21:00.",
-    "Response": "Ответ в течение 24 часов.",
+    "Availability": "Доступен 24/7",
+    "Response": "Доступен 24/7",
     "ConvenientCommunication": "Удобное общение в любое время.",
     "QuickResponses": "Быстрые ответы.",
     "TelegramSupport": "Быстрая поддержка через Telegram.",
@@ -202,13 +202,14 @@
     "BookATour": "Забронировать экскурсию",
     "Contact": "Связаться",
     "Gallery": "Галерея",
-    "ExploreMoments": "Красота в каждом кадре"
+    "ExploreMoments": "Красота в каждом кадре",
+    "BookATransfer": "Забронировать трансфер"
   },
   "Footer": {
     "DiscoverParis": "Откройте для себя настоящий Париж с одним из лучших гидов города",
     "Tours": "Экскурсии",
     "ExcursionsInParis": "Экскурсии в Париже",
-    "ExcursionsToTheSuburbsOfParis": "Экскурсии по предместьям Парижа",
+    "ExcursionsToTheSuburbsOfParis": "Экскурсии по предместиям Парижа",
     "ToursOfFrance": "Экскурсии по регионам Франции",
     "Company": "Компания",
     "About": "О нас",
@@ -246,7 +247,7 @@
     "TaxFree": "Встреча с табличкой и помощь в оформлении Tax Free.",
     "PopularRoute": "Популярный маршрут",
     "FixedRate": "Фиксированная ставка",
-    "ViewAllRates": "Посмотреть все тарифы"
+    "ViewAllRates": "Тарифы на трансферы"
   },
   "Review": {
     "Reviews": "Отзывы",

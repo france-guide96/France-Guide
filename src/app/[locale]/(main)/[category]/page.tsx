@@ -18,7 +18,7 @@ const categoryTitles: Record<
       "Best Paris tours with a Russian-speaking guide. Louvre, Eiffel Tower, Montmartre and more.",
   },
   "excursions-to-the-suburbs-of-paris": {
-    ru: "Экскурсии по предместьям Парижа",
+    ru: "Экскурсии по предместиям Парижа",
     en: "Excursions to the suburbs of Paris",
     descRu:
       "Версаль, Фонтенбло, Шантийи и другие замки предместий Парижа с русскоговорящим гидом.",

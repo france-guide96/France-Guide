@@ -63,16 +63,16 @@
     "ReadyToExplore": "Ready to explore Paris? Contact us to plan your unforgettable journey",
     "SendMessage": "Send Message",
     "YourName": "Your Name",
-    "YourEmail": "Your Email",
+    "YourEmail": "Your email address",
     "PhoneNumber": "Phone Number",
-    "YourDream": "Tell us about your dream Paris experience...",
+    "YourDream": "Your questions and wishes",
     "Phone": "Phone",
     "Email": "Email",
     "Viber": "Viber",
     "WhatsApp": "WhatsApp",
     "Telegram": "Telegram",
-    "Availability": "Available 9:00 - 21:00",
-    "Response": "Response within 24 hours",
+    "Availability": "Available 24/7",
+    "Response": "Available 24/7",
     "ConvenientCommunication": "Convenient communication at any time.",
     "QuickResponses": "Quick responses.",
     "TelegramSupport": "Fast support via Telegram.",
@@ -202,7 +202,8 @@
     "BookATour": "Book a tour",
     "Contact": "Contact",
     "Gallery": "Gallery",
-    "ExploreMoments": "Explore moments captured beautifully"
+    "ExploreMoments": "Explore moments captured beautifully",
+    "BookATransfer": "Book a transfer"
   },
   "Footer": {
     "DiscoverParis": "Discover the real Paris with one of the city's best guides",
@@ -246,7 +247,7 @@
     "TaxFree": "Meet with a sign and assistance with Tax Free registration.",
     "PopularRoute": "Popular Route",
     "FixedRate": "Fixed rate",
-    "ViewAllRates": "View all rates"
+    "ViewAllRates": "Transfer rates"
   },
   "Review": {
     "Reviews": "Reviews",
