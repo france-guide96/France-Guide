@@ -1,10 +1,11 @@
 import { ImageWithFallback } from "@/app/shared/imageWithFallback/imageWithFallback";
-import cuteSmile from "@/assets/about/cuteSmile.jpg";
 import { Star } from "lucide-react";
 import { AboutHeroProps } from "./type";
 import ContactButtons from "../ContactButton";
 import SmallHeader from "../SmallHeader";
 import Container from "../Container";
+import cuteSmile from "@/assets/about/cuteSmile.jpg";
+import heroBg from "@/assets/about/heroBg.jpg";
 
 export default async function AboutHero({
   description,
@@ -23,17 +24,14 @@ export default async function AboutHero({
 
   return (
     <section className="relative min-h-screen overflow-hidden">
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
+      <ImageWithFallback
+        src={heroBg}
+        alt="hero background"
+        fill
         className="absolute inset-0 w-full h-full object-cover"
-      >
-        <source src="/0507.mp4" type="video/mp4" />
-      </video>
-
+        unoptimized
+        priority
+      />
       <Container>
         <div className="relative sm:px-6 px-[10px]">
           <div className="min-h-screen flex gap-16 items-center justify-between pt-[120px]">
@@ -62,7 +60,6 @@ export default async function AboutHero({
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
                   </div>
                 </div>
-
                 <div className="absolute -top-4 -right-4 bg-amber-500 text-secondary rounded-2xl p-4 shadow-2xl">
                   <div className="text-2xl font-bold">{countExcursions}+</div>
                   <div className="text-xs">экскурсий</div>
@@ -73,7 +70,6 @@ export default async function AboutHero({
                   statistics.map((stat, index) => {
                     const isRating =
                       index === 2 || stat.label.toLowerCase().includes("Рейтинг");
-
                     return (
                       <div
                         key={stat.id}
