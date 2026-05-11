@@ -25,19 +25,19 @@ export async function generateMetadata({
       : "Exclusive guided tours of Paris, its suburbs and regions of France. Personal approach, unforgettable experiences. Book your tour today!",
     keywords: isRu
       ? [
-          "экскурсии в Париже",
-          "русскоговорящий гид",
-          "туры во Францию",
-          "Версаль",
-          "Лувр",
-        ]
+        "экскурсии в Париже",
+        "русскоговорящий гид",
+        "туры во Францию",
+        "Версаль",
+        "Лувр",
+      ]
       : [
-          "France tours",
-          "Russian speaking guide",
-          "France excursions",
-          "Versailles",
-          "Louvre",
-        ],
+        "France tours",
+        "Russian speaking guide",
+        "France excursions",
+        "Versailles",
+        "Louvre",
+      ],
     openGraph: {
       title: isRu
         ? "Экскурсии в Париже | France Guide"
@@ -76,15 +76,15 @@ export default async function Home({
       />
       <section className="bg-white py-[100px]">
         <Container>
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center pb-[50px]">
             <HeroSectionHome
               title={homeData?.categoryTitle || ""}
               description={homeData?.categoryDescription || ""}
             />
             <CategoryCards categoriesData={sortedTours || []} />
-            <AboutSectionWrapper locale={locale} />
           </div>
         </Container>
+        <AboutSectionWrapper locale={locale} />
         <TransferSectionWrapper locale={locale} />
         <Container>
           <ReviewSectionServer

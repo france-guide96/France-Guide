@@ -73,7 +73,7 @@ export default function MyStory({ title, subTitle, events }: MyStoryProps) {
           <div className="flex gap-8 px-[50px]" style={{ width: 'fit-content', minWidth: '100%' }}>
             {events?.map((item, idx) => (
               <div key={idx} className="relative flex flex-col items-center w-72 flex-shrink-0">
-                <div className="flex flex-col gap-4 items-start bg-secondary rounded-2xl p-3 shadow-md border border-gray-200 hover:shadow-2xl hover:scale-102 transition-all duration-300 w-full group z-5">
+                <div className="flex flex-col gap-4 items-start bg-white rounded-2xl p-3 shadow-md border border-gray-200 hover:shadow-2xl hover:scale-102 transition-all duration-300 w-full group z-5">
                   <div className="inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-gold/40 to-gold text-secondary font-bold rounded-xl shadow-md text-xl">
                     {item.year}
                   </div>

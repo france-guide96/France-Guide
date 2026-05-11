@@ -1,15 +1,10 @@
-import { fetchAboutData } from "lib/api/strapi/about/aboutSection";
-import AboutGuideSection from "../AboutGuideSection";
+import { fetchAboutPageData } from "lib/api/strapi/about/aboutPage";
+import AboutMe from "@/app/features/AboutMe";
 
-export default async function AboutSectionWrapper({
-  locale,
-}: {
-  locale: string;
-}) {
-  const aboutData = await fetchAboutData(locale);
+export default async function AboutSectionWrapper({ locale }: { locale: string }) {
+  const data = await fetchAboutPageData(locale);
 
-  if (!aboutData)
-    return <div>Страница временно недоступна. Попробуйте позже.</div>;
+  if (!data) return <div>Страница временно недоступна. Попробуйте позже.</div>;
 
-  return <AboutGuideSection aboutData={aboutData} />;
+  return <AboutMe aboutData={data} />;
 }

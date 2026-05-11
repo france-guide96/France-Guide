@@ -4,7 +4,6 @@ import AboutHimself from "@/app/shared/AboutHimself";
 import Principles from "@/app/shared/Principles";
 import MyStory from "@/app/shared/MyStory";
 import AboutHero from "@/app/shared/AboutHero";
-import ReviewSectionServer from "../ReviewSectionServer";
 import ImageExpander from "@/app/shared/ImageExpander";
 import { AboutPageData } from "lib/utils/aboutPageType";
 
@@ -17,7 +16,7 @@ export default function AboutMe({ aboutData }: { aboutData: AboutPageData }) {
         description={aboutData?.aboutPageDescription || ""}
         statistics={aboutData?.stats || []}
       />
-      <main className="bg-secondary">
+      <main>
         <Container>
           <AboutHimself
             data={aboutData?.myself || []}
@@ -59,15 +58,6 @@ export default function AboutMe({ aboutData }: { aboutData: AboutPageData }) {
             subTitle={aboutData.timelineEventSubTitle || ""}
             events={aboutData.timelineEventItem || []}
           />
-          <div className="pb-[100px]">
-            <ReviewSectionServer
-              title={true}
-              variant="grid"
-              limit={3}
-              designType="gold"
-              isDark
-            />
-          </div>
         </Container>
       </main>
     </>
