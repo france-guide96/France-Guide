@@ -6,6 +6,8 @@ import AboutSectionWrapper from "@/app/shared/AboutSectionWrapper";
 import TransferSectionWrapper from "@/app/shared/TransferSectionWrapper";
 import ReviewSectionServer from "@/app/features/ReviewSectionServer";
 import { fetchHomePage } from "lib/api/strapi/homePage/homePage";
+import { fetchCategories } from "lib/api/strapi/category/category";
+import { CategoriesData } from "@/constants/categoriesData";
 
 export async function generateMetadata({
   params,
@@ -59,6 +61,11 @@ export default async function Home({
 }) {
   const { locale } = await params;
   const homeData = await fetchHomePage(locale);
+  const categoryData = await fetchCategories(locale);
+
+  const sortedTours = [...(categoryData || [])].sort(
+    (a, b) => a.order - b.order,
+  );
 
   return (
     <div>
@@ -75,7 +82,7 @@ export default async function Home({
               title={homeData?.categoryTitle || ""}
               description={homeData?.categoryDescription || ""}
             />
-            <CategoryCards />
+            <CategoryCards categoriesData={sortedTours || []} />
             <AboutSectionWrapper locale={locale} />
           </div>
         </Container>
@@ -88,7 +95,8 @@ export default async function Home({
             designType="gold"
             isDark
             borderTop
-          /></Container>
+          />
+        </Container>
       </section>
     </div>
   );

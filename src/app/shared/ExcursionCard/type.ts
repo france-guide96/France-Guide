@@ -1,13 +1,11 @@
-import { StaticImageData } from "next/image";
-
 export type ExcursionProps = {
   id: number;
   title: string;
   description: string;
-  image: string | StaticImageData;
+  image: { id: number; url: string } | string;
   duration?: string;
   group?: string;
   location: string;
   isLarge?: boolean;
   href?: string;
-}
+};
