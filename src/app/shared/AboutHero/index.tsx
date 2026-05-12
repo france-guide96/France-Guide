@@ -9,15 +9,19 @@ export default async function AboutHero({
   statistics,
   aboutPageImage,
   countExcursions,
+  subTitle,
+  title
 }: AboutHeroProps) {
   const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL;
-  const imageURL = aboutPageImage?.[0]?.url
-    ? (aboutPageImage[0].url.startsWith("http") ? aboutPageImage[0].url : `${STRAPI_URL}${aboutPageImage[0].url}`)
+  const rawImageUrl = aboutPageImage?.url;
+  const imageURL = rawImageUrl
+    ? rawImageUrl.startsWith("http")
+      ? rawImageUrl
+      : `${STRAPI_URL}${rawImageUrl}`
     : cuteSmile;
 
   return (
     <section className="relative w-full min-h-[110vh] bg-[#fdfdfd] flex flex-col justify-between overflow-hidden">
-
       <div className="absolute top-0 left-0 w-full h-[60vh] z-0">
         <ImageWithFallback
           src={heroBg}
@@ -34,12 +38,12 @@ export default async function AboutHero({
         <div className="w-full relative z-10 pt-[25vh] pb-[50px] px-[20px]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-[100px] items-start justify-between">
             <div className="lg:col-span-6 flex flex-col pt-12">
-              <div className="mb-8 overflow-hidden">
-                <span className="inline-block text-amber-600 font-medium tracking-[0.2em] uppercase text-xs mb-4">
-                  Professional Private Guide
+              <div className="mb-8">
+                <span className="inline-block text-amber-600 font-semibold text-[16px] tracking-[0.2em] uppercase text-xs mb-4">
+                  {subTitle}
                 </span>
-                <h1 className="text-6xl md:text-[100px] font-serif leading-[0.85] text-[#1a1a1a] -ml-1">
-                  Garik <br /> Saakyan
+                <h1 className="text-6xl md:text-[100px] font-serif text-[#1a1a1a] -ml-1">
+                  {title}
                 </h1>
               </div>
 
@@ -49,10 +53,15 @@ export default async function AboutHero({
                 </p>
 
                 <div className="flex gap-10 mt-12">
-                  {statistics?.slice(0, 2).map((stat) => (
+                  {statistics?.map((stat) => (
                     <div key={stat.id}>
-                      <div className="text-3xl font-bold text-[#1a1a1a]">{stat.value}</div>
-                      <div className="text-[10px] uppercase tracking-widest text-gray-400 mt-1">{stat.label}</div>
+                      <div className="text-3xl font-bold text-[#1a1a1a]">
+                        {stat.value}
+                      </div>
+                      <div className="text-[10px] uppercase tracking-widest text-gray-400 mt-1">
+                        {stat.label}
+                      </div>
+                      <div className="text-[10px] uppercase tracking-widest text-gray-400 mt-1"></div>
                     </div>
                   ))}
                 </div>
@@ -75,7 +84,9 @@ export default async function AboutHero({
 
                 <div className="absolute -bottom-6 -left-6 bg-primary text-white p-8 z-20 min-w-[180px]">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="text-4xl font-bold text-secondary">{countExcursions}+</span>
+                    <span className="text-4xl font-bold text-secondary">
+                      {countExcursions} +
+                    </span>
                   </div>
                   <div className="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium">
                     Проведенных <br /> экскурсий
@@ -83,7 +94,6 @@ export default async function AboutHero({
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </Container>

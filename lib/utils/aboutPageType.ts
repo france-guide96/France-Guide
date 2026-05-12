@@ -61,6 +61,8 @@ export interface StrapiImage {
   width: number;
   height: number;
   formats?: Formats;
+  caption?: string;
+  size?: string;
 }
 
 interface StatisticItem {
@@ -73,13 +75,6 @@ interface AboutMyself {
   id: number;
   aboutMyself: string;
 }
-
-interface CarouselItem {
-  id: number;
-  alt: string;
-  image: StrapiImage[];
-}
-
 interface FeatureItem {
   id: number;
   title: string;
@@ -100,14 +95,16 @@ export interface AboutPageData {
   title: string;
   subTitle: string;
   description: string;
-  aboutPageDescription: string;
   countExcursions: number;
   stats: StatisticItem[];
-  aboutPageImage: StrapiImage[];
-  gallery: StrapiImage[];
+  aboutPageImage: {
+    id: number;
+    url: string;
+    alternativeText?: string | undefined;
+  } | null;
   myself: AboutMyself[];
   myselfTitle: string;
-  carousel: CarouselItem[];
+  carousel: StrapiImage[];
   educationTitle: string;
   educationSubTitle: string;
   educationItems: FeatureItem[];

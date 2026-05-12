@@ -9,10 +9,9 @@ export async function fetchAboutPageData(
 
   const fields = [
     "stats",
-    "gallery",
     "myself",
     "aboutPageImage",
-    "carousel.image",
+    "carousel",
     "educationItems",
     "timelineEventItem",
     "principles",
