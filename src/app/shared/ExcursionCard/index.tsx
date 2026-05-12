@@ -40,13 +40,13 @@ export default function ExcursionCard({
         </div>
 
         <div className="p-6">
-          <h2 className="text-2xl font-serif text-gray-900 mb-3 group-hover:text-amber-500 transition-colors">
+          <h2 className="text-xl xl:text-2xl font-serif text-gray-900 mb-3 group-hover:text-amber-500 transition-colors">
             {title}
           </h2>
 
           <p className="text-gray-600 mb-6 leading-relaxed">{description}</p>
 
-          <div className="flex items-center gap-4 mb-6 text-sm text-gray-500">
+          <div className="flex items-center gap-4 mb-6 text-[12px] md:text-sm text-gray-500">
             <div className="flex items-center gap-1.5">
               <Clock className="w-4 h-4 text-amber-500" />
               <span>{duration}</span>

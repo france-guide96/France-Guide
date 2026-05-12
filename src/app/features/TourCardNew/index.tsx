@@ -34,7 +34,7 @@ export async function TourCardNew({ tour, locale }: TourCardProps) {
           <ImageWithFallback
             src={imageUrl}
             alt={tour?.primaryText}
-            className="relative w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            className="relative w-full h-full object-fill group-hover:scale-105 transition-transform duration-500"
             width={600}
             height={400}
             unoptimized
