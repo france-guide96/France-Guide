@@ -89,7 +89,7 @@ export default function Footer() {
           <div className="mb-8">
             <LanguageSwitcher />
           </div>
-          <div className="flex justify-between flex-col sm:flex-row border-t border-dark-gray pt-8 gao-[10px] text-secondary/50 text-sm">
+          <div className="flex justify-between flex-col sm:flex-row border-t border-dark-gray pt-8 gap-[20px] text-secondary/50 text-sm">
             <div className="flex gap-[10px]">
               <Link href="/privacy-policy">{t("Privacy")}</Link>
               <p>|</p>

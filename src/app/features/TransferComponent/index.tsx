@@ -51,7 +51,7 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
             <Header
               heading={data.titlePage}
               subHeading={data.subTitlePage}
-              blockStyles="items-center"
+              blockStyles="flex text-center items-center"
             />
           </motion.h1>
           <div className="flex flex-col lg:flex-row justify-between items-stretch gap-[60px]">
@@ -77,11 +77,10 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
                       {data &&
                         data.carSpecs?.map((spec, index) => {
                           const Icon = specIconMap[index] || Star;
-
                           return (
                             <div
                               key={spec.id}
-                              className="flex items-center gap-2"
+                              className="flex flex-col md:flex-row items-start md:items-center gap-2"
                             >
                               <Icon className="w-5 h-5 text-accent" />
                               <span>{spec.text}</span>
@@ -139,7 +138,7 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
           </div>
         </div>
 
-        <div className="relative group mt-[100px] px-[20px] mb-[100px]">
+        <div className="relative group mt-[50px] md:my-[100px] md:px-[20px]">
           <div className="absolute -inset-0.5 bg-gradient-to-b from-accent/30 to-transparent rounded-[10px] blur opacity-20" />
           <div className="relative bg-dark-gray/10 backdrop-blur-2xl rounded-[10px] border border-secondary/5 overflow-hidden">
             <div className="grid grid-cols-12 p-2 md:p-8 border-b border-secondary/5 bg-secondary/5 items-center gap-[10px]">

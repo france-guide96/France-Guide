@@ -33,12 +33,12 @@ export default function ReviewSection({
 
   return (
     <section
-      className={`flex flex-col items-center gap-[50px] ${borderTop && "border-t border-dark-gray"} ${wrapperStyles}`}
+      className={`px-[20px] flex flex-col items-center gap-[50px] ${borderTop && "border-t border-dark-gray"} ${wrapperStyles}`}
     >
       {title && (
         <Header
           heading={t("Reviews")}
-          blockStyles="flex flex-col items-center mt-[100px]"
+          blockStyles="flex flex-col items-center mt-[50px] md:mt-[100px]"
           isDark={isDark}
         />
       )}

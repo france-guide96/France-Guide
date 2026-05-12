@@ -84,7 +84,7 @@ export default async function Page({ params }: Props) {
   return (
     <div className="bg-primary">
       <TourDetail tour={data} />
-      <div className="py-[100px]">
+      <div className="pb-[50px] lg:py-[100px]">
         <Container>
           <ReviewSectionServer
             title
