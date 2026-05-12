@@ -34,12 +34,20 @@ export default function Navbar() {
     setIsMenuOpen(false);
   };
 
+  const handleLogoClick = (e: React.MouseEvent) => {
+    if (normalizedPath === "/") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    setIsMenuOpen(false);
+  };
+
   return (
     <div className="flex justify-center w-full">
       <div className="fixed z-[888] inset-x-0 bg-primary/90 border-b border-secondary/10">
         <Container>
           <div className="flex justify-between items-center py-[18px] px-[20px]">
-            <Link href={`/${locale}`} style={{ fontFamily: "Oswald" }}>
+            <Link href={`/${locale}`} onClick={handleLogoClick} style={{ fontFamily: "Oswald" }}>
               <Logo />
             </Link>
 
@@ -51,7 +59,7 @@ export default function Navbar() {
                     item.path === PathnameEnum.HOME
                       ? normalizedPath === "/"
                       : normalizedPath === item.path ||
-                        normalizedPath.startsWith(item.path);
+                      normalizedPath.startsWith(item.path);
 
                   return (
                     <Link
@@ -63,11 +71,10 @@ export default function Navbar() {
 
                       <span
                         className={`absolute bottom-0 left-0 h-[2px] bg-accent transition-all duration-500 ease-out
-                  ${
-                    isActive
-                      ? "w-full opacity-100 shadow-[0_0_8px_rgba(202,138,4,0.4)]"
-                      : "w-0 opacity-0 group-hover:w-1/2 group-hover:opacity-50"
-                  }
+                  ${isActive
+                            ? "w-full opacity-100 shadow-[0_0_8px_rgba(202,138,4,0.4)]"
+                            : "w-0 opacity-0 group-hover:w-1/2 group-hover:opacity-50"
+                          }
                 `}
                       />
                     </Link>

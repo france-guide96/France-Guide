@@ -28,7 +28,7 @@ export default function ReviewSectionWrapper({
   };
 
   return (
-    <div className="bg-primary px-[20px] py-[100px] md:py-[150px]">
+    <div className="bg-primary px-[20px] py-[100px]">
       <Container>
         <div className="px-[20px]">
           <BackButton styles="text-secondary/50 hover:text-secondary" />
