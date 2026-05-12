@@ -36,7 +36,7 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
   const firstImage = getImageUrlSafe(data.carCarousel?.[0]?.url);
 
   return (
-    <main className="px-[20px] text-secondary overflow-hidden">
+    <main className="text-secondary overflow-hidden">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 blur-[150px] rounded-full -z-10" />
       <Container>
         <BackButton styles="text-secondary/50 hover:text-secondary px-[20px]" />
@@ -69,7 +69,7 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
                     width={1000}
                     height={1000}
                     alt="Mercedes V Class"
-                    className="w-full h-full object-cover transform transition-transform duration-[2000ms] group-hover:scale-110"
+                    className="object-contain transform transition-transform duration-[2000ms] group-hover:scale-110"
                     unoptimized
                   />
                   <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black/90 to-transparent">
@@ -138,9 +138,9 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
           </div>
         </div>
 
-        <div className="relative group mt-[50px] md:my-[100px] md:px-[20px]">
-          <div className="absolute -inset-0.5 bg-gradient-to-b from-accent/30 to-transparent rounded-[10px] blur opacity-20" />
-          <div className="relative bg-dark-gray/10 backdrop-blur-2xl rounded-[10px] border border-secondary/5 overflow-hidden">
+        <div className="relative group mt-[50px] md:my-[100px] sm:px-[20px]">
+          <div className="absolute -inset-0.5 bg-gradient-to-b from-accent/30 to-transparent sm:rounded-[10px] blur opacity-20" />
+          <div className="relative bg-dark-gray/10 backdrop-blur-2xl sm:rounded-[10px] border border-secondary/5 overflow-hidden">
             <div className="grid grid-cols-12 p-2 md:p-8 border-b border-secondary/5 bg-secondary/5 items-center gap-[10px]">
               <div className="col-span-6 text-[10px] md:text-[14px] uppercase tracking-[1px] md:tracking-[3px] font-[500] text-secondary/50">
                 Направление
