@@ -16,7 +16,7 @@ export default function AboutHimself({ data, myselfTitle }: AboutHimselfProps) {
           {data?.map((item) => (
             <div
               key={item.id}
-              className="bg-gradient-to-br from-secondary-transparent to-secondary rounded-3xl p-10 shadow-lg border border-gray-100"
+              className="bg-gradient-to-br from-secondary-transparent to-secondary rounded-3xl p-10 shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-500"
             >
               <Quote className="w-12 h-12 text-accent mb-6 opacity-40" />
               <p className="text-gray-700 leading-relaxed text-lg italic">
