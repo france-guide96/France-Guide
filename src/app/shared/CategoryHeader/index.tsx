@@ -8,7 +8,7 @@ export default function CategoryHeader({ category }: { category: string }) {
 
   return (
     <Header
-      blockStyles="flex flex-col items-center"
+      blockStyles="flex flex-col items-center text-center"
       heading={category}
       subHeading={t("SubTitle")}
     />

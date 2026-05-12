@@ -94,7 +94,7 @@ export default function GetInTouch({
   return (
     <>
       <section
-        className="bg-primary text-secondary py-[100px] border-t border-dark-gray"
+        className="bg-primary text-secondary py-[50px] md:py-[100px] border-t border-dark-gray"
         id="getInTouch"
       >
         <Container>

@@ -55,18 +55,17 @@ export default async function Transfer({
   return (
     <div className="bg-primary py-[100px]">
       <TransferPage data={data} />
-      <div className="py-[100px]">
-
-      <Container>
-        <ReviewSectionServer
-          designType="gold"
-          isDarkReview
-          title
-          variant="grid"
-          borderTop
+      <div className="py-[50px] md:py-[100px]">
+        <Container>
+          <ReviewSectionServer
+            designType="gold"
+            isDarkReview
+            title
+            variant="grid"
+            borderTop
           />
-      </Container>
-          </div>
+        </Container>
+      </div>
     </div>
   );
 }
