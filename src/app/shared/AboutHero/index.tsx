@@ -43,7 +43,7 @@ export default async function AboutHero({
                 </h1>
               </div>
 
-              <div className="max-w-md border-l-2 border-amber-500 pl-8 mt-4">
+              <div className="border-l-2 border-amber-500 pl-8 mt-4">
                 <p className="text-lg text-gray-700 font-light leading-relaxed italic">
                   {description}
                 </p>
