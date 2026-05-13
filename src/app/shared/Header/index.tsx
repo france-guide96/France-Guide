@@ -5,11 +5,11 @@ import { HeaderType } from "./type";
 type HeadingLevel = "h1" | "h2" | "h3" | "h4";
 
 export default function Header({
-  blockStyles,
+  blockStyles = "",
   heading,
-  headingStyles,
+  headingStyles = "",
   subHeading,
-  subHeadingStyles,
+  subHeadingStyles = "",
   isDark,
   as: Heading = "h2",
   subAs: SubHeading = "h3",
