@@ -24,6 +24,8 @@ export default function Education({ title, subTitle, items }: EducationProps) {
           subHeading={subTitle}
           isDark={true}
           blockStyles="flex items-center mb-12 text-center"
+          as="h2"
+          subAs="h3"
         />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {items &&

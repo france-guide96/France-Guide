@@ -32,6 +32,8 @@ export default function HeroSectionHome({
           heading={title}
           subHeading={description}
           isDark
+          as="h2"
+          subAs="h3"
         />
       )}
     </>

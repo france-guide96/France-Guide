@@ -30,6 +30,8 @@ export default function TransferPromo({ data }: { data: TransferSectionData }) {
           subHeading={data?.sectionSubTitle}
           blockStyles="text-center items-center mb-[50px]"
           isDark={true}
+          as="h2"
+          subAs="h3"
         />
 
         <div className="grid lg:grid-cols-12 gap-10 items-center">

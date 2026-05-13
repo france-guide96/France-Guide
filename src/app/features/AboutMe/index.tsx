@@ -13,7 +13,7 @@ export default function AboutMe({ aboutData }: { aboutData: AboutPageData }) {
       <AboutHero
         countExcursions={aboutData?.countExcursions || 500}
         aboutPageImage={aboutData?.aboutPageImage || null}
-        description={aboutData?.description || ""}
+        description={aboutData?.description || "Гарик Саакян"}
         statistics={aboutData?.stats || []}
         title={aboutData?.title || "Гарик Саакян"}
         subTitle={aboutData?.subTitle || "Профессиональный частный гид"}

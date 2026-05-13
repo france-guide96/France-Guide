@@ -37,6 +37,8 @@ export default function ReviewSectionWrapper({
               heading={t("Reviews")}
               subHeading={t("RealExperience")}
               blockStyles="flex flex-col items-center"
+              as="h2"
+              subAs="h3"
             />
 
             <ReviewComponent reviews={reviews} isDark />

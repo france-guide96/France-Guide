@@ -33,6 +33,8 @@ export default function ImageExpander({
             subHeading={t("ExploreMoments")}
             isDark
             blockStyles="flex items-center"
+            as="h2"
+            subAs="h3"
           />
         </div>
       )}

@@ -52,6 +52,8 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
               heading={data.titlePage}
               subHeading={data.subTitlePage}
               blockStyles="flex text-center items-center"
+              as="h2"
+              subAs="h3"
             />
           </motion.h1>
           <div className="flex flex-col lg:flex-row justify-between items-stretch gap-[60px]">

@@ -31,7 +31,7 @@ export default function Footer() {
                 </h4>
                 <ul className="space-y-4">
                   {categories?.map((item, index) => (
-                    <li key={index}>
+                    <li key={index} className="list-none">
                       <Link
                         href={`/${locale}${item.path}`}
                         className="group relative flex items-center text-secondary/50 text-sm transition-all duration-300 hover:text-accent pl-0"
@@ -59,12 +59,18 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/review" className="hover:text-accent transition-colors">
+                    <Link
+                      href="/review"
+                      className="hover:text-accent transition-colors"
+                    >
                       {t("Reviews")}
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="hover:text-accent transition-colors">
+                    <Link
+                      href="#"
+                      className="hover:text-accent transition-colors"
+                    >
                       {t("Contacts")}
                     </Link>
                   </li>

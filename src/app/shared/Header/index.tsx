@@ -1,6 +1,8 @@
-"use client"
+"use client";
 
 import { HeaderType } from "./type";
+
+type HeadingLevel = "h1" | "h2" | "h3" | "h4";
 
 export default function Header({
   blockStyles,
@@ -9,24 +11,25 @@ export default function Header({
   subHeading,
   subHeadingStyles,
   isDark,
-}: HeaderType) {
-
+  as: Heading = "h2",
+  subAs: SubHeading = "h3",
+}: HeaderType & { as?: HeadingLevel; subAs?: HeadingLevel }) {
   return (
     <div
       className={`${isDark ? "text-primary" : "text-secondary"} flex flex-col justify-center gap-[24px] px-[10px] ${blockStyles}`}
     >
-      <h3
+      <Heading
         className={`text-[28px] sm:text-[44px] lg:text-[72px] font-[500] leading-[110%] ${headingStyles}`}
         style={{ fontFamily: "Oswald" }}
       >
         {heading}
-      </h3>
+      </Heading>
       <div className="w-[96px] h-[4px] bg-accent"></div>
-      <h4
+      <SubHeading
         className={`max-w-[700px] text-[16px] lg:text-[18px] font-[400] leading-[150%] ${subHeadingStyles}`}
       >
         {subHeading}
-      </h4>
+      </SubHeading>
     </div>
   );
 }

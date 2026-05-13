@@ -11,6 +11,8 @@ export default function AboutHimself({ data, myselfTitle }: AboutHimselfProps) {
           headingStyles="font-[500]"
           isDark={true}
           blockStyles="flex items-center"
+          as="h2"
+          subAs="h3"
         />
         <div className="grid md:grid-cols-2 items-start gap-10 mt-[20px]">
           {data?.map((item) => (

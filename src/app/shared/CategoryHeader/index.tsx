@@ -11,6 +11,8 @@ export default function CategoryHeader({ category }: { category: string }) {
       blockStyles="flex flex-col items-center text-center"
       heading={category}
       subHeading={t("SubTitle")}
+      as="h2"
+      subAs="h3"
     />
   );
 }

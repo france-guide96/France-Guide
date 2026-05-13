@@ -105,6 +105,8 @@ export default function GetInTouch({
               subHeadingStyles="text-center"
               heading={title}
               subHeading={description}
+              as="h2"
+              subAs="h3"
             />
             <div className="flex flex-col-reverse lg:flex-row justify-between items-start gap-[48px] px-[20px]">
               <div className="w-full flex flex-row lg:flex-col flex-wrap justify-between items-start gap-[32px] mt-[50px] lg:mt-[0px]">

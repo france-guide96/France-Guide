@@ -1,11 +1,10 @@
-"use client"
+"use client";
 
 import { useEffect, useRef } from "react";
 import { MyStoryProps } from "./type";
 import Header from "@/app/shared/Header";
 
 export default function MyStory({ title, subTitle, events }: MyStoryProps) {
-
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -63,6 +62,8 @@ export default function MyStory({ title, subTitle, events }: MyStoryProps) {
           subHeading={subTitle}
           isDark
           blockStyles="flex items-center mb-12"
+          as="h2"
+          subAs="h3"
         />
       </div>
       <div className="relative select-none">
@@ -70,9 +71,15 @@ export default function MyStory({ title, subTitle, events }: MyStoryProps) {
           ref={scrollRef}
           className="overflow-x-auto scrollbar-hide cursor-grab active:cursor-grabbing pt-4 pb-14"
         >
-          <div className="flex gap-8 px-[50px]" style={{ width: 'fit-content', minWidth: '100%' }}>
+          <div
+            className="flex gap-8 px-[50px]"
+            style={{ width: "fit-content", minWidth: "100%" }}
+          >
             {events?.map((item, idx) => (
-              <div key={idx} className="relative flex flex-col items-center w-72 flex-shrink-0">
+              <div
+                key={idx}
+                className="relative flex flex-col items-center w-72 flex-shrink-0"
+              >
                 <div className="flex flex-col gap-4 items-start bg-white rounded-2xl p-3 shadow-md border border-gray-200 hover:shadow-2xl hover:scale-102 transition-all duration-300 w-full group z-5">
                   <div className="inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-gold/40 to-gold text-secondary font-bold rounded-xl shadow-md text-xl">
                     {item.year}
@@ -82,9 +89,7 @@ export default function MyStory({ title, subTitle, events }: MyStoryProps) {
                     {item.eventTitle}
                   </h3>
 
-                  <p className="text-primary/50">
-                    {item.description}
-                  </p>
+                  <p className="text-primary/50">{item.description}</p>
                 </div>
 
                 {idx < events.length - 1 && (
