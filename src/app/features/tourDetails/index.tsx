@@ -16,10 +16,13 @@ import { ImageWithFallback } from "@/app/shared/imageWithFallback/imageWithFallb
 import { Formats2, TourCard } from "lib/utils/tourCardType";
 import Button from "@/app/shared/Button";
 import Container from "@/app/shared/Container";
-import BookingModal from "@/app/shared/BookingModal";
+import dynamic from "next/dynamic";
 import { AnimatePresence, motion } from "framer-motion";
 import BackButton from "@/app/shared/BackButton";
 import ImageExpander from "@/app/shared/ImageExpander";
+const BookingModal = dynamic(() => import("@/app/shared/BookingModal"), {
+  ssr: false,
+});
 
 type Props = {
   tour: TourCard;
@@ -235,40 +238,42 @@ export function TourDetail({ tour }: Props) {
               {tour?.contentSections?.length > 0 && (
                 <div className="space-y-6">
                   {tour?.contentSections?.map((section, idx: number) => (
-                      <div
-                        key={idx}
-                        className="bg-gradient-to-br from-gray-900 to-gray-800 border border-dark-gray/50 rounded-[16px] p-8 transition-all hover:border-accent/50"
-                      >
-                        {section?.title && (
-                          <h2 className="text-[24px] font-[700] leading-[133%] text-secondary mb-6 flex items-center gap-3">
-                            <div className="w-1 h-6 bg-accent rounded-full" />{" "}
-                            {section?.title}
-                          </h2>
-                        )}
+                    <div
+                      key={idx}
+                      className="bg-gradient-to-br from-gray-900 to-gray-800 border border-dark-gray/50 rounded-[16px] p-8 transition-all hover:border-accent/50"
+                    >
+                      {section?.title && (
+                        <h2 className="text-[24px] font-[700] leading-[133%] text-secondary mb-6 flex items-center gap-3">
+                          <div className="w-1 h-6 bg-accent rounded-full" />{" "}
+                          {section?.title}
+                        </h2>
+                      )}
 
-                        {section.description && (
-                          <div className="text-[16px] font-[400] leading-[163%] text-secondary space-y-4 whitespace-pre-line text-base">
-                            {section?.description}
-                          </div>
-                        )}
+                      {section.description && (
+                        <div className="text-[16px] font-[400] leading-[163%] text-secondary space-y-4 whitespace-pre-line text-base">
+                          {section?.description}
+                        </div>
+                      )}
 
-                        {section.isNewDesign && (
-                          <div className="mt-6">
-                            <ImageExpander
-                              images={
-                              section.newDesignImageCarousel?.map((img, idx) => ({
-                                    src: getImageUrl(img.url) || "",
-                                alt: img.alternativeText || `Gallery ${idx + 1}`,
-                                    width: img.width,
-                                    height: img.height,
-                              })) || []
-                              }
-                              isGrid
-                            />
-                          </div>
-                        )}
-
-                      </div>
+                      {section.isNewDesign && (
+                        <div className="mt-6">
+                          <ImageExpander
+                            images={
+                              section.newDesignImageCarousel?.map(
+                                (img, idx) => ({
+                                  src: getImageUrl(img.url) || "",
+                                  alt:
+                                    img.alternativeText || `Gallery ${idx + 1}`,
+                                  width: img.width,
+                                  height: img.height,
+                                }),
+                              ) || []
+                            }
+                            isGrid
+                          />
+                        </div>
+                      )}
+                    </div>
                   ))}
                 </div>
               )}
@@ -319,7 +324,8 @@ export function TourDetail({ tour }: Props) {
                             handleChange(e);
                             if (dateError) setDateError(false);
                           }}
-                          className={`appearance-none w-full px-4 py-3 bg-dark-gray border rounded-[10px] text-secondary focus:outline-none ${dateError
+                          className={`appearance-none w-full px-4 py-3 bg-dark-gray border rounded-[10px] text-secondary focus:outline-none ${
+                            dateError
                               ? "border-red-500 animate-shake shadow-[0_0_10px_rgba(239,68,68,0.2)]"
                               : "border-gray-700 focus:border-accent"
                           }`}

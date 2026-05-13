@@ -4,8 +4,11 @@ import { useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { GalleryType } from "./type";
-import Lightbox from "yet-another-react-lightbox";
 import Header from "../Header";
+import dynamic from "next/dynamic";
+const Lightbox = dynamic(() => import("yet-another-react-lightbox"), {
+  ssr: false,
+});
 
 import "yet-another-react-lightbox/styles.css";
 
@@ -36,7 +39,8 @@ export default function ImageExpander({
 
       <div
         className={
-          styles ?? "grid sm:grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[200px] [grid-auto-flow:dense]"
+          styles ??
+          "grid sm:grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[200px] [grid-auto-flow:dense]"
         }
       >
         {images.map((img, idx) => {
@@ -83,7 +87,13 @@ export default function ImageExpander({
         render={{
           slide: ({ slide }) => (
             <div className="relative w-full h-full">
-              <Image fill src={slide.src} alt={slide.alt || ""} unoptimized className="object-contain" />
+              <Image
+                fill
+                src={slide.src}
+                alt={slide.alt || ""}
+                unoptimized
+                className="object-contain"
+              />
             </div>
           ),
           buttonPrev: images.length <= 1 ? () => null : undefined,
