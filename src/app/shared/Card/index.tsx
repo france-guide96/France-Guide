@@ -25,7 +25,7 @@ export default function Card({
       {img && (
         <Image
           src={img}
-          alt={imageAltText || ""}
+          alt={imageAltText || "france tour"}
           width={50}
           height={50}
           className={imgStyles}

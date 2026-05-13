@@ -57,7 +57,7 @@ export default function ImageExpander({
               <div className="relative h-full w-full overflow-hidden bg-[#0B1220] flex items-center justify-center">
                 <Image
                   src={img.src}
-                  alt={img.alt || ""}
+                  alt={img.alt || "france guide"}
                   fill
                   className="object-cover blur-lg opacity-40 scale-110"
                   unoptimized
@@ -65,7 +65,7 @@ export default function ImageExpander({
                 <div className="relative w-full h-full p-1">
                   <Image
                     src={img.src}
-                    alt={img.alt || ""}
+                    alt={img.alt || "france guide"}
                     fill
                     unoptimized
                     className={`${isGrid ? "object-cover" : "object-contain z-10"} transition-transform duration-500 hover:scale-[1.02]`}
@@ -90,7 +90,7 @@ export default function ImageExpander({
               <Image
                 fill
                 src={slide.src}
-                alt={slide.alt || ""}
+                alt={slide.alt || "france guide"}
                 unoptimized
                 className="object-contain"
               />

@@ -37,7 +37,7 @@ export function ImageWithFallback(props: ImageProps) {
     <Image
       {...rest}
       src={src}
-      alt={alt}
+      alt={alt || "france guide"}
       className={className}
       style={style}
       onError={handleError}
