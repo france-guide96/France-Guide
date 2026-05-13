@@ -33,18 +33,22 @@ export default function LanguageSwitcher() {
       {locale === "en" ? (
         <>
           <ReactCountryFlag
+            alt="RU"
             countryCode="RU"
             svg
             style={{ width: "20px", height: "20px" }}
+            aria-label="Русский язык"
           />
           RU
         </>
       ) : (
         <>
           <ReactCountryFlag
+            alt="GB"
             countryCode="GB"
             svg
             style={{ width: "20px", height: "20px" }}
+            aria-label="English language"
           />
           EN
         </>
