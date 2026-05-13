@@ -36,7 +36,7 @@ export default function ImageExpander({
 
       <div
         className={
-          styles ?? "grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[200px] [grid-auto-flow:dense]"
+          styles ?? "grid sm:grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[200px] [grid-auto-flow:dense]"
         }
       >
         {images.map((img, idx) => {
