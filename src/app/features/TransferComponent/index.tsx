@@ -73,16 +73,16 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
                     unoptimized
                   />
                   <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black/90 to-transparent">
-                    <div className="flex gap-8">
+                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-8 text-[12px] md:text-[16px]">
                       {data &&
                         data.carSpecs?.map((spec, index) => {
                           const Icon = specIconMap[index] || Star;
                           return (
                             <div
                               key={spec.id}
-                              className="flex flex-col md:flex-row items-start md:items-center gap-2"
+                              className="flex items-center gap-2"
                             >
-                              <Icon className="w-5 h-5 text-accent" />
+                              <Icon className="w-4 h-4 md:w-5 md:h-5 text-accent" />
                               <span>{spec.text}</span>
                             </div>
                           );
