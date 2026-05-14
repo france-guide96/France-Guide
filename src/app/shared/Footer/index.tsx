@@ -68,10 +68,10 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      href="#"
+                      href="/transfer"
                       className="hover:text-accent transition-colors"
                     >
-                      {t("Contacts")}
+                      {t("Transfer")}
                     </Link>
                   </li>
                 </ul>
