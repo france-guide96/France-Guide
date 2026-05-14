@@ -41,19 +41,18 @@ export async function TourCardNew({ tour, locale }: TourCardProps) {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent" />
 
-          <div className="absolute top-4 left-4 flex flex-col items-start flex-wrap gap-2">
+          <div className="absolute top-4 px-4 w-full flex flex-wrap items-start justify-between gap-2">
             {tour?.category && (
               <span className="px-[12px] py-[4px] bg-gray-transparent backdrop-blur-sm text-secondary text-[12px] font-[600] leading-[133%] rounded-full uppercase tracking-wider">
                 {tour?.category}
               </span>
             )}
-          </div>
-
-          <div className="absolute top-4 right-4 flex items-center gap-1 bg-gray-transparent backdrop-blur-sm px-2.5 py-1 rounded-full">
-            <Star className="w-3.5 h-3.5 fill-accent text-accent" />
-            <span className="text-[12px] text-secondary font-[600] leading-[143%]">
-              {tour?.rating || "5.0"}
-            </span>
+            <div className="flex items-center gap-1 bg-gray-transparent backdrop-blur-sm px-2.5 py-1 rounded-full">
+              <Star className="w-3.5 h-3.5 fill-accent text-accent" />
+              <span className="text-[12px] text-secondary font-[600] leading-[143%]">
+                {tour?.rating || "5.0"}
+              </span>
+            </div>
           </div>
 
           <h3 className="absolute bottom-4 left-4 right-4 text-secondary text-[20px] font-[600] leading-[140%] line-clamp-2">

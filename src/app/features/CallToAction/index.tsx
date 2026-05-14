@@ -70,7 +70,7 @@ function ContactLink({
     <Link
       href={href}
       target="_blank"
-      className="flex items-center gap-2 md:gap-3 group cursor-pointer text-secondary"
+      className="flex flex-col sm:flex-row items-start sm:items-center gap-2 md:gap-3 group cursor-pointer text-secondary"
     >
       <div className="w-6 h-6 md:w-12 md:h-12 bg-gray-900 rounded-2xl flex items-center justify-center border border-gray-800 group-hover:border-accent transition-colors">
         {icon}

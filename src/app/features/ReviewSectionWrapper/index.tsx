@@ -30,13 +30,12 @@ export default function ReviewSectionWrapper({
   return (
     <div className="bg-primary px-[20px] py-[100px]">
       <Container>
-        <div className="px-[20px]">
           <BackButton styles="text-secondary/50 hover:text-secondary" />
           <div className="flex flex-col gap-[50px] items-center">
             <Header
               heading={t("Reviews")}
               subHeading={t("RealExperience")}
-              blockStyles="flex flex-col items-center"
+              blockStyles="flex flex-col items-center text-center"
               as="h2"
               subAs="h3"
             />
@@ -44,11 +43,11 @@ export default function ReviewSectionWrapper({
             <ReviewComponent reviews={reviews} isDark />
 
             {pageCount > 1 && (
-              <div className="flex items-center justify-center gap-2 mt-12">
+              <div className="flex items-center justify-center sm:gap-2 mt-12">
                 <Button
                   onClick={() => handlePageChange(currentPage - 1)}
                   disabled={currentPage === 1}
-                  styles="px-4 py-2 rounded-xl text-sm font-medium text-secondary/50 hover:text-secondary disabled:opacity-30 disabled:cursor-not-allowed transition-colors duration-200 cursor-pointer"
+                  styles="px-2 sm:px-4 py-2 rounded-xl text-sm font-medium text-secondary/50 hover:text-secondary disabled:opacity-30 disabled:cursor-not-allowed transition-colors duration-200 cursor-pointer"
                 >
                   ← {t("Prev")}
                 </Button>
@@ -72,7 +71,7 @@ export default function ReviewSectionWrapper({
                 <Button
                   onClick={() => handlePageChange(currentPage + 1)}
                   disabled={currentPage === pageCount}
-                  styles="px-4 py-2 rounded-xl text-sm font-medium text-secondary/50 hover:text-secondary disabled:opacity-30 disabled:cursor-not-allowed transition-colors duration-200 cursor-pointer"
+                  styles="px-2 sm:px-4 py-2 rounded-xl text-sm font-medium text-secondary/50 hover:text-secondary disabled:opacity-30 disabled:cursor-not-allowed transition-colors duration-200 cursor-pointer"
                 >
                   {t("Next")} →
                 </Button>
@@ -81,7 +80,6 @@ export default function ReviewSectionWrapper({
 
             <ReviewForm />
           </div>
-        </div>
       </Container>
     </div>
   );

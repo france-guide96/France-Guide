@@ -25,7 +25,7 @@ export default function ReviewComponent({
 }: Props) {
   if (variant === "grid") {
     return (
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 break-inside-avoid px-[20px]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 break-inside-avoid">
         {reviews.map((review, index) => (
           <motion.div
             key={review.id}

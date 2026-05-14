@@ -9,9 +9,16 @@ export default function ContactButtons({ isAbout }: { isAbout?: boolean }) {
   const { openContact } = useModals();
 
   const handleContactClick = () => {
-    document
-      .getElementById("getInTouch")
-      ?.scrollIntoView({ behavior: "smooth" });
+    const el = document.getElementById("getInTouch");
+    if (!el) return;
+
+    const isMobile = window.innerWidth < 768;
+    const top =
+      el.getBoundingClientRect().top +
+      window.scrollY -
+      (isMobile ? 100 : 0);
+
+    window.scrollTo({ top, behavior: "smooth" });
   };
 
   const buttons = [

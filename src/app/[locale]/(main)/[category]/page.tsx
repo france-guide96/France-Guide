@@ -84,7 +84,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       <Container>
         <div className="px-[20px] py-[100px]">
           <BackButton styles="text-secondary/50 hover:text-secondary" />
-          <div className="flex flex-col items-center gap-[100px]">
+          <div className="flex flex-col items-center gap-[50px]">
             <NewStrapiCard
               locale={locale}
               category={selectedCategory}
