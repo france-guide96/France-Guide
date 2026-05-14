@@ -5,6 +5,7 @@ import { TourDetail } from "@/app/features/tourDetails";
 import { Metadata } from "next";
 import ReviewSectionServer from "@/app/features/ReviewSectionServer";
 import Container from "@/app/shared/Container";
+import { notFound } from "next/navigation";
 
 export const revalidate = 3600;
 
@@ -14,6 +15,11 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, category, slug } = await params;
+
+  if (!categoryMap[category as keyof typeof categoryMap]) {
+    return { title: "France Guide" };
+  }
+
   const data = await fetchTourDetails(locale, category, slug);
 
   if (!data) return { title: " France Guide" };
@@ -71,6 +77,11 @@ export async function generateStaticParams() {
 
 export default async function Page({ params }: Props) {
   const { locale, category, slug } = await params;
+
+  if (!categoryMap[category as keyof typeof categoryMap]) {
+    notFound();
+  }
+
   const data = await fetchTourDetails(locale, category, slug);
 
   if (!data) {

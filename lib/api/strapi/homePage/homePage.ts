@@ -2,6 +2,8 @@ import { HomePage } from "lib/utils/HomePageType";
 import { fetchWithRetry } from "../fetchWithRetry";
 
 export async function fetchHomePage(locale: string): Promise<HomePage | null> {
+  if (!["ru", "en"].includes(locale)) return null;
+
   const params = new URLSearchParams();
   params.set("locale", locale);
 
