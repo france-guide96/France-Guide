@@ -221,7 +221,13 @@ function ContactLink({ href, icon, label, sub }: {
   sub: string;
 }) {
   return (
-    <Link href={href} target="_blank" rel="noreferrer" className="flex items-center gap-4 group cursor-pointer px-[10px]">
+    <Link
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      title={label}
+      aria-label={label}
+      className="flex items-center gap-4 group cursor-pointer px-[10px]">
       <div className="w-12 h-12 bg-gray-900 rounded-2xl flex items-center justify-center border border-gray-800 group-hover:border-accent transition-colors">
         {icon}
       </div>

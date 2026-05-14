@@ -66,9 +66,13 @@ function ContactLink({
   label: string;
   sub: string;
 }) {
+
   return (
     <Link
       href={href}
+      rel="noopener noreferrer"
+      title={label}
+      aria-label={label}
       target="_blank"
       className="flex flex-col sm:flex-row items-start sm:items-center gap-2 md:gap-3 group cursor-pointer text-secondary"
     >

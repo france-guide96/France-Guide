@@ -33,6 +33,9 @@ export default function Footer() {
                   {categories?.map((item, index) => (
                     <li key={index} className="list-none">
                       <Link
+                        rel="noopener noreferrer"
+                        title={t(item.key)}
+                        aria-label={t(item.key)}
                         href={`/${locale}${item.path}`}
                         className="group relative flex items-center text-secondary/50 text-sm transition-all duration-300 hover:text-accent pl-0"
                       >
@@ -52,6 +55,9 @@ export default function Footer() {
                 <ul className="space-y-2 text-secondary/50 text-sm">
                   <li>
                     <Link
+                      rel="noopener noreferrer"
+                      title={t("About")}
+                      aria-label={t("About")}
                       href={"/about"}
                       className="hover:text-accent transition-colors"
                     >
@@ -60,6 +66,9 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
+                      rel="noopener noreferrer"
+                      title={t("Reviews")}
+                      aria-label={t("Reviews")}
                       href="/review"
                       className="hover:text-accent transition-colors"
                     >
@@ -68,10 +77,13 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      href="#"
+                      rel="noopener noreferrer"
+                      title={t("Transfer")}
+                      aria-label={t("Transfer")}
+                      href="/transfer"
                       className="hover:text-accent transition-colors"
                     >
-                      {t("Contacts")}
+                      {t("Transfer")}
                     </Link>
                   </li>
                 </ul>
@@ -97,9 +109,21 @@ export default function Footer() {
           </div>
           <div className="flex justify-between flex-col sm:flex-row border-t border-dark-gray pt-8 gap-[20px] text-secondary/50 text-sm">
             <div className="flex gap-[10px]">
-              <Link href="/privacy-policy">{t("Privacy")}</Link>
+              <Link
+                rel="noopener noreferrer"
+                title={t("Privacy")}
+                aria-label={t("Privacy")}
+                href="/privacy-policy">
+                {t("Privacy")}
+              </Link>
               <p>|</p>
-              <Link href="/terms-and-conditions">{t("Terms")}</Link>
+              <Link
+                rel="noopener noreferrer"
+                title={t("Terms")}
+                aria-label={t("Terms")}
+                href="/terms-and-conditions">
+                {t("Terms")}
+              </Link>
             </div>
             <p>
               &copy; {CURRENT_YEAR} France Guide. {t("AllRights")}

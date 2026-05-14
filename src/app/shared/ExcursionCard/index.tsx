@@ -26,7 +26,12 @@ export default function ExcursionCard({
     : "/fallback-image.jpg";
 
   return (
-    <Link href={`/${locale}${href}`}>
+    <Link
+      href={`/${locale}${href}`}
+      rel="noopener noreferrer"
+      title={title}
+      aria-label={title}
+    >
       <div className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
         <div className="relative h-64 overflow-hidden">
           <ImageWithFallback
