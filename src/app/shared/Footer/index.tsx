@@ -56,17 +56,6 @@ export default function Footer() {
                   <li>
                     <Link
                       rel="noopener noreferrer"
-                      title={t("About")}
-                      aria-label={t("About")}
-                      href={"/about"}
-                      className="hover:text-accent transition-colors"
-                    >
-                      {t("About")}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      rel="noopener noreferrer"
                       title={t("Reviews")}
                       aria-label={t("Reviews")}
                       href="/review"
@@ -113,7 +102,8 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 title={t("Privacy")}
                 aria-label={t("Privacy")}
-                href="/privacy-policy">
+                href="/privacy-policy"
+              >
                 {t("Privacy")}
               </Link>
               <p>|</p>
@@ -121,7 +111,8 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 title={t("Terms")}
                 aria-label={t("Terms")}
-                href="/terms-and-conditions">
+                href="/terms-and-conditions"
+              >
                 {t("Terms")}
               </Link>
             </div>
