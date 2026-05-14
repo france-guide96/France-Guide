@@ -55,6 +55,9 @@ export default function Navbar() {
           <div className="flex justify-between items-center py-[18px] px-[20px]">
             <Link
               href={`/${locale}`}
+              rel="noopener noreferrer"
+              title={"Logo"}
+              aria-label={"Logo"}
               onClick={handleLogoClick}
               style={{ fontFamily: "Oswald" }}
             >
@@ -69,23 +72,25 @@ export default function Navbar() {
                     item.path === PathnameEnum.HOME
                       ? normalizedPath === "/"
                       : normalizedPath === item.path ||
-                        normalizedPath.startsWith(item.path);
+                      normalizedPath.startsWith(item.path);
 
                   return (
                     <li key={item?.path} className="list-none">
                       <Link
                         href={fullPath}
+                        rel="noopener noreferrer"
+                        title={t(item.key)}
+                        aria-label={t(item.key)}
                         className="lg:text-[14px] 2xl:text-[16px] text-secondary relative py-1 group transition-colors duration-300"
                       >
                         {t(item.key)}
 
                         <span
                           className={`absolute bottom-0 left-0 h-[2px] bg-accent transition-all duration-500 ease-out
-                  ${
-                    isActive
-                      ? "w-full opacity-100 shadow-[0_0_8px_rgba(202,138,4,0.4)]"
-                      : "w-0 opacity-0 group-hover:w-1/2 group-hover:opacity-50"
-                  }
+                  ${isActive
+                              ? "w-full opacity-100 shadow-[0_0_8px_rgba(202,138,4,0.4)]"
+                              : "w-0 opacity-0 group-hover:w-1/2 group-hover:opacity-50"
+                            }
                 `}
                         />
                       </Link>
@@ -118,6 +123,9 @@ export default function Navbar() {
                   <Link
                     key={index}
                     href={`/${locale}${item.path}`}
+                    rel="noopener noreferrer"
+                    title={t(item.key)}
+                    aria-label={t(item.key)}
                     onClick={() => setIsMenuOpen(false)}
                     className="text-[16px] font-[400] text-secondary"
                   >
