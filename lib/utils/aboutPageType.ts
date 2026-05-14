@@ -81,14 +81,6 @@ interface FeatureItem {
   description: string;
 }
 
-interface TimelineEventItem {
-  id: number;
-  year: string;
-  title: string;
-  description: string;
-  eventTitle: string;
-}
-
 export interface AboutPageData {
   id: number;
   documentId: string;
@@ -111,9 +103,6 @@ export interface AboutPageData {
   principleTitle: string;
   principleSubTitle: string;
   principles: FeatureItem[];
-  timelineEventTitle: string;
-  timelineEventSubTitle: string;
-  timelineEventItem?: TimelineEventItem[];
   createdAt: string;
   updatedAt: string;
   publishedAt: string;

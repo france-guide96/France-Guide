@@ -13,7 +13,6 @@ export async function fetchAboutPageData(
     "aboutPageImage",
     "carousel",
     "educationItems",
-    "timelineEventItem",
     "principles",
   ];
   fields.forEach((field, index) => {

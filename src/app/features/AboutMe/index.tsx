@@ -2,7 +2,6 @@ import Container from "@/app/shared/Container";
 import Education from "@/app/shared/Education";
 import AboutHimself from "@/app/shared/AboutHimself";
 import Principles from "@/app/shared/Principles";
-import MyStory from "@/app/shared/MyStory";
 import AboutHero from "@/app/shared/AboutHero";
 import ImageExpander from "@/app/shared/ImageExpander";
 import { AboutPageData } from "lib/utils/aboutPageType";
@@ -58,11 +57,6 @@ export default function AboutMe({ aboutData }: { aboutData: AboutPageData }) {
             title={aboutData?.principleTitle || ""}
             subTitle={aboutData?.principleSubTitle || ""}
             items={aboutData?.principles || []}
-          />
-          <MyStory
-            title={aboutData.timelineEventTitle || ""}
-            subTitle={aboutData.timelineEventSubTitle || ""}
-            events={aboutData.timelineEventItem || []}
           />
         </Container>
       </main>
