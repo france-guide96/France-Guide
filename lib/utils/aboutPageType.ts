@@ -70,11 +70,6 @@ interface StatisticItem {
   value: string;
   label: string;
 }
-
-interface AboutMyself {
-  id: number;
-  aboutMyself: string;
-}
 interface FeatureItem {
   id: number;
   title: string;
@@ -94,7 +89,7 @@ export interface AboutPageData {
     url: string;
     alternativeText?: string | undefined;
   } | null;
-  myself: AboutMyself[];
+  aboutMyself: string;
   myselfTitle: string;
   carousel: StrapiImage[];
   educationTitle: string;

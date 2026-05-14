@@ -3,7 +3,6 @@ export type HomePage = {
   heroDesc: string;
   categoryTitle: string;
   categoryDescription: string;
-  heroColorPart: string;
   getInTouchTitle: string;
   getInTouchDescription: string;
 };

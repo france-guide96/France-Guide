@@ -1,5 +1,5 @@
-import { fetchAboutPageData } from "lib/api/strapi/about/aboutPage";
 import AboutMe from "@/app/features/AboutMe";
+import { fetchAboutPageData } from "lib/api/strapi/about/aboutPage";
 
 export default async function AboutSectionWrapper({ locale }: { locale: string }) {
   const data = await fetchAboutPageData(locale);

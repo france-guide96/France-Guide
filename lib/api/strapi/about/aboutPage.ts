@@ -9,7 +9,6 @@ export async function fetchAboutPageData(
 
   const fields = [
     "stats",
-    "myself",
     "aboutPageImage",
     "carousel",
     "educationItems",

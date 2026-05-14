@@ -7,14 +7,12 @@ export default function HeroSectionHome({
   isHero = false,
   heroTitle,
   heroDescription,
-  heroColorPart,
   title,
   description,
 }: {
   isHero?: boolean;
   heroTitle?: string;
   heroDescription?: string;
-  heroColorPart?: string;
   title?: string;
   description?: string;
 }) {
@@ -23,7 +21,6 @@ export default function HeroSectionHome({
       {isHero ? (
         <HeroSection
           heading={heroTitle}
-          coloredPart={heroColorPart}
           subHeading={heroDescription}
         />
       ) : (

@@ -13,7 +13,6 @@ import scrollAnimation from "@/assets/elements/scroll.gif";
 export default function HeroSection({
   generalStyles,
   heading,
-  coloredPart,
   headingStyles,
   subHeading,
   subHeadingStyles,
@@ -70,8 +69,6 @@ export default function HeroSection({
               style={{ fontFamily: "Oswald" }}
             >
               {heading}
-              <br />
-              <span className="text-accent">{coloredPart}</span>
             </h1>
             <h2
               className={`max-w-[700px] lg:text-[22px] text-[18px] font-[400] leading-[150%] text-secondary ${subHeadingStyles}`}

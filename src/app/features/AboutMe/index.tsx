@@ -20,7 +20,7 @@ export default function AboutMe({ aboutData }: { aboutData: AboutPageData }) {
       <main>
         <Container>
           <AboutHimself
-            data={aboutData?.myself || []}
+            aboutMyself={aboutData?.aboutMyself || "Гарик Саакян"}
             myselfTitle={aboutData?.myselfTitle || ""}
           />
           <div className="py-20">
@@ -37,7 +37,7 @@ export default function AboutMe({ aboutData }: { aboutData: AboutPageData }) {
                 return {
                   src,
                   alt:
-                    img.alternativeText || img.caption || "Elite Paris Gallery",
+                    img.alternativeText || img.caption || "Paris Gallery",
                   width: img.width,
                   height: img.height,
                   size: img.size || "small",

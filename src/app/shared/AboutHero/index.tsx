@@ -10,7 +10,7 @@ export default async function AboutHero({
   aboutPageImage,
   countExcursions,
   subTitle,
-  title
+  title,
 }: AboutHeroProps) {
   const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL;
   const rawImageUrl = aboutPageImage?.url;
@@ -39,7 +39,7 @@ export default async function AboutHero({
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-[100px] items-start justify-between">
             <div className="lg:col-span-6 flex flex-col pt-12">
               <div className="mb-8">
-                <span className="inline-block text-amber-600 font-semibold text-[16px] tracking-[0.2em] uppercase text-xs mb-4">
+                <span className="inline-block text-black font-semibold text-[16px] tracking-[0.2em] uppercase text-xs mb-4">
                   {subTitle}
                 </span>
                 <h1 className="text-6xl md:text-[100px] font-serif text-[#1a1a1a] -ml-1">

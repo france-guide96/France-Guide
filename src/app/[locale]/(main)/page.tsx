@@ -75,7 +75,6 @@ export default async function Home({
       <HeroSectionHome
         heroTitle={homeData?.heroTitle || ""}
         heroDescription={homeData?.heroDesc || ""}
-        heroColorPart={homeData?.heroColorPart || ""}
         isHero
       />
       <section className="bg-white py-[100px]">
