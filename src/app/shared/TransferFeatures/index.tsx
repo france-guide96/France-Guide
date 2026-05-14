@@ -1,8 +1,15 @@
-import { CheckCircle, Compass, LucideIcon, ShieldCheck } from "lucide-react";
+import {
+  CheckCircle,
+  Compass,
+  LucideIcon,
+  ShieldCheck,
+  Van,
+} from "lucide-react";
 
 const transferIconMap: Record<number, LucideIcon> = {
   0: ShieldCheck,
   1: Compass,
+  2: Van,
 };
 
 interface TransferFeaturesProps {

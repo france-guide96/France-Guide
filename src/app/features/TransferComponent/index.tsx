@@ -7,6 +7,7 @@ import {
   Users,
   Car,
   Star,
+  Van,
   LucideIcon,
 } from "lucide-react";
 import Container from "@/app/shared/Container";
@@ -22,6 +23,7 @@ const specIconMap: Record<number, LucideIcon> = {
   0: Users,
   1: Car,
   2: ShieldCheck,
+  3: Van,
 };
 
 export default function TransferPage({ data }: { data: TransferPageData }) {
