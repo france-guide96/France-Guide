@@ -22,7 +22,7 @@ export default async function AboutHero({
 
   return (
     <section className="relative w-full min-h-[110vh] bg-[#fdfdfd] flex flex-col justify-between overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-[60vh] z-0">
+      <div className="absolute top-0 left-0 w-full h-[60vh] md:h-[80vh] lg:h-[130vh] z-0">
         <ImageWithFallback
           src={heroBg}
           alt="Paris"

@@ -15,7 +15,7 @@ export default function Education({ title, subTitle, items }: EducationProps) {
           as="h2"
           subAs="h3"
         />
-        <div className="grid grid-cols-1 align-center md:grid-cols-1 gap-8">
+        <div className="grid grid-cols-1 gap-8 justify-items-center">
           {items &&
             items?.map((item) => (
               <div

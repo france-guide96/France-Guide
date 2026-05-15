@@ -22,6 +22,7 @@ export default function HeroSectionHome({
         <HeroSection
           heading={heroTitle}
           subHeading={heroDescription}
+          headingStyles="max-w-[350px] sm:max-w-[530px] lg:max-w-[1100px]"
         />
       ) : (
         <Header
