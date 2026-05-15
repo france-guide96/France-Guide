@@ -26,6 +26,7 @@ export interface TourCard {
   gallery: Gallery[];
   bgImg: BgImg;
   pricing: Pricing[];
+  isNewDesign: boolean;
   contentSections: ContentSection[];
 }
 
