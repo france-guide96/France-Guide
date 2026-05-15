@@ -208,7 +208,7 @@ export default function GetInTouch({
                     type="submit"
                     disabled={loading}
                     text={loading ? "Sending..." : t("SendMessage")}
-                    styles="w-full h-[50px] text-[16px] rounded-[6px] px-[24px] py-[10px] font-[600]"
+                    styles="w-full h-[50px] text-[12px] sm:text-[16px] rounded-[6px] px-[24px] py-[10px] font-[600]"
                     designType="gold"
                   />
                 </form>
