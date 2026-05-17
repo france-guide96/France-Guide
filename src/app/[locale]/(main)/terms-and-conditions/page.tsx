@@ -1,6 +1,6 @@
 "use client";
 
-export const runtime = 'edge';
+// export const runtime = 'edge';
 
 import { useTranslations } from "next-intl";
 import Header from "@/app/shared/Header";
