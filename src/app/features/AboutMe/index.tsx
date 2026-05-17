@@ -29,7 +29,7 @@ export default function AboutMe({ aboutData }: { aboutData: AboutPageData }) {
               showHeader
               images={(aboutData?.carousel || []).map((img) => {
                 const rawUrl = img.formats?.large?.url || img.url || "";
-
+ 
                 const src = rawUrl.startsWith("http")
                   ? rawUrl
                   : `${process.env.NEXT_PUBLIC_STRAPI_URL}${rawUrl}`;
