@@ -47,21 +47,20 @@ export default async function AboutHero({
                 </h1>
               </div>
 
-              <div className="border-l-2 border-amber-500 pl-8 mt-4">
+              <div className="border-l-2 border-amber-500 rounded-[30px] p-6 mt-4 bg-white/10 backdrop-blur-md shadow-lg rounded-r-lg">
                 <p className="text-lg text-gray-700 font-light leading-relaxed italic">
                   {description}
                 </p>
 
-                <div className="flex gap-10 mt-12">
+                <div className="flex gap-10 mt-7 mb-5">
                   {statistics?.map((stat) => (
                     <div key={stat.id}>
                       <div className="text-3xl font-bold text-[#1a1a1a]">
                         {stat.value}
                       </div>
-                      <div className="text-[10px] uppercase tracking-widest text-gray-400 mt-1">
+                      <div className="text-[10px] uppercase tracking-widest text-text-[#1a1a1a] mt-1">
                         {stat.label}
                       </div>
-                      <div className="text-[10px] uppercase tracking-widest text-gray-400 mt-1"></div>
                     </div>
                   ))}
                 </div>
