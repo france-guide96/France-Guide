@@ -1,5 +1,3 @@
-export const runtime = 'edge';
-
 import { fetchTourDetails } from "lib/api/strapi/tour/fetchTourDetails";
 import { fetchTourCards } from "lib/api/strapi/tour/toursCard";
 import { categoryMap } from "@/constants/categoryEnum";
