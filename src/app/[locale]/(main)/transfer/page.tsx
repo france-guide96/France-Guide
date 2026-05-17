@@ -1,5 +1,3 @@
-export const runtime = 'edge';
-
 import ReviewSectionServer from "@/app/features/ReviewSectionServer";
 import TransferPage from "@/app/features/TransferComponent";
 import Container from "@/app/shared/Container";
