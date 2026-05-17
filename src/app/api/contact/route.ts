@@ -53,7 +53,7 @@ export async function POST(req: Request) {
       : `✉️ Сообщение от ${name}`;
 
     await resend.emails.send({
-      from: "France Guide <onboarding@resend.dev>",
+      from: "France Guide <france-gid.ru>",
       to: toEmail,
       replyTo: email,
       subject: subject,
