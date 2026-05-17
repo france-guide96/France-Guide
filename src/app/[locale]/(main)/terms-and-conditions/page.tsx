@@ -32,7 +32,7 @@ export default function TermsAndConditions() {
               </h2>
 
               <div className="space-y-3">
-                {section.items.map((item) => (
+                {section.items.map((item) => ( 
                   <p
                     key={item}
                     className="text-muted-foreground leading-relaxed text-[14px] sm:text-[18px] lg:text-[24px]"
