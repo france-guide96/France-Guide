@@ -24,7 +24,7 @@ export async function POST(req: Request) {
 
     const resend = new Resend(apiKey);
     const body = await req.json();
-    const parsed = schema.safeParse(body);
+    const parsed = schema.safeParse(body); 
 
     if (!parsed.success) {
       return NextResponse.json(
