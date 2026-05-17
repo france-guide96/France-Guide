@@ -181,7 +181,15 @@ export default function GetInTouch({
                     onChange={handleChange}
                     placeholder={t("PhoneNumber")}
                     className="w-full h-[50px] bg-secondary-transparent rounded-[6px] p-[16px] border-[1px] border-accent"
-                    required
+                    onKeyDown={(e) => {
+                      if (
+                        !/[0-9+\-\s()]/.test(e.key) &&
+                        e.key !== "Backspace" &&
+                        e.key !== "Delete"
+                      ) {
+                        e.preventDefault();
+                      }
+                    }}
                   />
 
                   <textarea
