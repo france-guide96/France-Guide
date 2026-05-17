@@ -54,7 +54,7 @@ export default async function AboutHero({
 
                 <div className="flex gap-10 mt-7 mb-5">
                   {statistics?.map((stat) => (
-                    <div key={stat.id}>
+                    <div key={stat.id} className="flex flex-col items-center">
                       <div className="text-3xl font-bold text-[#1a1a1a]">
                         {stat.value}
                       </div>
