@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 import ReviewSectionWrapper from "@/app/features/ReviewSectionWrapper";
 import { fetchReviews, mapStrapiReview } from "lib/api/strapi/review/review";
 

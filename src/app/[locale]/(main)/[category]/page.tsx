@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 import NewStrapiCard from "@/app/features/newStrapiCard";
 import { categoryMap, CategoryPageProps } from "@/constants/categoryEnum";
 import Container from "@/app/shared/Container";
