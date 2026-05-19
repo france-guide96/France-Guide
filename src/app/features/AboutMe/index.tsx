@@ -23,21 +23,20 @@ export default function AboutMe({ aboutData }: { aboutData: AboutPageData }) {
             aboutMyself={aboutData?.aboutMyself || "Гарик Саакян"}
             myselfTitle={aboutData?.myselfTitle || ""}
           />
-          <div className="py-20">
+          <div className="md:py-10 px-[10px]">
             <ImageExpander
               isGrid
               showHeader
               images={(aboutData?.carousel || []).map((img) => {
                 const rawUrl = img.formats?.large?.url || img.url || "";
- 
+
                 const src = rawUrl.startsWith("http")
                   ? rawUrl
                   : `${process.env.NEXT_PUBLIC_STRAPI_URL}${rawUrl}`;
 
                 return {
                   src,
-                  alt:
-                    img.alternativeText || img.caption || "Paris Gallery",
+                  alt: img.alternativeText || img.caption || "Paris Gallery",
                   width: img.width,
                   height: img.height,
                   size: img.size || "small",

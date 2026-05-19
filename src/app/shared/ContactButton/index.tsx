@@ -29,7 +29,7 @@ export default function ContactButtons({ isAbout }: { isAbout?: boolean }) {
       aboutStyles:
         "px-4 py-2 md:px-8 md:py-4 bg-amber-500 text-white rounded-full hover:bg-amber-600 shadow-2xl font-semibold hover:scale-105 text-[14px] md:text-[16px]",
       defaultStyles:
-        "px-6 py-3 rounded-lg font-[600] group inline-flex items-center gap-2",
+        "px-3 md:px-6 py-3 text-[14px] md:text-[16px] rounded-lg font-[600] group inline-flex items-center gap-2",
       designType: "gold" as const,
     },
     {
@@ -39,7 +39,7 @@ export default function ContactButtons({ isAbout }: { isAbout?: boolean }) {
       aboutStyles:
         "px-4 py-2 md:px-8 md:py-4 bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 rounded-full hover:bg-white/20 font-semibold text-[14px] md:text-[16px]",
       defaultStyles:
-        "group inline-flex items-center px-6 py-3 ml-[10px] font-[600] rounded-lg shadow-md hover:shadow-lg",
+        "group inline-flex items-center px-3 md:px-6 py-3 ml-[10px] text-[14px] md:text-[16px] font-[600] rounded-lg shadow-md hover:shadow-lg",
       designType: "white" as const,
     },
   ];

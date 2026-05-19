@@ -144,7 +144,7 @@ export default function GetInTouch({
                   ))}
               </div>
 
-              <div className="w-full flex flex-col gap-[25px] bg-secondary-transparent rounded-[6px] p-[32px]">
+               <div className="w-full flex flex-col gap-[25px] bg-secondary-transparent rounded-[6px] p-[18px] sm:p-[32px]">
                 <h3
                   className="text-[28px] font-[500] leading-[150%]"
                   style={{ fontFamily: "Oswald" }}
