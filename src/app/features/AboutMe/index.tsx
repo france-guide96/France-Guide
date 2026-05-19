@@ -23,7 +23,7 @@ export default function AboutMe({ aboutData }: { aboutData: AboutPageData }) {
             aboutMyself={aboutData?.aboutMyself || "Гарик Саакян"}
             myselfTitle={aboutData?.myselfTitle || ""}
           />
-          <div className="py-20">
+          <div className="md:py-10 px-[10px]">
             <ImageExpander
               isGrid
               showHeader

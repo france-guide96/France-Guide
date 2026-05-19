@@ -79,9 +79,9 @@ export default async function Home({
         heroDescription={homeData?.heroDesc || ""}
         isHero
       />
-      <section className="bg-white py-[100px]">
+      <section className="bg-white py-[50px] md:py-[100px]">
         <Container>
-          <div className="flex flex-col items-center pb-[50px]">
+          <div className="flex flex-col items-center">
             <HeroSectionHome
               title={homeData?.categoryTitle || ""}
               description={homeData?.categoryDescription || ""}

@@ -61,7 +61,7 @@ export default function HeroSection({
       <div className="absolute inset-0 bg-black/30 z-[1]" />
       <Container>
         <div
-          className={`relative z-[2] flex flex-col items-center justify-center min-h-screen gap-[48px] px-[10px] pt-[150px] pb-[50px] ${generalStyles}`}
+          className={`relative z-[2] flex flex-col items-center justify-start min-h-screen gap-[48px] px-[10px] pt-[150px] pb-[50px] ${generalStyles}`}
         >
           <div className={"flex flex-col items-center justify-center text-center gap-[24px]"}>
             <h1

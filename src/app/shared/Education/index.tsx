@@ -4,7 +4,7 @@ import { EducationProps } from "./type";
 
 export default function Education({ title, subTitle, items }: EducationProps) {
   return (
-    <section className="py-20">
+    <section className="py-[50px] md:py-20">
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <Header
           heading={title}

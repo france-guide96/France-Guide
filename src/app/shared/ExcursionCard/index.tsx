@@ -44,7 +44,7 @@ export default function ExcursionCard({
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
         </div>
 
-        <div className="p-6 h-[224px]">
+        <div className="pt-6 px-6 h-[250px] flex flex-col justify-between">
           <h2 className="text-xl xl:text-2xl font-serif text-gray-900 mb-3 group-hover:text-amber-500 transition-colors">
             {title}
           </h2>

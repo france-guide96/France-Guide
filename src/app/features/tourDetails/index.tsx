@@ -242,7 +242,7 @@ export function TourDetail({ tour }: Props) {
                   {tour?.contentSections?.map((section, idx: number) => (
                     <div
                       key={idx}
-                      className="bg-gradient-to-br from-gray-900 to-gray-800 border border-dark-gray/50 rounded-[16px] p-8 transition-all hover:border-accent/50"
+                      className="bg-gradient-to-br from-gray-900 to-gray-800 border border-dark-gray/50 rounded-[16px] p-4 sm:p-8 transition-all hover:border-accent/50"
                     >
                       {section?.title && (
                         <h2 className="text-[24px] font-[700] leading-[133%] text-secondary mb-6 flex items-center gap-3">
@@ -282,7 +282,7 @@ export function TourDetail({ tour }: Props) {
             </div>
             <div className="lg:col-span-1">
               <div className="sticky top-24">
-                <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-dark-gray/50 rounded-[16px] p-8 transition-all hover:border-accent/50">
+                <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-dark-gray/50 rounded-[16px] p-4 sm:p-8 transition-all hover:border-accent/50">
                   <div className="mb-6">
                     <div className="text-secondary/50 text-[14px] font-[400] leading-[143%] mb-2">
                       {t("Pricing")}
