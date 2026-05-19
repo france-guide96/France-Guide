@@ -76,13 +76,14 @@ export default async function AboutHero({
                     fill
                     src={imageURL}
                     alt="Garik"
-                    className="object-cover scale-110 group-hover:scale-100 transition-transform duration-700"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    objectPosition="25% center"
                     unoptimized
                   />
                 </div>
 
-                <div className="absolute -bottom-6 -left-6 bg-primary text-white p-8 z-20 min-w-[180px]">
-                  <div className="flex items-center gap-2 mb-2">
+                <div className="text-center md:absolute md:-bottom-14 md:-left-25 md:rounded-2xl bg-primary text-white p-8 z-20 min-w-[180px]">
+                  <div className="flex justify-center items-center gap-2 mb-2 w-full">
                     <span className="text-4xl font-bold text-secondary">
                       {countExcursions} +
                     </span>
