@@ -11,13 +11,13 @@ import {
   LucideIcon,
 } from "lucide-react";
 import Container from "@/app/shared/Container";
-import { ImageWithFallback } from "@/app/shared/imageWithFallback/imageWithFallback";
 import Header from "@/app/shared/Header";
 import BackButton from "@/app/shared/BackButton";
 import ImageExpander from "@/app/shared/ImageExpander";
 import { TransferPageData } from "lib/utils/transferType";
 import ContactButtons from "@/app/shared/ContactButton";
 import TransferFeatures from "@/app/shared/TransferFeatures";
+import { ImageLoader } from "@/app/shared/ImageLoader";
 
 const specIconMap: Record<number, LucideIcon> = {
   0: Users,
@@ -68,7 +68,7 @@ export default function TransferPage({ data }: { data: TransferPageData }) {
               >
                 <div className="absolute -inset-1 bg-gradient-to-r from-accent/20 to-transparent rounded-[40px] blur-xl opacity-50 group-hover:opacity-100 transition duration-1000" />
                 <div className="relative rounded-[32px] overflow-hidden border border-secondary/5 bg-dark-gray">
-                  <ImageWithFallback
+                  <ImageLoader
                     src={firstImage}
                     width={1000}
                     height={1000}

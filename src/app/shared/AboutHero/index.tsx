@@ -3,6 +3,7 @@ import { AboutHeroProps } from "./type";
 import Container from "../Container";
 import cuteSmile from "@/assets/about/cuteSmile.jpg";
 import heroBg from "@/assets/about/paris.jpg";
+import { ImageLoader } from "../ImageLoader";
 
 export default async function AboutHero({
   description,
@@ -72,13 +73,14 @@ export default async function AboutHero({
                 <div className="absolute -top-10 -left-10 w-full h-full border-[1px] border-gray-200 z-0 hidden md:block" />
 
                 <div className="relative aspect-[3/4] overflow-hidden transition-all duration-500 z-10">
-                  <ImageWithFallback
+                  <ImageLoader
                     fill
                     src={imageURL}
                     alt="Garik"
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                     objectPosition="25% center"
                     unoptimized
+                    variant="light"
                   />
                 </div>
 
