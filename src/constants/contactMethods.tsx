@@ -20,7 +20,7 @@ export const getContactMethods = (t: TranslationFunction) => [
   },
   {
     id: "viber",
-    href: "https://viber.me/+33609572780",
+    href: "viber://chat?number=%2B33609572780",
     icon: <MessageSquare className="text-purple-500" />,
     label: "Viber",
     sub: t("QuickReply"),
