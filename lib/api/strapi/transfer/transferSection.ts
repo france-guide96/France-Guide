@@ -10,7 +10,7 @@ export async function fetchTransferData(
   params.append("populate", "sectionPopularRoute");
   params.append("populate", "carImage");
 
-  const url = `${process.env.NEXT_PUBLIC_STRAPI_URL}api/transfer?${params.toString()}`;
+  const url = `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/transfer?${params.toString()}`;
 
   try {
     const res = await fetchWithRetry(url, {

@@ -10,7 +10,7 @@ export async function fetchTourCards(
   params.set("populate", "bgImg");
   params.set("filters[filterCategory][$eq]", category);
 
-  const url = `${process.env.NEXT_PUBLIC_STRAPI_URL}api/tour-cards?${params.toString()}`;
+  const url = `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/tour-cards?${params.toString()}`;
 
   try {
     const res = await fetchWithRetry(url, {

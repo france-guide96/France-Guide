@@ -7,7 +7,7 @@ export async function fetchHomePage(locale: string): Promise<HomePage | null> {
   const params = new URLSearchParams();
   params.set("locale", locale);
 
-  const url = `${process.env.NEXT_PUBLIC_STRAPI_URL}api/home-page?${params.toString()}`;
+  const url = `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/home-page?${params.toString()}`;
 
   try {
     const res = await fetchWithRetry(url, {

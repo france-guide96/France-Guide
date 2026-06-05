@@ -8,7 +8,7 @@ export async function fetchCategories(
   params.set("locale", locale);
   params.append("populate", "image");
 
-  const url = `${process.env.NEXT_PUBLIC_STRAPI_URL}api/categories?${params.toString()}`;
+  const url = `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/categories?${params.toString()}`;
 
   try {
     const res = await fetchWithRetry(url, {
