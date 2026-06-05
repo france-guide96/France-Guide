@@ -41,7 +41,7 @@ export async function fetchReviews(
 
   try {
     const res = await fetchWithRetry(
-      `${STRAPI_URL}/api/reviews?${params.toString()}`,
+      `${STRAPI_URL}api/reviews?${params.toString()}`,
       { next: { revalidate: 60 }, headers: AUTH_HEADERS },
     );
 

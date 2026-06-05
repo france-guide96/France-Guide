@@ -18,7 +18,7 @@ export async function fetchAboutPageData(
     params.append(`populate[${index}]`, field);
   });
 
-  const url = `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/about-page?${params.toString()}`;
+  const url = `${process.env.NEXT_PUBLIC_STRAPI_URL}api/about-page?${params.toString()}`;
 
   try {
     const res = await fetchWithRetry(url, {

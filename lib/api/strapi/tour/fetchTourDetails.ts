@@ -30,7 +30,7 @@ export async function fetchTourDetails(
     "filters[filterCategory][$eq]": dbCategory,
   });
 
-  const url = `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/tour-cards?${queryParams.toString()}&${TOUR_DETAILS_POPULATE}`;
+  const url = `${process.env.NEXT_PUBLIC_STRAPI_URL}api/tour-cards?${queryParams.toString()}&${TOUR_DETAILS_POPULATE}`;
 
   try {
     const res = await fetchWithRetry(url, {
