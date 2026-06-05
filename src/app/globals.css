@@ -64,3 +64,17 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   height: 100%;
   cursor: pointer;
 }
+
+@keyframes drawTower {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes goldSweep {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes twinkleDot {
+  0%, 100% { opacity: 0; transform: scale(0.5); }
+  50%       { opacity: 0.8; transform: scale(1.3); }
+}

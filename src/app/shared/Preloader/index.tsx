@@ -114,7 +114,6 @@ export default function Preloader() {
       ></div>
 
       <div className="content-wrap">
-        {/* Эйфелева башня */}
         <svg width="70" height="90" viewBox="0 0 100 120" className="tower-svg">
           <path
             d="M50 5 L68 115 M50 5 L32 115 M20 115 H80 M32 85 H68 M42 45 H58"
@@ -125,7 +124,6 @@ export default function Preloader() {
           />
         </svg>
 
-        {/* Буквы */}
         <div className="letters-row">
           <span className="letter">P</span>
           <span className="letter">A</span>

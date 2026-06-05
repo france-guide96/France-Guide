@@ -54,6 +54,7 @@ export default function HeroSection({
         playsInline
         preload="metadata"
         className="absolute inset-0 w-full h-full object-cover"
+        poster="/paris-poster.png"
       >
         <source src="/final.mp4" type="video/mp4" />
       </video>

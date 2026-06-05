@@ -3,6 +3,7 @@ import { AboutHeroProps } from "./type";
 import Container from "../Container";
 import cuteSmile from "@/assets/about/cuteSmile.jpg";
 import heroBg from "@/assets/about/paris.jpg";
+import { ImageLoader } from "../ImageLoader";
 
 export default async function AboutHero({
   description,
@@ -72,17 +73,19 @@ export default async function AboutHero({
                 <div className="absolute -top-10 -left-10 w-full h-full border-[1px] border-gray-200 z-0 hidden md:block" />
 
                 <div className="relative aspect-[3/4] overflow-hidden transition-all duration-500 z-10">
-                  <ImageWithFallback
+                  <ImageLoader
                     fill
                     src={imageURL}
                     alt="Garik"
-                    className="object-cover scale-110 group-hover:scale-100 transition-transform duration-700"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    objectPosition="25% center"
                     unoptimized
+                    variant="light"
                   />
                 </div>
 
-                <div className="absolute -bottom-6 -left-6 bg-primary text-white p-8 z-20 min-w-[180px]">
-                  <div className="flex items-center gap-2 mb-2">
+                <div className="text-center md:absolute md:-bottom-14 md:-left-25 md:rounded-2xl bg-primary text-white p-8 z-20 min-w-[180px]">
+                  <div className="flex justify-center items-center gap-2 mb-2 w-full">
                     <span className="text-4xl font-bold text-secondary">
                       {countExcursions} +
                     </span>

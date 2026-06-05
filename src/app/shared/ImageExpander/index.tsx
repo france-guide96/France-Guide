@@ -1,16 +1,21 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { GalleryType } from "./type";
 import Header from "../Header";
 import dynamic from "next/dynamic";
+import { ImageLoader } from "@/app/shared/ImageLoader";
+
 const Lightbox = dynamic(() => import("yet-another-react-lightbox"), {
   ssr: false,
 });
 
 import "yet-another-react-lightbox/styles.css";
+
+type ExtendedGalleryType = GalleryType & {
+  variant?: "dark" | "light";
+};
 
 export default function ImageExpander({
   images,
@@ -18,7 +23,8 @@ export default function ImageExpander({
   imgStyles,
   isGrid = false,
   showHeader = false,
-}: GalleryType) {
+  variant = "dark",
+}: ExtendedGalleryType) {
   const [index, setIndex] = useState(-1);
   const t = useTranslations("About");
 
@@ -56,25 +62,15 @@ export default function ImageExpander({
               onClick={() => setIndex(idx)}
               className={`${imgStyles ?? "relative block w-full min-h-[200px] rounded-[16px] overflow-hidden cursor-pointer shadow-md"} ${span}`}
             >
-              <div className="relative h-full w-full overflow-hidden bg-[#0B1220] flex items-center justify-center">
-                <Image
-                  src={img.src}
-                  alt={img.alt || "france guide"}
-                  fill
-                  className="object-cover blur-lg opacity-40 scale-110"
-                  unoptimized
-                />
-                <div className="relative w-full h-full p-1">
-                  <Image
-                    src={img.src}
-                    alt={img.alt || "france guide"}
-                    fill
-                    unoptimized
-                    className={`${isGrid ? "object-cover" : "object-contain z-10"} transition-transform duration-500 hover:scale-[1.02]`}
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                </div>
-              </div>
+              <ImageLoader
+                src={img.src}
+                alt={img.alt || "france guide"}
+                fill
+                unoptimized
+                variant={variant}
+                className={isGrid ? "object-cover" : "object-contain"}
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
             </button>
           );
         })}
@@ -89,11 +85,12 @@ export default function ImageExpander({
         render={{
           slide: ({ slide }) => (
             <div className="relative w-full h-full">
-              <Image
+              <ImageLoader
                 fill
                 src={slide.src}
                 alt={slide.alt || "france guide"}
                 unoptimized
+                variant={variant}
                 className="object-contain"
               />
             </div>

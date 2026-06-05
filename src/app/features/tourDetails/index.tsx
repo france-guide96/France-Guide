@@ -3,6 +3,7 @@
 import { useRouter } from "@/navigation";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import dynamic from "next/dynamic";
 import {
   Star,
   Clock,
@@ -12,14 +13,14 @@ import {
   Calendar,
   ChevronDown,
 } from "lucide-react";
-import { ImageWithFallback } from "@/app/shared/imageWithFallback/imageWithFallback";
 import { Formats2, TourCard } from "lib/utils/tourCardType";
 import Button from "@/app/shared/Button";
 import Container from "@/app/shared/Container";
-import dynamic from "next/dynamic";
 import { AnimatePresence, motion } from "framer-motion";
 import BackButton from "@/app/shared/BackButton";
 import ImageExpander from "@/app/shared/ImageExpander";
+import { ImageLoader } from "@/app/shared/ImageLoader";
+
 const BookingModal = dynamic(() => import("@/app/shared/BookingModal"), {
   ssr: false,
 });
@@ -125,7 +126,7 @@ export function TourDetail({ tour }: Props) {
             <div className="lg:col-span-2 space-y-8">
               <div className="space-y-4">
                 <div className="relative rounded-2xl overflow-hidden">
-                  <ImageWithFallback
+                  <ImageLoader
                     width={100}
                     height={100}
                     src={

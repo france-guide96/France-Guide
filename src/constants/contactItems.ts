@@ -33,7 +33,7 @@ export const contactData: ContactItem[] = [
     key: "Viber",
     value: "+33-609-57-27-80",
     sub: "ConvenientCommunication",
-    href: "https://viber.me/+33609572780",
+    href: "viber://chat?number=%2B33609572780",
   },
   {
     icon: whatsAppIcon,
