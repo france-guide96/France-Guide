@@ -46,7 +46,7 @@ export default function HeroSection({
   };
 
   return (
-    <section className="relative min-h-screen overflow-hidden">
+    <section className="relative min-h-screen overflow-hidden"> 
       <video
         autoPlay
         muted
