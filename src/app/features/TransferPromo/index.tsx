@@ -15,10 +15,10 @@ export default function TransferPromo({ data }: { data: TransferSectionData }) {
   const t = useTranslations("Transfer");
   const router = useRouter();
 
-  const carImageUrl = data?.carImage[0]?.url
-    ? data.carImage[0].url.startsWith("http")
-      ? data.carImage[0].url
-      : `${process.env.NEXT_PUBLIC_STRAPI_URL}${data.carImage[0].url}`
+  const carImageUrl = data?.carImage?.url
+    ? data.carImage.url.startsWith("http")
+      ? data.carImage.url
+      : `${process.env.NEXT_PUBLIC_STRAPI_URL}${data?.carImage?.url}`
     : null;
 
   return (
@@ -47,7 +47,7 @@ export default function TransferPromo({ data }: { data: TransferSectionData }) {
                 alt="Mercedes V-Class Luxe"
                 width={1000}
                 height={100}
-                className="w-full h-auto drop-shadow-[0_40px_80px_rgba(0,0,0,0.15)] transition-transform duration-700 hover:scale-105"
+                className="w-full h-auto drop-shadow-[0_40px_80px_rgba(0,0,0,0.15)] transition-transform duration-700 hover:scale-105 rounded-[10px]"
                 priority
                 unoptimized
               />

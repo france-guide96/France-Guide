@@ -19,7 +19,7 @@ export interface TransferSectionData {
   buttonText: string;
   features: TransferFeature[];
   sectionPopularRoute: PopularRoute[];
-  carImage: StrapiImage[];
+  carImage: StrapiImage;
 }
 
 export interface TransferSpec {
